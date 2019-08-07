@@ -1,4 +1,4 @@
-# classifica.me [![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://github.com/codered-co/classifica-me-app/issues?q=is%3Aopen+is%3Aissue)  [![GitHub issues-closed](https://img.shields.io/github/issues-closed/Naereen/StrapDown.js.svg)](https://github.com/codered-co/classifica-me-app/issues?q=is%3Aissue+is%3Aclosed)
+# classifica.me ![GitHub issues](https://img.shields.io/github/issues/codered-co/classifica-me-app?color=green&label=issues)  ![GitHub closed issues](https://img.shields.io/github/issues-closed/codered-co/classifica-me-app?color=red)
 
 Aplicativo Android de classificação de empresas desenvolvido em caráter colaborativo com previsão de finalização/entrega na [MercoNoroeste2019](https://merconoroeste.com.br/)
 
