@@ -27,4 +27,6 @@ public class RankingFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_ranking, container, false);
     }
 
+
+
 }
