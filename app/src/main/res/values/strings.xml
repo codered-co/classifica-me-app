@@ -56,7 +56,7 @@
     </string-array>
 
     <string-array name="categoria">
-        <item>Categoria</item>
+        <item>(Categoria)</item>
         <item>Varejo</item>
         <item>Tecnologia</item>
         <item>Educação</item>
@@ -71,10 +71,10 @@
     </string-array>
 
     <string-array name="local">
-        <item>Local</item>
+        <item>(Local)</item>
         <item>Itaperuna</item>
         <item>Miracema</item>
-        <item>Bom Jesus do Itabapoana</item>
+        <item>Bom Jesus</item>
         <item>Padua</item>
         <item>Raposo</item>
         <item>Retiro</item>
@@ -89,5 +89,4 @@
     <string name="title_classificar">Classificar</string>
     <string name="title_perfil">Perfil</string>
     <string name="title_ranking">Ranking</string>
-
 </resources>
