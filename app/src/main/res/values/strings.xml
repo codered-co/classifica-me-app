@@ -54,8 +54,39 @@
         <item>Novembro</item>
         <item>Dezembro</item>
     </string-array>
+
+    <string-array name="categoria">
+        <item>Categoria</item>
+        <item>Varejo</item>
+        <item>Tecnologia</item>
+        <item>Educação</item>
+        <item>Comércio</item>
+        <item>Construção</item>
+        <item>Saúde</item>
+        <item>Alimentação</item>
+        <item>Beleza</item>
+        <item>Vendas e Marketing</item>
+        <item>Serviços Pessoais</item>
+        <item>Serviços especializados</item>
+    </string-array>
+
+    <string-array name="local">
+        <item>Local</item>
+        <item>Itaperuna</item>
+        <item>Miracema</item>
+        <item>Bom Jesus do Itabapoana</item>
+        <item>Padua</item>
+        <item>Raposo</item>
+        <item>Retiro</item>
+        <item>Laje do Muriaé</item>
+        <item>Natividade</item>
+        <item>Ubá</item>
+        <item>Porciúncula</item>
+        <item>Varre-Sai</item>
+    </string-array>
+
     <string name="title_activity_app">Classifica.me</string>
-    <string name="title_home">Home</string>
+    <string name="title_classificar">Classificar</string>
     <string name="title_perfil">Perfil</string>
     <string name="title_ranking">Ranking</string>
 

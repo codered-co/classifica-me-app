@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
+        android:id="@+id/navigation_classificar"
+        android:icon="@drawable/ic_star"
+        android:title="@string/title_classificar" />
 
     <item
         android:id="@+id/navigation_perfil"
@@ -15,5 +15,6 @@
         android:id="@+id/navigation_ranking"
         android:icon="@drawable/ic_notifications_black_24dp"
         android:title="@string/title_ranking" />
+
 
 </menu>
