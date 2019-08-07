@@ -23,11 +23,11 @@
 
 
             <TextView
+                android:id="@+id/textView_nome_empresa_classificar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="5dp"
-                android:text="Braseiro"
                 android:textColor="@android:color/black"
                 android:textSize="30dp"
                 android:textStyle="bold" />
@@ -41,16 +41,16 @@
                 app:cardUseCompatPadding="true">
 
                 <TextView
+                    android:id="@+id/textView_descricao_empresa_classificar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="2dp"
                     android:layout_marginEnd="2dp"
-                    android:layout_marginBottom="1dp"
-                    android:text="Uma pequena descrição fornecida por nós mesmos na hora do cadastro ou pelo google." />
+                    android:layout_marginBottom="1dp" />
             </android.support.v7.widget.CardView>
 
             <TextView
-                android:id="@+id/textViewAtendimento"
+                android:id="@+id/textView_atendimento_cliente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -58,13 +58,13 @@
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <app.youkai.simpleratingview.SimpleRatingView
-                android:id="@+id/simpleRatingViewAtendimento"
+                android:id="@+id/simpleRatingView_atendimento_cliente"
                 android:layout_width="wrap_content"
                 android:layout_height="64dp"
                 android:layout_gravity="center_horizontal" />
 
             <TextView
-                android:id="@+id/txtRatingValueAtendimento"
+                android:id="@+id/textView_ratingValue_atendimento_cliente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -72,7 +72,7 @@
                 android:textSize="16dp" />
 
             <TextView
-                android:id="@+id/textViewPagamento"
+                android:id="@+id/textView_forma_pagamento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -81,13 +81,13 @@
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <app.youkai.simpleratingview.SimpleRatingView
-                android:id="@+id/simpleRatingViewPagamento"
+                android:id="@+id/simpleRatingView_forma_pagamento"
                 android:layout_width="wrap_content"
                 android:layout_height="64dp"
                 android:layout_gravity="center_horizontal" />
 
             <TextView
-                android:id="@+id/txtRatingValuePagamento"
+                android:id="@+id/textView_ratingValue_forma_pagamento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -95,7 +95,7 @@
                 android:textSize="16dp" />
 
             <TextView
-                android:id="@+id/textViewEntrega"
+                android:id="@+id/textView_servico_entrega"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -104,13 +104,13 @@
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <app.youkai.simpleratingview.SimpleRatingView
-                android:id="@+id/simpleRatingViewEntrega"
+                android:id="@+id/simpleRatingView_servico_entrega"
                 android:layout_width="wrap_content"
                 android:layout_height="64dp"
                 android:layout_gravity="center_horizontal" />
 
             <TextView
-                android:id="@+id/txtRatingValueEntrega"
+                android:id="@+id/textView_ratingValue_servico_entrega"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -118,7 +118,7 @@
                 android:textSize="16dp" />
 
             <TextView
-                android:id="@+id/textViewVoltar"
+                android:id="@+id/textView_possibilidade_voltar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -128,30 +128,21 @@
 
 
             <app.youkai.simpleratingview.SimpleRatingView
-                android:id="@+id/simpleRatingViewVoltar"
+                android:id="@+id/simpleRatingView_possibilidade_voltar"
                 android:layout_width="wrap_content"
                 android:layout_height="64dp"
                 android:layout_gravity="center_horizontal" />
 
             <TextView
-                android:id="@+id/txtRatingValueVoltar"
+                android:id="@+id/textView_ratingValue_possibilidade_voltar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textSize="16dp" />
 
-
-            <TextView
-                android:id="@+id/textViewMediaFinal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textSize="20dp"
-                android:visibility="gone" />
-
             <Button
-                android:id="@+id/buttonSubmit"
+                android:id="@+id/button_submit_valor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -160,6 +151,7 @@
 
             <Button
                 android:id="@+id/button_sugerir_empresa"
+                android:text="Sugerir Empresa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal" />
