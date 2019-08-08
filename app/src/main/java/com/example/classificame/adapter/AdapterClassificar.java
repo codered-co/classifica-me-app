@@ -36,8 +36,7 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
         viewHolderEmpresa.nomeEmpresa.setText(empresa.getNomeEmpresa());
         viewHolderEmpresa.descricaoEmpresa.setText(empresa.getDescricaoEmpresa());
         viewHolderEmpresa.localEmpresa.setText(empresa.getLocalEmpresa());
-        //imagemEmpresa
-        //tipoEmpresa
+        viewHolderEmpresa.tipoEmpresa.setText(empresa.getTipoEmpresa());
     }
 
 
@@ -48,7 +47,7 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
 
     public class ViewHolderEmpresa extends RecyclerView.ViewHolder {
 
-        private TextView nomeEmpresa, descricaoEmpresa, localEmpresa;
+        private TextView nomeEmpresa, descricaoEmpresa, localEmpresa, tipoEmpresa;
         private ImageView imagemEmpresa;
         private Button classificarEmpresa;
 
@@ -60,7 +59,7 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
             localEmpresa = itemView.findViewById(R.id.textView_local_empresa_adapter);
             classificarEmpresa = itemView.findViewById(R.id.button_classificar_adapter);
             imagemEmpresa = itemView.findViewById(R.id.imageView_empresa_adapter);
-
+            tipoEmpresa = itemView.findViewById(R.id.textView_tipo_empresa_adapter);
 
         }
     }

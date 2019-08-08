@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.classificame.R;
+import com.example.classificame.activity.EditarPerfilActivity;
 import com.example.classificame.activity.MainActivity;
 import com.example.classificame.config.ConfigFirebase;
 import com.google.firebase.auth.FirebaseAuth;
@@ -69,7 +70,9 @@ public class PerfilFragment extends Fragment {
             encerrarSessao();
         }
         if (id == R.id.action_editar) {
-            Toast.makeText(getActivity(), "Editar perfil", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity(), "Editar perfil", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(getContext(), EditarPerfilActivity.class);
+            startActivity(i);
         }
         return super.onOptionsItemSelected(item);
     }
