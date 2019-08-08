@@ -89,4 +89,12 @@
     <string name="title_classificar">Classificar</string>
     <string name="title_perfil">Perfil</string>
     <string name="title_ranking">Ranking</string>
+
+    <!-- String para mudar nome dos ranking na rating bar -->
+
+    <string name="srv_awful">Bronze</string>
+    <string name="srv_meh">Prata</string>
+    <string name="srv_good">Ouro</string>
+    <string name="srv_amazing">Diamante</string>
+    <string name="srv_no_rating">Sem Ranking</string>
 </resources>
