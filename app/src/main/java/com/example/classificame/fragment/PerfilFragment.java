@@ -30,9 +30,8 @@ public class PerfilFragment extends Fragment {
     private ImageView imageViewPerfil, imageViewEmblema;
 
     public PerfilFragment() {
-
+        //Constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
