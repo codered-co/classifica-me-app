@@ -1,6 +1,7 @@
 package com.example.classificame.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 
 import com.example.classificame.R;
+import com.example.classificame.activity.SugerirEmpresaActivity;
 
 import app.youkai.simpleratingview.SimpleRatingView;
 
