@@ -1,144 +1,60 @@
 package com.example.classificame.fragment;
 
-
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-
 
 import com.example.classificame.R;
-import com.example.classificame.activity.SugerirEmpresaActivity;
+import com.example.classificame.adapter.AdapterClassificar;
+import com.example.classificame.model.Empresa;
 
-import app.youkai.simpleratingview.SimpleRatingView;
+import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ClassificarFragment extends Fragment {
+    private RecyclerView recyclerViewEmpresa;
 
-    private SimpleRatingView ratingViewAtendimentoCliente;
-    private SimpleRatingView ratingViewFormaPagamento;
-    private SimpleRatingView ratingViewServicoEntrega;
-    private SimpleRatingView ratingViewPossibilidadeVoltar;
+    private ArrayList<Empresa> empresas = new ArrayList<>();
+    private AdapterClassificar adapterClassificar;
 
-    private TextView textViewValorAtendimentoCliente;
-    private TextView textViewValorFormaPagamento;
-    private TextView textViewValorServicoEntrega;
-    private TextView textViewValorPossibilidadeVoltar;
-
-
-    private TextView textViewNomeEmpresa;
-    private TextView textViewDescricaoEmpresa;
-
-    private Button buttonSugerir;
-
-    public ClassificarFragment() {
-        // Required empty public constructor
-    }
-
-
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_classificar, container, false);
 
-        buttonSugerir = view.findViewById(R.id.button_sugerir_empresa);
-
-        buttonSugerir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getContext(), SugerirEmpresaActivity.class);
-                startActivity(i);
-            }
-        });
-
+        //Recycler
+        recyclerViewEmpresa = view.findViewById(R.id.recyclerViewClassificar);
+        recyclerViewEmpresa.setLayoutManager(new LinearLayoutManager(getContext()));
+        //Adapter
+        adapterClassificar = new AdapterClassificar(empresas);
+        recyclerViewEmpresa.setAdapter(adapterClassificar);
+        criarEmpresa();
         return view;
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        ratingViewAtendimentoCliente = getView().findViewById(R.id.simpleRatingView_atendimento_cliente);
-        ratingViewFormaPagamento = getView().findViewById(R.id.simpleRatingView_forma_pagamento);
-        ratingViewServicoEntrega = getView().findViewById(R.id.simpleRatingView_servico_entrega);
-        ratingViewPossibilidadeVoltar = getView().findViewById(R.id.simpleRatingView_possibilidade_voltar);
-
-        textViewValorAtendimentoCliente = getView().findViewById(R.id.textView_ratingValue_atendimento_cliente);
-        textViewValorFormaPagamento = getView().findViewById(R.id.textView_ratingValue_forma_pagamento);
-        textViewValorServicoEntrega = getView().findViewById(R.id.textView_ratingValue_servico_entrega);
-        textViewValorPossibilidadeVoltar = getView().findViewById(R.id.textView_ratingValue_possibilidade_voltar);
-
-
-        textViewNomeEmpresa = getView().findViewById(R.id.textView_nome_empresa_classificar);
-        textViewDescricaoEmpresa = getView().findViewById(R.id.textView_descricao_empresa_classificar);
-
-
-
-        addListenerOnRatingBar(ratingViewAtendimentoCliente, textViewValorAtendimentoCliente);
-        addListenerOnRatingBar(ratingViewFormaPagamento, textViewValorFormaPagamento);
-        addListenerOnRatingBar(ratingViewServicoEntrega, textViewValorServicoEntrega);
-        addListenerOnRatingBar(ratingViewPossibilidadeVoltar, textViewValorPossibilidadeVoltar);
-
-        addListenerOnButtonEnviar();
+    private void criarEmpresa() {
+        Empresa empresa1 = new Empresa();
+        empresa1.setNomeEmpresa("CodeRed");
+        empresa1.setCategoriaEmpresa("Tecnologia");
+        empresa1.setDescricaoEmpresa("Programar aprende conosco");
+        empresa1.setLocalEmpresa("Itaperuna-RJ");
+        //empresa1.setImagemEmpresa("https://scontent.fitp2-1.fna.fbcdn.net/v/t1.0-9/51083572_354238292092123_2909024814649835520_o.jpg?_nc_cat=107&_nc_oc=AQnS1qcEQW7zdkOUynBry0mC91hFbTb1ncc43KZ95kZfXPplmqOZFYliTG97tqAAP3U&_nc_ht=scontent.fitp2-1.fna&oh=c5eb13727bdd683fb93a0e06d18a53df&oe=5D57513C");
+        empresas.add(empresa1);
     }
-
-    public void addListenerOnRatingBar(SimpleRatingView simpleRatingView, final TextView txtRatingValue) {
-        //if rating value is changed,
-        //display the current rating value in the result automatically
-        simpleRatingView.setListener(new SimpleRatingView.OnRatingSelectedListener() {
-            @Override
-            public void onRatingSelected(SimpleRatingView.Rating rating) {
-                txtRatingValue.setText(getString(rating.getStringRes()));
-            }
-        });
-    }
-
-
-    public int pegarValor(TextView textView){
-        int valorRankin = 0;
-        String ranking = textView.getText().toString();
-        if (ranking.contentEquals("Bronze")){
-            valorRankin = 2;
-        } else if (ranking.contentEquals("Prata")){
-            valorRankin = 3;
-        } else if (ranking.contentEquals("Ouro")){
-            valorRankin = 4;
-        } else if (ranking.contentEquals("Diamante")){
-            valorRankin = 5;
-        } else{
-            valorRankin = 0;
-        }
-        return valorRankin;
-    }
-
-
-    public void addListenerOnButtonEnviar() {
-        textViewValorAtendimentoCliente = getView().findViewById(R.id.textView_ratingValue_atendimento_cliente);
-        textViewValorFormaPagamento = getView().findViewById(R.id.textView_ratingValue_forma_pagamento);
-        textViewValorServicoEntrega = getView().findViewById(R.id.textView_ratingValue_servico_entrega);
-        textViewValorPossibilidadeVoltar= getView().findViewById(R.id.textView_ratingValue_possibilidade_voltar);
-
-
-        Button buttonSubmit = getView().findViewById(R.id.button_submit_valor);
-        //if click, then display the current rating value.
-        buttonSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                float rankingAtendimentoCliente = pegarValor(textViewValorAtendimentoCliente);
-                float rankingFormaPagamento = pegarValor(textViewValorFormaPagamento);
-                float rankingServicoEntrega = pegarValor(textViewValorServicoEntrega);
-                float rankingPossibilidadeVoltar = pegarValor(textViewValorPossibilidadeVoltar);
-
-
-            }
-        });
+    private void recuperarEmpresa() {
+        //Firebase
     }
 }
