@@ -1,6 +1,7 @@
 package com.example.classificame.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
@@ -76,6 +77,8 @@ public class SugerirEmpresaActivity extends AppCompatActivity {
                 } if (categoria.equals("(Categoria)")) {
                     Toast.makeText(SugerirEmpresaActivity.this, "Selecione uma categoria", Toast.LENGTH_SHORT).show();
                 }
+                esconderTeclado();
+                finish();
             }
         });
     }
