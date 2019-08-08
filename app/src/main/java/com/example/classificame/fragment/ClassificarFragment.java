@@ -91,8 +91,8 @@ public class ClassificarFragment extends Fragment {
     }
 
     public void addListenerOnRatingBar(SimpleRatingView simpleRatingView, final TextView txtRatingValue) {
-        //if rating value is changed,
-        //display the current rating value in the result automatically
+        //se o valor do ratingBar muda,
+        //exibe automaticamente o resultado atual
         simpleRatingView.setListener(new SimpleRatingView.OnRatingSelectedListener() {
             @Override
             public void onRatingSelected(SimpleRatingView.Rating rating) {
@@ -100,7 +100,6 @@ public class ClassificarFragment extends Fragment {
             }
         });
     }
-
 
     public int pegarValor(TextView textView){
         int valorRankin = 0;
@@ -128,7 +127,7 @@ public class ClassificarFragment extends Fragment {
 
 
         Button buttonSubmit = getView().findViewById(R.id.button_submit_valor);
-        //if click, then display the current rating value.
+        //se clickar recupera os valores votados em cada categoria
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
