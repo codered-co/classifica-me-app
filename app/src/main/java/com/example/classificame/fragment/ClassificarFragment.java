@@ -35,9 +35,8 @@ public class ClassificarFragment extends Fragment {
         buttonSugerir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-           // Intent i = new Intent(getContext(), SugerirEmpresaActivity.class);
-           // startActivity(i);
-
+                Intent i = new Intent(getContext(), SugerirEmpresaActivity.class);
+                startActivity(i);
             }
         });
 

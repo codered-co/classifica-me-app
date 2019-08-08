@@ -1,13 +1,19 @@
 package com.example.classificame.fragment;
 
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.classificame.R;
 import com.example.classificame.activity.MainActivity;
@@ -19,9 +25,12 @@ import com.google.firebase.auth.FirebaseAuth;
  */
 public class PerfilFragment extends Fragment {
 
-    private Button buttonLogout;
+    private TextView textViewNome, textViewSobrenome, textViewCidade, textViewDataNascimento, textViewTipoConsumidor;
+    private ProgressBar progressBarNivel;
+    private ImageView imageViewPerfil, imageViewEmblema;
 
     public PerfilFragment() {
+
     }
 
 
@@ -29,20 +38,52 @@ public class PerfilFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_perfil, container, false);
-
-        buttonLogout = view.findViewById(R.id.button_logout);
-
-        buttonLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth auth = ConfigFirebase.getAuth();
-                auth.signOut();
-                getActivity().finish();
-                startActivity(new Intent(getContext(), MainActivity.class));
-            }
-        });
-
+        textViewNome = view.findViewById(R.id.textView_nome_perfil);
+        textViewSobrenome = view.findViewById(R.id.textView_sobrenome_perfil);
+        textViewCidade = view.findViewById(R.id.textView_cidade_perfil);
+        textViewTipoConsumidor = view.findViewById(R.id.textView_consumidor_perfil);
+        textViewDataNascimento = view.findViewById(R.id.textView_data_perfil);
+        progressBarNivel = view.findViewById(R.id.progressBar_perfil_user);
+        imageViewPerfil = view.findViewById(R.id.imageView_perfil_usuario);
+        imageViewEmblema = view.findViewById(R.id.imageView_emblema_perfil);
         return view;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        //inflate menu
+        inflater.inflate(R.menu.menu_toolbar, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_logout) {
+            encerrarSessao();
+        }
+        if (id == R.id.action_editar) {
+            Toast.makeText(getActivity(), "Editar perfil", Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void encerrarSessao() {
+        FirebaseAuth auth = ConfigFirebase.getAuth();
+        auth.signOut();
+        getActivity().finish();
+        startActivity(new Intent(getContext(), MainActivity.class));
+    }
+
+    private void recuperarPerfil() {
+
     }
 
 }
