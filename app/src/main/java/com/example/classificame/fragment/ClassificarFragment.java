@@ -1,66 +1,65 @@
 package com.example.classificame.fragment;
 
-
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-
 
 import com.example.classificame.R;
-import com.example.classificame.activity.SugerirEmpresaActivity;
+import com.example.classificame.adapter.AdapterClassificar;
+import com.example.classificame.model.Empresa;
 
-import app.youkai.simpleratingview.SimpleRatingView;
+import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ClassificarFragment extends Fragment {
+    private RecyclerView recyclerViewEmpresa;
 
-    private SimpleRatingView ratingViewAtendimentoCliente;
-    private SimpleRatingView ratingViewFormaPagamento;
-    private SimpleRatingView ratingViewServicoEntrega;
-    private SimpleRatingView ratingViewPossibilidadeVoltar;
+    private ArrayList<Empresa> empresas = new ArrayList<>();
+    private AdapterClassificar adapterClassificar;
 
-    private TextView textViewValorAtendimentoCliente;
-    private TextView textViewValorFormaPagamento;
-    private TextView textViewValorServicoEntrega;
-    private TextView textViewValorPossibilidadeVoltar;
-
-
-    private TextView textViewNomeEmpresa;
-    private TextView textViewDescricaoEmpresa;
-
-    private Button buttonSugerir;
-
-    public ClassificarFragment() {
-        // Required empty public constructor
-    }
-
-
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_classificar, container, false);
 
-        buttonSugerir = view.findViewById(R.id.button_sugerir_empresa);
-
-        buttonSugerir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getContext(), SugerirEmpresaActivity.class);
-                startActivity(i);
-            }
-        });
-
+        //Recycler
+        recyclerViewEmpresa = view.findViewById(R.id.recyclerViewClassificar);
+        recyclerViewEmpresa.setLayoutManager(new LinearLayoutManager(getContext()));
+        //Adapter
+        adapterClassificar = new AdapterClassificar(empresas);
+        recyclerViewEmpresa.setAdapter(adapterClassificar);
+        criarEmpresa();
         return view;
     }
+
+    private void criarEmpresa() {
+        Empresa empresa1 = new Empresa();
+        empresa1.setNomeEmpresa("CodeRed");
+        empresa1.setCategoriaEmpresa("Tecnologia");
+        empresa1.setDescricaoEmpresa("Programar se aprende aqui");
+        empresa1.setLocalEmpresa("Itaperuna-RJ");
+        empresa1.setTipoEmpresa("Privada/Pública");
+        empresas.add(empresa1);
+    }
+    private void recuperarEmpresa() {
+        //Firebase
+    }
+}
+
+
+
+/* CÓDIGO ESTAVA SOBRE POSTO
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -139,5 +138,5 @@ public class ClassificarFragment extends Fragment {
 
             }
         });
-    }
-}
+*/
+
