@@ -41,7 +41,7 @@ public class ContainerActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.layout_container, new ClassificarFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.layout_container, new RankingFragment()).commit();
     }
 
 }
