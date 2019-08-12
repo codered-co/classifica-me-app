@@ -1,6 +1,5 @@
 package com.example.classificame.activity;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,12 +30,12 @@ public class ClassificarActivity extends AppCompatActivity {
 
         ratingViewAtendimentoCliente = findViewById(R.id.simpleRatingView_atendimento_cliente);
         ratingViewFormaPagamento = findViewById(R.id.simpleRatingView_forma_pagamento);
-        ratingViewServicoEntrega = findViewById(R.id.simpleRatingView_servico_entrega);
+        ratingViewServicoEntrega = findViewById(R.id.simpleRatingView_qualidade_produto);
         ratingViewPossibilidadeVoltar = findViewById(R.id.simpleRatingView_possibilidade_voltar);
 
         textViewValorAtendimentoCliente = findViewById(R.id.textView_ratingValue_atendimento_cliente);
         textViewValorFormaPagamento = findViewById(R.id.textView_ratingValue_forma_pagamento);
-        textViewValorServicoEntrega = findViewById(R.id.textView_ratingValue_servico_entrega);
+        textViewValorServicoEntrega = findViewById(R.id.textView_ratingValue_qualidade_produto);
         textViewValorPossibilidadeVoltar = findViewById(R.id.textView_ratingValue_possibilidade_voltar);
 
 
@@ -91,7 +90,7 @@ public class ClassificarActivity extends AppCompatActivity {
     public void addListenerOnButtonEnviar() {
         textViewValorAtendimentoCliente = findViewById(R.id.textView_ratingValue_atendimento_cliente);
         textViewValorFormaPagamento = findViewById(R.id.textView_ratingValue_forma_pagamento);
-        textViewValorServicoEntrega = findViewById(R.id.textView_ratingValue_servico_entrega);
+        textViewValorServicoEntrega = findViewById(R.id.textView_ratingValue_qualidade_produto);
         textViewValorPossibilidadeVoltar = findViewById(R.id.textView_ratingValue_possibilidade_voltar);
 
 

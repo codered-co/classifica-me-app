@@ -68,6 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:text="Sem Ranking"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textSize="16dp" />
 
@@ -91,29 +92,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:text="Sem Rankin"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textSize="16dp" />
 
             <TextView
-                android:id="@+id/textView_servico_entrega"
+                android:id="@+id/textView_qualidade_produto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Serviço de Entrega"
+                android:text="Qualidade do Produto"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <app.youkai.simpleratingview.SimpleRatingView
-                android:id="@+id/simpleRatingView_servico_entrega"
+                android:id="@+id/simpleRatingView_qualidade_produto"
                 android:layout_width="wrap_content"
                 android:layout_height="64dp"
                 android:layout_gravity="center_horizontal" />
 
             <TextView
-                android:id="@+id/textView_ratingValue_servico_entrega"
+                android:id="@+id/textView_ratingValue_qualidade_produto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:text="Sem Ranking"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textSize="16dp" />
 
@@ -138,6 +141,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:text="Sem Rankin"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textSize="16dp" />
 
