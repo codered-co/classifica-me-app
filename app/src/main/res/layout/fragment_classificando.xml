@@ -147,14 +147,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Enviar" />
-
-
-            <Button
-                android:id="@+id/button_sugerir_empresa"
-                android:text="Sugerir Empresa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" />
         </LinearLayout>
     </ScrollView>
 

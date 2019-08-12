@@ -36,7 +36,7 @@ public class ClassificarFragment extends Fragment {
         recyclerViewEmpresa = view.findViewById(R.id.recyclerViewClassificar);
         recyclerViewEmpresa.setLayoutManager(new LinearLayoutManager(getContext()));
         //Adapter
-        adapterClassificar = new AdapterClassificar(empresas);
+        adapterClassificar = new AdapterClassificar(empresas, getContext());
         recyclerViewEmpresa.setAdapter(adapterClassificar);
         criarEmpresa();
         return view;

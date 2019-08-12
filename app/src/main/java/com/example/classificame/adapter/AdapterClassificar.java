@@ -63,7 +63,6 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
 
         private TextView nomeEmpresa, descricaoEmpresa, localEmpresa, tipoEmpresa;
         private ImageView imagemEmpresa;
-        private Button classificarEmpresa;
 
         public ViewHolderEmpresa(@NonNull View itemView) {
             super(itemView);
@@ -71,7 +70,6 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
             nomeEmpresa = itemView.findViewById(R.id.textView_nome_empresa_adapter);
             descricaoEmpresa = itemView.findViewById(R.id.textView_descricao_empresa_adapter);
             localEmpresa = itemView.findViewById(R.id.textView_local_empresa_adapter);
-            classificarEmpresa = itemView.findViewById(R.id.button_classificar_adapter);
             imagemEmpresa = itemView.findViewById(R.id.imageView_empresa_adapter);
             tipoEmpresa = itemView.findViewById(R.id.textView_tipo_empresa_adapter);
 

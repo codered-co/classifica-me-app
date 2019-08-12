@@ -27,7 +27,7 @@ public class ClassificarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_classificar);
+        setContentView(R.layout.fragment_classificando);
 
         ratingViewAtendimentoCliente = findViewById(R.id.simpleRatingView_atendimento_cliente);
         ratingViewFormaPagamento = findViewById(R.id.simpleRatingView_forma_pagamento);
@@ -50,6 +50,10 @@ public class ClassificarActivity extends AppCompatActivity {
         addListenerOnRatingBar(ratingViewPossibilidadeVoltar, textViewValorPossibilidadeVoltar);
 
         addListenerOnButtonEnviar();
+    }
+
+    public void buscarInformacoes(){
+
 
     }
 
