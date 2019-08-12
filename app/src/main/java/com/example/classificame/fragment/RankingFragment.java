@@ -37,5 +37,9 @@ public class RankingFragment extends Fragment {
         RecyclerView recyclerViewRankingEmpresas = getView().findViewById(R.id.recycleView_ranking_empresas);
         recyclerViewRankingEmpresas.setLayoutManager(new LinearLayoutManager(getContext()));
 
+
+
+
+
     }
 }

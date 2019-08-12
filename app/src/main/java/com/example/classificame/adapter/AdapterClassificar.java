@@ -1,5 +1,7 @@
 package com.example.classificame.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.classificame.R;
+import com.example.classificame.activity.ClassificarActivity;
+import com.example.classificame.activity.ContainerActivity;
 import com.example.classificame.model.Empresa;
 
 import java.util.ArrayList;
@@ -18,9 +22,11 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
 
 
     private ArrayList<Empresa> empresas;
+    private Context context;
 
-    public AdapterClassificar(ArrayList<Empresa> empresas) {
+    public AdapterClassificar(ArrayList<Empresa> empresas, Context context) {
         this.empresas = empresas;
+        this.context = context;
     }
 
     @NonNull
@@ -37,6 +43,14 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
         viewHolderEmpresa.descricaoEmpresa.setText(empresa.getDescricaoEmpresa());
         viewHolderEmpresa.localEmpresa.setText(empresa.getLocalEmpresa());
         viewHolderEmpresa.tipoEmpresa.setText(empresa.getTipoEmpresa());
+
+        viewHolderEmpresa.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ClassificarActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
 
