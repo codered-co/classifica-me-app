@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.classificame.R;
 import com.example.classificame.activity.EditarPerfilActivity;
@@ -24,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 /**
  * A simple {@link Fragment} subclass.
  */
+
 public class PerfilFragment extends Fragment {
 
     private TextView textViewNome, textViewSobrenome, textViewCidade, textViewDataNascimento, textViewTipoConsumidor;
@@ -84,7 +84,6 @@ public class PerfilFragment extends Fragment {
     }
 
     private void recuperarPerfil() {
-
+        //Firebase
     }
-
 }

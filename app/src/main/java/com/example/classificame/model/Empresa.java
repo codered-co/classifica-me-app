@@ -2,7 +2,7 @@ package com.example.classificame.model;
 
 public class Empresa {
 
-    private String nomeEmpresa, descricaoEmpresa, localEmpresa, categoriaEmpresa, imagemEmpresa, tipoEmpresa;
+    private String nomeEmpresa, descricaoEmpresa, localEmpresa, categoriaEmpresa, imagemEmpresa, tipoEmpresa, enderecoEmpresa, cnpjEmpresa;
 
     public Empresa() {
         this.nomeEmpresa = nomeEmpresa;
@@ -11,6 +11,8 @@ public class Empresa {
         this.categoriaEmpresa = categoriaEmpresa;
         this.imagemEmpresa = imagemEmpresa;
         this.tipoEmpresa = tipoEmpresa;
+        this.enderecoEmpresa = enderecoEmpresa;
+        this.cnpjEmpresa = cnpjEmpresa;
     }
 
     public String getNomeEmpresa() {
@@ -59,5 +61,21 @@ public class Empresa {
 
     public void setTipoEmpresa(String tipoEmpresa) {
         this.tipoEmpresa = tipoEmpresa;
+    }
+
+    public String getCnpjEmpresa() {
+        return enderecoEmpresa;
+    }
+
+    public void setCnpjEmpresa(String cnpjEmpresa) {
+        this.cnpjEmpresa = cnpjEmpresa;
+    }
+
+    public String getEnderecoEmpresa() {
+        return enderecoEmpresa;
+    }
+
+    public void setEnderecoEmpresa(String enderecoEmpresa) {
+        this.enderecoEmpresa = enderecoEmpresa;
     }
 }
