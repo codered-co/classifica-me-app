@@ -63,6 +63,16 @@ public class PerfilFragment extends Fragment {
     }
 
     @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        MenuItem item1 = menu.findItem(R.id.action_ordenar);
+
+        if (item1 != null) {
+            item1.setVisible(false);
+        }
+        super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 

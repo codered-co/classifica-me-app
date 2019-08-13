@@ -1,5 +1,6 @@
 package com.example.classificame.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.classificame.R;
+import com.example.classificame.activity.EditarPerfilActivity;
 import com.example.classificame.adapter.AdapterClassificar;
 import com.example.classificame.model.Empresa;
 
@@ -58,11 +60,24 @@ public class ClassificarFragment extends Fragment {
     }
 
     @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        MenuItem item1 = menu.findItem(R.id.action_editar);
+        MenuItem item2 = menu.findItem(R.id.action_logout);
+
+        if(item1 != null)
+            item1.setVisible(false);
+        if (item2 != null)
+            item2.setVisible(false);
+
+        super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
         if (id == R.id.action_ordenar) {
-            //Ordenação da lista
+            //Ordenar lista em ordem alfabética
         }
         return super.onOptionsItemSelected(item);
     }
