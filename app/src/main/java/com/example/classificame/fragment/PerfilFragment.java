@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.classificame.R;
 import com.example.classificame.activity.EditarPerfilActivity;
@@ -24,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 /**
  * A simple {@link Fragment} subclass.
  */
+
 public class PerfilFragment extends Fragment {
 
     private TextView textViewNome, textViewSobrenome, textViewCidade, textViewDataNascimento, textViewTipoConsumidor;
@@ -63,6 +63,16 @@ public class PerfilFragment extends Fragment {
     }
 
     @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        MenuItem item1 = menu.findItem(R.id.action_ordenar);
+
+        if (item1 != null) {
+            item1.setVisible(false);
+        }
+        super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
@@ -70,7 +80,6 @@ public class PerfilFragment extends Fragment {
             encerrarSessao();
         }
         if (id == R.id.action_editar) {
-            //Toast.makeText(getActivity(), "Editar perfil", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(getContext(), EditarPerfilActivity.class);
             startActivity(i);
         }
@@ -85,7 +94,6 @@ public class PerfilFragment extends Fragment {
     }
 
     private void recuperarPerfil() {
-
+        //Firebase
     }
-
 }
