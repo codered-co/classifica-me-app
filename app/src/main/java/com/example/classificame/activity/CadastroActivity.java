@@ -27,6 +27,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,12 +47,16 @@ public class CadastroActivity extends AppCompatActivity {
 
     private Usuario usuario;
 
+    private FirebaseAuth auth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
         getSupportActionBar().setTitle("Cadastro");
+
+        auth = ConfigFirebase.getAuth();
 
         editTextNome = findViewById(R.id.editText_nome);
         editTextEmail = findViewById(R.id.editText_email);
@@ -68,6 +73,14 @@ public class CadastroActivity extends AppCompatActivity {
         radioButtonNull = findViewById(R.id.radioButton_null);
 
         radioButtonNull.setVisibility(View.GONE);
+
+        if (auth.getCurrentUser() != null) {
+            FirebaseUser user = auth.getCurrentUser();
+            editTextNome.setText(user.getDisplayName());
+            editTextEmail.setText(user.getEmail());
+            editTextSenha.setVisibility(View.GONE);
+            editTextConfirmarSenha.setVisibility(View.GONE);
+        }
 
         configurarSpinner(spinnerDia, R.array.dia);
         configurarSpinner(spinnerMes, R.array.mes);
@@ -93,8 +106,8 @@ public class CadastroActivity extends AppCompatActivity {
 
                 if (!nome.isEmpty()) {
                     if (!email.isEmpty()) {
-                        if (!senha.isEmpty()) {
-                            if (!confirmarSenha.isEmpty()) {
+                        if (!senha.isEmpty()|| auth.getCurrentUser() != null) {
+                            if (!confirmarSenha.isEmpty()|| auth.getCurrentUser() != null) {
                                 if (!anoNascimento.isEmpty()) {
                                     if (!cidade.isEmpty()) {
                                         if (!estado.isEmpty()) {
@@ -102,6 +115,7 @@ public class CadastroActivity extends AppCompatActivity {
                                                 if (!sexo.equals("")) {
                                                     if (confirmarSenha.equals(senha)) {
                                                         esconderTeclado();
+
                                                         usuario = new Usuario();
                                                         usuario.setNome(nome);
                                                         usuario.setEmail(email);
@@ -187,38 +201,48 @@ public class CadastroActivity extends AppCompatActivity {
     }
 
     private void cadastrarUsuario() {
-        FirebaseAuth auth = ConfigFirebase.getAuth();
-
-        auth.createUserWithEmailAndPassword(usuario.getEmail(), usuario.getSenha())
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            String idUsuario = Base64Helper.codificarBase64(usuario.getEmail());
-                            usuario.setId(idUsuario);
-                            usuario.salvarUsuario();
-                            startActivity(new Intent(CadastroActivity.this, ContainerActivity.class));
-                            finish();
-                        } else {
-                            String excecao = "";
-                            try {
-                                throw task.getException();
-                            } catch (FirebaseAuthWeakPasswordException e) {
-                                editTextSenha.setError("Senha muito fraca");
-                                excecao = "Digite uma senha mais forte";
-                            } catch (FirebaseAuthInvalidCredentialsException e) {
-                                editTextEmail.setError("Email Inválido");
-                                excecao = "Por favor, digite um email valido";
-                            } catch (FirebaseAuthUserCollisionException e) {
-                                editTextEmail.setError("Email existente");
-                                excecao = "Essa conta já existe";
-                            } catch (Exception e) {
-                                excecao = "Erro ao cadastrar usuário" + e.getMessage();
-                                e.printStackTrace();
+        if (auth.getCurrentUser() == null) {
+            auth.createUserWithEmailAndPassword(usuario.getEmail(), usuario.getSenha())
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                String idUsuario = Base64Helper.codificarBase64(usuario.getEmail());
+                                usuario.setId(idUsuario);
+                                usuario.salvarUsuario();
+                                startActivity(new Intent(CadastroActivity.this, ContainerActivity.class));
+                                finish();
+                            } else {
+                                String excecao = "";
+                                try {
+                                    throw task.getException();
+                                } catch (FirebaseAuthWeakPasswordException e) {
+                                    editTextSenha.setError("Senha muito fraca");
+                                    excecao = "Digite uma senha mais forte";
+                                } catch (FirebaseAuthInvalidCredentialsException e) {
+                                    editTextEmail.setError("Email Inválido");
+                                    excecao = "Por favor, digite um email valido";
+                                } catch (FirebaseAuthUserCollisionException e) {
+                                    editTextEmail.setError("Email existente");
+                                    excecao = "Essa conta já existe";
+                                } catch (Exception e) {
+                                    excecao = "Erro ao cadastrar usuário" + e.getMessage();
+                                    e.printStackTrace();
+                                }
+                                Toast.makeText(CadastroActivity.this, excecao, Toast.LENGTH_SHORT).show();
                             }
-                            Toast.makeText(CadastroActivity.this, excecao, Toast.LENGTH_SHORT).show();
                         }
-                    }
-                });
+                    });
+        } else {
+            salvarUsuario(usuario);
+        }
+    }
+
+    private void salvarUsuario(Usuario usuario){
+        String idUsuario = Base64Helper.codificarBase64(usuario.getEmail());
+        usuario.setId(idUsuario);
+        usuario.salvarUsuario();
+        startActivity(new Intent(CadastroActivity.this, ContainerActivity.class));
+        finish();
     }
 }
