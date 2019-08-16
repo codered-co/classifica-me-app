@@ -55,12 +55,14 @@ public class PerfilFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         //inflate menu
         inflater.inflate(R.menu.menu_toolbar, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
+
 
     @Override
     public void onPrepareOptionsMenu(Menu menu) {

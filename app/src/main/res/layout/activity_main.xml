@@ -32,9 +32,16 @@
         android:layout_height="wrap_content"
         android:text="Já tenho uma conta" />
 
-    <Button
-        android:id="@+id/button_login_facebook"
-        android:layout_width="match_parent"
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/button_facebook"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Entrar com Facebook" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/button_google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
