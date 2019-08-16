@@ -18,7 +18,6 @@ import com.example.classificame.R;
 import com.example.classificame.activity.EditarPerfilActivity;
 import com.example.classificame.activity.MainActivity;
 import com.example.classificame.config.ConfigFirebase;
-import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
 
 /**
@@ -56,17 +55,6 @@ public class PerfilFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-
-        buttonLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth auth = ConfigFirebase.getAuth();
-                auth.signOut();
-                LoginManager.getInstance().logOut();
-                getActivity().finish();
-                startActivity(new Intent(getContext(), MainActivity.class));
-            }
-        });
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
