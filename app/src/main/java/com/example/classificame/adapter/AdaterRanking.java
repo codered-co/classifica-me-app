@@ -64,7 +64,7 @@ public class AdaterRanking extends RecyclerView.Adapter<AdaterRanking.AdapterRan
             @Override
             public void onClick(View v) {
                 ((FragmentActivity)context).getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.layout_container, new DescricaoEmpresaFragment())
+                        .replace(R.id.layout_container, new DescricaoEmpresaFragment(), "descricao")
                         .commit();
             }
         });
