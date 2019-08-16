@@ -34,7 +34,7 @@ public class DescricaoEmpresaFragment extends Fragment {
         textViewCnpjEmpresa = view.findViewById(R.id.textView_cnpj_descricao_empresa);
         imageViewPerfilEmpresa = view.findViewById(R.id.imageView_perfil_descricao_empresa);
 
-        bottomNavigationView = getView().findViewById(R.id.nav_view);
+        bottomNavigationView = getActivity().findViewById(R.id.nav_view);
         bottomNavigationView.setVisibility(View.GONE);
 
         return view;

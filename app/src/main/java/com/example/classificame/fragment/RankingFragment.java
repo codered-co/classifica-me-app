@@ -73,7 +73,7 @@ public class RankingFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
-        BottomNavigationView bottomNavigationView = getView().findViewById(R.id.nav_view);
+        BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.nav_view);
         bottomNavigationView.setVisibility(View.VISIBLE);
     }
 }
