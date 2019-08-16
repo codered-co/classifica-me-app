@@ -17,6 +17,8 @@ public class DescricaoEmpresaFragment extends Fragment {
 
     private TextView textViewNomeEmpresa, textViewDescricaoEmpresa, textViewTipoEmpresa, textViewCategoriaEmpresa, textViewTelefoneEmpresa, textViewCidadeEmpresa, textViewEnderecoEmpresa, textViewCnpjEmpresa;
     private ImageView imageViewPerfilEmpresa;
+    private BottomNavigationView bottomNavigationView;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -31,9 +33,11 @@ public class DescricaoEmpresaFragment extends Fragment {
         textViewEnderecoEmpresa = view.findViewById(R.id.textView_endereco_descricao_empresa);
         textViewCnpjEmpresa = view.findViewById(R.id.textView_cnpj_descricao_empresa);
         imageViewPerfilEmpresa = view.findViewById(R.id.imageView_perfil_descricao_empresa);
+
+        bottomNavigationView = getView().findViewById(R.id.nav_view);
+        bottomNavigationView.setVisibility(View.GONE);
+
         return view;
-
-
     }
 
     @Override
