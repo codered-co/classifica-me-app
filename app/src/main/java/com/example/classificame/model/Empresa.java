@@ -2,7 +2,13 @@ package com.example.classificame.model;
 
 public class Empresa {
 
+<<<<<<< HEAD
+    private String nomeEmpresa, descricaoEmpresa, localEmpresa, categoriaEmpresa, imagemEmpresa, tipoEmpresa;
+    private float atendimentoCliente, formaPagamento, servicoEntrega, possibilidadeVoltar, classificacaoEmpresa;
+    private int votosEmpresa;
+=======
     private String nomeEmpresa, descricaoEmpresa, localEmpresa, categoriaEmpresa, imagemEmpresa, tipoEmpresa, enderecoEmpresa, cnpjEmpresa;
+>>>>>>> master
 
     public Empresa() {
         this.nomeEmpresa = nomeEmpresa;
@@ -63,6 +69,54 @@ public class Empresa {
         this.tipoEmpresa = tipoEmpresa;
     }
 
+<<<<<<< HEAD
+    public float getAtendimentoCliente() {
+        return atendimentoCliente;
+    }
+
+    public void setAtendimentoCliente(float atendimentoCliente) {
+        this.atendimentoCliente = atendimentoCliente;
+    }
+
+    public float getFormaPagamento() {
+        return formaPagamento;
+    }
+
+    public void setFormaPagamento(float formaPagamento) {
+        this.formaPagamento = formaPagamento;
+    }
+
+    public float getServicoEntrega() {
+        return servicoEntrega;
+    }
+
+    public void setServicoEntrega(float servicoEntrega) {
+        this.servicoEntrega = servicoEntrega;
+    }
+
+    public float getPossibilidadeVoltar() {
+        return possibilidadeVoltar;
+    }
+
+    public void setPossibilidadeVoltar(float possibilidadeVoltar) {
+        this.possibilidadeVoltar = possibilidadeVoltar;
+    }
+
+    public float getClassificacaoEmpresa() {
+        return classificacaoEmpresa;
+    }
+
+    public void setClassificacaoEmpresa(float classificacaoEmpresa) {
+        this.classificacaoEmpresa = classificacaoEmpresa;
+    }
+
+    public int getVotosEmpresa() {
+        return votosEmpresa;
+    }
+
+    public void setVotosEmpresa(int votosEmpresa) {
+        this.votosEmpresa = votosEmpresa;
+=======
     public String getCnpjEmpresa() {
         return enderecoEmpresa;
     }
@@ -77,5 +131,6 @@ public class Empresa {
 
     public void setEnderecoEmpresa(String enderecoEmpresa) {
         this.enderecoEmpresa = enderecoEmpresa;
+>>>>>>> master
     }
 }
