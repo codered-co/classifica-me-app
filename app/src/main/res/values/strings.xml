@@ -54,9 +54,49 @@
         <item>Dezembro</item>
     </string-array>
 
+<<<<<<< HEAD
+=======
+    <string-array name="categoria">
+        <item>(Categoria)</item>
+        <item>Varejo</item>
+        <item>Tecnologia</item>
+        <item>Educação</item>
+        <item>Comércio</item>
+        <item>Construção</item>
+        <item>Saúde</item>
+        <item>Alimentação</item>
+        <item>Beleza</item>
+        <item>Vendas e Marketing</item>
+        <item>Serviços Pessoais</item>
+        <item>Serviços especializados</item>
+    </string-array>
+
+    <string-array name="local">
+        <item>(Local)</item>
+        <item>Itaperuna</item>
+        <item>Miracema</item>
+        <item>Bom Jesus</item>
+        <item>Padua</item>
+        <item>Raposo</item>
+        <item>Retiro</item>
+        <item>Laje do Muriaé</item>
+        <item>Natividade</item>
+        <item>Ubá</item>
+        <item>Porciúncula</item>
+        <item>Varre-Sai</item>
+    </string-array>
+
+>>>>>>> master
     <string name="title_activity_app">Classifica.me</string>
-    <string name="title_home">Home</string>
+    <string name="title_classificar">Classificar</string>
     <string name="title_perfil">Perfil</string>
     <string name="title_ranking">Ranking</string>
 
+    <!-- String para mudar nome dos ranking na rating bar -->
+
+    <string name="srv_awful">Bronze</string>
+    <string name="srv_meh">Prata</string>
+    <string name="srv_good">Ouro</string>
+    <string name="srv_amazing">Diamante</string>
+    <string name="srv_no_rating">Sem Ranking</string>
 </resources>
