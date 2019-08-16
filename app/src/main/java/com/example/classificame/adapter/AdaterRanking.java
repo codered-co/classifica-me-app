@@ -2,6 +2,7 @@ package com.example.classificame.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.classificame.R;
+import com.example.classificame.fragment.DescricaoEmpresaFragment;
 import com.example.classificame.model.Empresa;
 
 import java.util.ArrayList;
@@ -56,6 +58,16 @@ public class AdaterRanking extends RecyclerView.Adapter<AdaterRanking.AdapterRan
         } else {
             adapterRankingViewHolder.imageViewClassificacaoEmpresa.setImageResource(R.drawable.ic_arrow);
         }
+
+
+        adapterRankingViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((FragmentActivity)context).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.layout_container, new DescricaoEmpresaFragment())
+                        .commit();
+            }
+        });
     }
 
     @Override
