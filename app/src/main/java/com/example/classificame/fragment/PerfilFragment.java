@@ -57,17 +57,6 @@ public class PerfilFragment extends Fragment {
     }
 
 
-        buttonLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth auth = ConfigFirebase.getAuth();
-                auth.signOut();
-                LoginManager.getInstance().logOut();
-                getActivity().finish();
-                startActivity(new Intent(getContext(), MainActivity.class));
-            }
-        });
-
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         //inflate menu
