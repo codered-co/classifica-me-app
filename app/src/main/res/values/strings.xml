@@ -54,8 +54,6 @@
         <item>Dezembro</item>
     </string-array>
 
-<<<<<<< HEAD
-=======
     <string-array name="categoria">
         <item>(Categoria)</item>
         <item>Varejo</item>
@@ -86,7 +84,7 @@
         <item>Varre-Sai</item>
     </string-array>
 
->>>>>>> master
+    
     <string name="title_activity_app">Classifica.me</string>
     <string name="title_classificar">Classificar</string>
     <string name="title_perfil">Perfil</string>
