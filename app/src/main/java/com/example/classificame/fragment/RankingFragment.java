@@ -11,12 +11,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.classificame.R;
+import com.example.classificame.adapter.AdaterRanking;
+import com.example.classificame.model.Empresa;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class RankingFragment extends Fragment {
 
+    private AdaterRanking adaterRanking;
+    private ArrayList<Empresa> empresaArrayList = new ArrayList<>();
 
     public RankingFragment() {
         // Required empty public constructor
@@ -36,6 +42,29 @@ public class RankingFragment extends Fragment {
 
         RecyclerView recyclerViewRankingEmpresas = getView().findViewById(R.id.recycleView_ranking_empresas);
         recyclerViewRankingEmpresas.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
+        Empresa empresa1 = new Empresa();
+        empresa1.setNomeEmpresa("Code Red");
+        empresa1.setDescricaoEmpresa("Empresa de Teste");
+        empresa1.setLocalEmpresa("Itaperuna - RJ");
+        empresa1.setCategoriaEmpresa("Teste");
+        empresa1.setClassificacaoEmpresa((float) 3.9);
+
+
+        Empresa empresa2 = new Empresa();
+        empresa2.setNomeEmpresa("Odin Son");
+        empresa2.setDescricaoEmpresa("Empresa de controle de tempestades");
+        empresa2.setLocalEmpresa("Yggdrazil");
+        empresa2.setCategoriaEmpresa("Controle");
+        empresa2.setClassificacaoEmpresa((float) 5.0);
+
+
+        empresaArrayList.add(empresa1);
+        empresaArrayList.add(empresa2);
+
+        adaterRanking = new AdaterRanking(empresaArrayList, getContext());
+        recyclerViewRankingEmpresas.setAdapter(adaterRanking);
 
     }
 }

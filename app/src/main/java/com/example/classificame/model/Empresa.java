@@ -2,7 +2,11 @@ package com.example.classificame.model;
 
 public class Empresa {
 
-    private String nomeEmpresa, descricaoEmpresa, localEmpresa, categoriaEmpresa, imagemEmpresa, tipoEmpresa, enderecoEmpresa, cnpjEmpresa;
+
+    private String nomeEmpresa, descricaoEmpresa, localEmpresa, categoriaEmpresa, imagemEmpresa, tipoEmpresa;
+    private float atendimentoCliente, formaPagamento, servicoEntrega, possibilidadeVoltar, classificacaoEmpresa;
+    private int votosEmpresa;
+
 
     public Empresa() {
         this.nomeEmpresa = nomeEmpresa;
@@ -11,8 +15,6 @@ public class Empresa {
         this.categoriaEmpresa = categoriaEmpresa;
         this.imagemEmpresa = imagemEmpresa;
         this.tipoEmpresa = tipoEmpresa;
-        this.enderecoEmpresa = enderecoEmpresa;
-        this.cnpjEmpresa = cnpjEmpresa;
     }
 
     public String getNomeEmpresa() {
@@ -63,19 +65,52 @@ public class Empresa {
         this.tipoEmpresa = tipoEmpresa;
     }
 
-    public String getCnpjEmpresa() {
-        return enderecoEmpresa;
+    public float getAtendimentoCliente() {
+        return atendimentoCliente;
     }
 
-    public void setCnpjEmpresa(String cnpjEmpresa) {
-        this.cnpjEmpresa = cnpjEmpresa;
+    public void setAtendimentoCliente(float atendimentoCliente) {
+        this.atendimentoCliente = atendimentoCliente;
     }
 
-    public String getEnderecoEmpresa() {
-        return enderecoEmpresa;
+    public float getFormaPagamento() {
+        return formaPagamento;
     }
 
-    public void setEnderecoEmpresa(String enderecoEmpresa) {
-        this.enderecoEmpresa = enderecoEmpresa;
+    public void setFormaPagamento(float formaPagamento) {
+        this.formaPagamento = formaPagamento;
+    }
+
+    public float getServicoEntrega() {
+        return servicoEntrega;
+    }
+
+    public void setServicoEntrega(float servicoEntrega) {
+        this.servicoEntrega = servicoEntrega;
+    }
+
+    public float getPossibilidadeVoltar() {
+        return possibilidadeVoltar;
+    }
+
+    public void setPossibilidadeVoltar(float possibilidadeVoltar) {
+        this.possibilidadeVoltar = possibilidadeVoltar;
+    }
+
+    public float getClassificacaoEmpresa() {
+        return classificacaoEmpresa;
+    }
+
+    public void setClassificacaoEmpresa(float classificacaoEmpresa) {
+        this.classificacaoEmpresa = classificacaoEmpresa;
+    }
+
+    public int getVotosEmpresa() {
+        return votosEmpresa;
+    }
+
+    public void setVotosEmpresa(int votosEmpresa) {
+        this.votosEmpresa = votosEmpresa;
+
     }
 }

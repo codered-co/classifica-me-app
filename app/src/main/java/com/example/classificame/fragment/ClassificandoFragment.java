@@ -19,8 +19,11 @@ import app.youkai.simpleratingview.SimpleRatingView;
 /**
  * A simple {@link Fragment} subclass.
  */
+
+
 public class ClassificandoFragment extends Fragment {
 
+/*
     private SimpleRatingView ratingViewAtendimentoCliente;
     private SimpleRatingView ratingViewFormaPagamento;
     private SimpleRatingView ratingViewServicoEntrega;
@@ -36,7 +39,7 @@ public class ClassificandoFragment extends Fragment {
     private TextView textViewDescricaoEmpresa;
 
     private Button buttonSugerir;
-
+*/
     public ClassificandoFragment() {
         // Required empty public constructor
     }
@@ -48,7 +51,7 @@ public class ClassificandoFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_classificando, container, false);
 
-        buttonSugerir = view.findViewById(R.id.button_sugerir_empresa);
+        /*buttonSugerir = view.findViewById(R.id.button_sugerir_empresa);
 
         buttonSugerir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,11 +59,11 @@ public class ClassificandoFragment extends Fragment {
                 Intent i = new Intent(getContext(), SugerirEmpresaActivity.class);
                 startActivity(i);
             }
-        });
+        });*/
 
         return view;
     }
-
+/*
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -138,5 +141,5 @@ public class ClassificandoFragment extends Fragment {
 
             }
         });
-    }
+    }*/
 }

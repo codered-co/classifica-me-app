@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
@@ -31,13 +32,14 @@
             </intent-filter>
         </activity>
 
+
         <activity
             android:name=".activity.ContainerActivity"
             android:label="@string/title_activity_app" />
         <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.EditarPerfilActivity"></activity>
+        <activity android:name=".activity.EditarPerfilActivity" />
         <activity android:name=".activity.CadastroActivity" />
-        <activity android:name=".activity.SugerirEmpresaActivity"></activity>
+        <activity android:name=".activity.SugerirEmpresaActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
