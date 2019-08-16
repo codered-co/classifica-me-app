@@ -10,4 +10,10 @@
         android:id="@+id/action_editar"
         android:title="Editar perfil">
     </item>
+    <item
+        android:id="@+id/action_ordenar"
+        android:icon="@drawable/ic_sort"
+        app:showAsAction="always"
+        android:title="Ordenar">
+    </item>
 </menu>
