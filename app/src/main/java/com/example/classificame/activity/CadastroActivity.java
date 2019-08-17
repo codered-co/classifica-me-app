@@ -36,7 +36,7 @@ import java.util.Locale;
 public class CadastroActivity extends AppCompatActivity {
 
     private TextInputEditText editTextNome, editTextEmail, editTextSenha, editTextConfirmarSenha,
-            editTextAno,editTextCidade, editTextEstado;
+            editTextAno,editTextCidade, editTextEstado, editTextTelefone;
     private RadioGroup radioGroup;
     private RadioButton radioButtonSelecionado, radioButtonNull;
     private Spinner spinnerDia, spinnerMes, spinnerPaises;
@@ -62,6 +62,7 @@ public class CadastroActivity extends AppCompatActivity {
         editTextEmail = findViewById(R.id.editText_email);
         editTextSenha = findViewById(R.id.editText_senha);
         editTextConfirmarSenha = findViewById(R.id.editText_confirmar_senha);
+        editTextTelefone = findViewById(R.id.editText_telefone);
         editTextAno = findViewById(R.id.editText_ano);
         editTextCidade = findViewById(R.id.editText_cidade);
         editTextEstado = findViewById(R.id.editText_estado);
@@ -78,6 +79,7 @@ public class CadastroActivity extends AppCompatActivity {
             FirebaseUser user = auth.getCurrentUser();
             editTextNome.setText(user.getDisplayName());
             editTextEmail.setText(user.getEmail());
+            editTextTelefone.setText(user.getPhoneNumber());
             editTextSenha.setVisibility(View.GONE);
             editTextConfirmarSenha.setVisibility(View.GONE);
         }
@@ -93,6 +95,7 @@ public class CadastroActivity extends AppCompatActivity {
                 String email = editTextEmail.getText().toString().toLowerCase();
                 String senha = editTextSenha.getText().toString().trim();
                 String confirmarSenha = editTextConfirmarSenha.getText().toString().trim();
+                String telefone = editTextTelefone.getText().toString();
                 String diaNascimento = spinnerDia.getSelectedItem().toString();
                 String mesNascimento = spinnerMes.getSelectedItem().toString().toLowerCase();
                 String anoNascimento = editTextAno.getText().toString();
@@ -118,21 +121,26 @@ public class CadastroActivity extends AppCompatActivity {
                                             if (!pais.isEmpty()) {
                                                 if (!sexo.equals("")) {
                                                     if (confirmarSenha.equals(senha)) {
-                                                        esconderTeclado();
+                                                        if (!telefone.isEmpty()) {
+                                                            esconderTeclado();
 
-                                                        usuario = new Usuario();
-                                                        usuario.setNome(nome);
-                                                        usuario.setEmail(email);
-                                                        usuario.setSenha(senha);
-                                                        usuario.setDiaNascimento(Integer.parseInt(diaNascimento));
-                                                        usuario.setMesNascimento(mesNascimento);
-                                                        usuario.setAnoNascimento(Integer.parseInt(anoNascimento));
-                                                        usuario.setSexo(sexo);
-                                                        usuario.setCidade(cidade);
-                                                        usuario.setEstado(estado);
-                                                        usuario.setPais(pais);
+                                                            usuario = new Usuario();
+                                                            usuario.setNome(nome);
+                                                            usuario.setEmail(email);
+                                                            usuario.setSenha(senha);
+                                                            usuario.setDiaNascimento(Integer.parseInt(diaNascimento));
+                                                            usuario.setMesNascimento(mesNascimento);
+                                                            usuario.setAnoNascimento(Integer.parseInt(anoNascimento));
+                                                            usuario.setSexo(sexo);
+                                                            usuario.setCidade(cidade);
+                                                            usuario.setEstado(estado);
+                                                            usuario.setPais(pais);
+                                                            usuario.setTelefone(telefone);
 
-                                                        cadastrarUsuario();
+                                                            cadastrarUsuario();
+                                                        } else {
+                                                            campoVazio(editTextTelefone);
+                                                        }
                                                     } else {
                                                         editTextSenha.setError("Senhas não conferem");
                                                         editTextConfirmarSenha.setError("Senhas não conferem");
