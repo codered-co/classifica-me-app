@@ -148,14 +148,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void verificarLogin() {
+    private void verificarLogin() {
         if (auth.getCurrentUser() != null) {
             startActivity(new Intent(this, ContainerActivity.class));
             finish();
         }
     }
 
-    public void verificarPerfil(){
+    private void verificarPerfil(){
         if (!confirmar) {
             listener = firebase.child("usuario").addValueEventListener(new ValueEventListener() {
                 @Override
@@ -182,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void handleFacebookAcessToken(AccessToken token) {
+    private void handleFacebookAcessToken(AccessToken token) {
         Log.d("Facebook: ", "handleFacebookAccessToken:" + token);
 
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
