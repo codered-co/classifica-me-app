@@ -89,20 +89,24 @@ public class CadastroActivity extends AppCompatActivity {
         buttonCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nome = editTextNome.getText().toString();
-                String email = editTextEmail.getText().toString();
+                String nome = editTextNome.getText().toString().toLowerCase();
+                String email = editTextEmail.getText().toString().toLowerCase();
                 String senha = editTextSenha.getText().toString().trim();
                 String confirmarSenha = editTextConfirmarSenha.getText().toString().trim();
                 String diaNascimento = spinnerDia.getSelectedItem().toString();
-                String mesNascimento = spinnerMes.getSelectedItem().toString();
+                String mesNascimento = spinnerMes.getSelectedItem().toString().toLowerCase();
                 String anoNascimento = editTextAno.getText().toString();
-                String cidade = editTextCidade.getText().toString();
+                String cidade = editTextCidade.getText().toString().toLowerCase();
                 String estado = editTextEstado.getText().toString().toUpperCase();
-                String pais = spinnerPaises.getSelectedItem().toString();
+                String pais = spinnerPaises.getSelectedItem().toString().toLowerCase();
 
                 int id = radioGroup.getCheckedRadioButtonId();
                 radioButtonSelecionado = findViewById(id);
                 String sexo = radioButtonSelecionado.getText().toString();
+
+                if (auth.getCurrentUser().getEmail() == null) {
+                    auth.getCurrentUser().updateEmail(email);
+                }
 
                 if (!nome.isEmpty()) {
                     if (!email.isEmpty()) {
