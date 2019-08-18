@@ -61,36 +61,13 @@
         android:id="@+id/textView_nome_perfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="260dp"
+        android:layout_marginStart="8dp"
         android:text="Nome"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_nome_perfil"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <TextView
-        android:id="@+id/textView_sobrenome_perfil"
-        android:layout_width="79dp"
-        android:layout_height="18dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="220dp"
-        android:text="Sobrenome"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_nome_perfil" />
-
-    <ImageView
-        android:id="@+id/imageView_sobrenome_perfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:src="@drawable/ic_pessoa"
-        app:layout_constraintEnd_toStartOf="@+id/textView_sobrenome_perfil"
-        app:layout_constraintHorizontal_bias="0.911"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_nome_perfil" />
+        app:layout_constraintTop_toTopOf="@+id/imageView_nome_perfil" />
 
     <ImageView
         android:id="@+id/imageView_emblema_perfil"
@@ -101,56 +78,53 @@
         android:layout_marginEnd="8dp"
         android:src="@drawable/ic_sentiment"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView_cidade_perfil"
+        app:layout_constraintStart_toStartOf="@+id/imageView_cidade_perfil"
         app:layout_constraintTop_toBottomOf="@+id/textView_cidade_perfil" />
 
     <TextView
         android:id="@+id/textView_data_perfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="172dp"
+        android:layout_marginStart="8dp"
         android:text="Data de Nascimento"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_sobrenome_perfil" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_data_nasc_perfil"
+        app:layout_constraintStart_toEndOf="@+id/imageView_data_nasc_perfil"
+        app:layout_constraintTop_toTopOf="@+id/imageView_data_nasc_perfil" />
 
     <TextView
         android:id="@+id/textView_cidade_perfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="248dp"
+        android:layout_marginStart="8dp"
         android:text="Cidade"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_data_perfil" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_cidade_perfil"
+        app:layout_constraintStart_toEndOf="@+id/imageView_cidade_perfil"
+        app:layout_constraintTop_toTopOf="@+id/imageView_cidade_perfil" />
 
     <TextView
         android:id="@+id/textView_consumidor_perfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:text="Consumidor regular"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_emblema_perfil"
+        app:layout_constraintStart_toStartOf="@+id/imageView_emblema_perfil"
         app:layout_constraintTop_toBottomOf="@+id/imageView_emblema_perfil" />
 
     <ImageView
         android:id="@+id/imageView_nome_perfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:src="@drawable/ic_pessoa"
         app:layout_constraintEnd_toStartOf="@+id/textView_nome_perfil"
-        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintHorizontal_bias="0.981"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -158,26 +132,20 @@
         android:id="@+id/imageView_data_nasc_perfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:src="@drawable/ic_pessoa"
-        app:layout_constraintEnd_toStartOf="@+id/textView_sobrenome_perfil"
-        app:layout_constraintHorizontal_bias="0.926"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_sobrenome_perfil" />
+        app:layout_constraintEnd_toEndOf="@+id/imageView_nome_perfil"
+        app:layout_constraintStart_toStartOf="@+id/imageView_nome_perfil"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_nome_perfil" />
 
     <ImageView
         android:id="@+id/imageView_cidade_perfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:src="@drawable/ic_business"
-        app:layout_constraintEnd_toStartOf="@+id/textView_cidade_perfil"
-        app:layout_constraintHorizontal_bias="0.837"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_data_nasc_perfil"
+        app:layout_constraintStart_toStartOf="@+id/imageView_data_nasc_perfil"
         app:layout_constraintTop_toBottomOf="@+id/imageView_data_nasc_perfil" />
 
 </android.support.constraint.ConstraintLayout>
