@@ -10,7 +10,7 @@ import com.example.classificame.R;
 
 import app.youkai.simpleratingview.SimpleRatingView;
 
-public class ClassificarActivity extends AppCompatActivity {
+public class ClassificandoActivity extends AppCompatActivity {
 
     private SimpleRatingView ratingViewAtendimentoCliente;
     private SimpleRatingView ratingViewFormaPagamento;

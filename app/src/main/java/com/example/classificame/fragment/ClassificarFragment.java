@@ -37,13 +37,7 @@ public class ClassificarFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_classificar, container, false);
 
-        //Recycler
-        recyclerViewEmpresa = view.findViewById(R.id.recyclerViewClassificar);
-        recyclerViewEmpresa.setLayoutManager(new LinearLayoutManager(getContext()));
-        //Adapter
-        adapterClassificar = new AdapterClassificar(empresas, getContext());
-        recyclerViewEmpresa.setAdapter(adapterClassificar);
-        criarEmpresa();
+
         return view;
     }
 
@@ -72,32 +66,30 @@ public class ClassificarFragment extends Fragment {
         super.onPrepareOptionsMenu(menu);
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
+        //Recycler
+        recyclerViewEmpresa = getView().findViewById(R.id.recyclerViewClassificar);
+        recyclerViewEmpresa.setLayoutManager(new LinearLayoutManager(getContext()));
+        //Adapter
+        adapterClassificar = new AdapterClassificar(empresas, getContext());
+        recyclerViewEmpresa.setAdapter(adapterClassificar);
+
+        criarEmpresa();
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
         if (id == R.id.action_ordenar) {
-            Toast.makeText(getContext(), "Testar ordenação", Toast.LENGTH_SHORT).show();
             Collections.sort(empresas, adapterClassificar.sortNameEmpresa);
-            //Ordenar lista em ordem alfabética
+            adapterClassificar.notifyDataSetChanged();
         }
         return super.onOptionsItemSelected(item);
     }
-
-
-    private void sortArrayList() {
-        Collections.sort(empresas, new Comparator<Empresa>() {
-            @Override
-            public int compare(Empresa empresa, Empresa t1) {
-                return empresa.getNomeEmpresa().compareTo(t1.getNomeEmpresa());
-            }
-        });
-        adapterClassificar.notifyDataSetChanged();
-    }
-
-
 
     private void criarEmpresa() {
         Empresa empresa1 = new Empresa();
@@ -107,7 +99,24 @@ public class ClassificarFragment extends Fragment {
         empresa1.setLocalEmpresa("Itaperuna-RJ");
         empresa1.setTipoEmpresa("Privada/Pública");
         empresas.add(empresa1);
+
+        Empresa empresa2 = new Empresa();
+        empresa2.setNomeEmpresa("Braseiro");
+        empresa2.setCategoriaEmpresa("Tecnologia");
+        empresa2.setDescricaoEmpresa("Programar se aprende aqui");
+        empresa2.setLocalEmpresa("Itaperuna-RJ");
+        empresa2.setTipoEmpresa("Privada/Pública");
+        empresas.add(empresa2);
+
+        Empresa empresa3 = new Empresa();
+        empresa3.setNomeEmpresa("Ampla");
+        empresa3.setCategoriaEmpresa("Tecnologia");
+        empresa3.setDescricaoEmpresa("Programar se aprende aqui");
+        empresa3.setLocalEmpresa("Itaperuna-RJ");
+        empresa3.setTipoEmpresa("Privada/Pública");
+        empresas.add(empresa3);
     }
+
     private void recuperarEmpresa() {
         //Firebase
     }
