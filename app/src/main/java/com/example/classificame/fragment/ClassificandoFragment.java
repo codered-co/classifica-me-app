@@ -1,20 +1,13 @@
 package com.example.classificame.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
 
 import com.example.classificame.R;
-import com.example.classificame.activity.SugerirEmpresaActivity;
-
-import app.youkai.simpleratingview.SimpleRatingView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,7 +42,7 @@ public class ClassificandoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_classificando, container, false);
+        View view = inflater.inflate(R.layout.activity_classificar, container, false);
 
         /*buttonSugerir = view.findViewById(R.id.button_sugerir_empresa);
 

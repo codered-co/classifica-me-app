@@ -6,7 +6,7 @@ import com.google.firebase.database.Exclude;
 
 public class Usuario {
 
-    private String id, nome, email, senha, cidade, estado, pais, sexo, mesNascimento;
+    private String id, nome, email, senha, cidade, estado, pais, sexo, mesNascimento, telefone;
     private int diaNascimento, anoNascimento;
 
     public void salvarUsuario() {
@@ -15,6 +15,14 @@ public class Usuario {
         firebase.child("usuario")
                 .child(this.id)
                 .setValue(this);
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     @Exclude
