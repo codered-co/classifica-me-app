@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: app.youkai.simpleratingview:library:1.0.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bedb49dc6b14f2d47e0f721e1d3f469d/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bedb49dc6b14f2d47e0f721e1d3f469d/res" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/aac24479449e5a9da9d672edb29b2e2e/res" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/aac24479449e5a9da9d672edb29b2e2e/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/app.youkai.simpleratingview/library/1.0.0/c4fb7e32d8cd1cecaaf1af7f2ef00c64a8bddea6/library-1.0.0-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/app.youkai.simpleratingview/library/1.0.0/c4fb7e32d8cd1cecaaf1af7f2ef00c64a8bddea6/library-1.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

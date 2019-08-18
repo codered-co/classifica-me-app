@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.ClassificarFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textView_nome_empresa_classificar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:textColor="@android:color/black"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                app:cardUseCompatPadding="true">
+
+                <TextView
+                    android:id="@+id/textView_descricao_empresa_classificar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginBottom="1dp" />
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView_atendimento_cliente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Atendimendo o Cliente"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <app.youkai.simpleratingview.SimpleRatingView
+                android:id="@+id/simpleRatingView_atendimento_cliente"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/textView_ratingValue_atendimento_cliente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Sem Ranking"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/textView_forma_pagamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Formas de Pagamento"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <app.youkai.simpleratingview.SimpleRatingView
+                android:id="@+id/simpleRatingView_forma_pagamento"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/textView_ratingValue_forma_pagamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Sem Ranking"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/textView_qualidade_produto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Qualidade do Produto"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <app.youkai.simpleratingview.SimpleRatingView
+                android:id="@+id/simpleRatingView_qualidade_produto"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/textView_ratingValue_qualidade_produto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Sem Ranking"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/textView_possibilidade_voltar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Possibilidade de voltar"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+            <app.youkai.simpleratingview.SimpleRatingView
+                android:id="@+id/simpleRatingView_possibilidade_voltar"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/textView_ratingValue_possibilidade_voltar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Sem Ranking"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="16dp" />
+
+            <Button
+                android:id="@+id/button_submit_valor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Enviar" />
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

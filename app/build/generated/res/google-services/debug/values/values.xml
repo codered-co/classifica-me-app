@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">674587807969-kpc1v7iaac648inugh4i8687bs9hej7t.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://classificame-6ed76.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">674587807969</string>
+    <string name="google_api_key" translatable="false">AIzaSyC5DLpVJtvo8V_3OugKwijAbVyXz8wHP9E</string>
+    <string name="google_app_id" translatable="false">1:674587807969:android:8087b4c014fb8168</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC5DLpVJtvo8V_3OugKwijAbVyXz8wHP9E</string>
+    <string name="google_storage_bucket" translatable="false">classificame-6ed76.appspot.com</string>
+    <string name="project_id" translatable="false">classificame-6ed76</string>
+</resources>

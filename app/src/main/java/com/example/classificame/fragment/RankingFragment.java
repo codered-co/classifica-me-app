@@ -3,6 +3,7 @@ package com.example.classificame.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -66,5 +67,13 @@ public class RankingFragment extends Fragment {
         adaterRanking = new AdaterRanking(empresaArrayList, getContext());
         recyclerViewRankingEmpresas.setAdapter(adaterRanking);
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.nav_view);
+        bottomNavigationView.setVisibility(View.VISIBLE);
     }
 }
