@@ -7,16 +7,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.classificame.R;
 import com.example.classificame.activity.ClassificarActivity;
-import com.example.classificame.activity.ContainerActivity;
 import com.example.classificame.model.Empresa;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.ViewHolderEmpresa> {
 
@@ -53,6 +52,12 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
         });
     }
 
+    public static Comparator<Empresa> sortNameEmpresa = new Comparator<Empresa>() {
+        @Override
+        public int compare(Empresa empresa, Empresa t1) {
+            return empresa.getNomeEmpresa().compareTo(t1.getNomeEmpresa());
+        }
+    };
 
     @Override
     public int getItemCount() {
