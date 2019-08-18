@@ -84,6 +84,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+                    try {
+                        Thread.sleep(800);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     startActivity(new Intent(LoginActivity.this, ContainerActivity.class));
                     finish();
                 } else {
@@ -91,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
                     try {
                         throw task.getException();
                     } catch (FirebaseAuthInvalidCredentialsException e) {
-                        excecao = "Email ou Senha inválidos";
+                        excecao = "Email ou senha inválidos";
                     } catch (FirebaseAuthInvalidUserException e) {
                         excecao = "Usuario nao está cadastrado";
                     } catch (Exception e) {
