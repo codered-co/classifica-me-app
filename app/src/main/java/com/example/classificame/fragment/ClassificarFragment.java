@@ -1,6 +1,5 @@
 package com.example.classificame.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,13 +12,15 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.classificame.R;
-import com.example.classificame.activity.EditarPerfilActivity;
 import com.example.classificame.adapter.AdapterClassificar;
 import com.example.classificame.model.Empresa;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 
 /**
@@ -27,7 +28,6 @@ import java.util.ArrayList;
  */
 public class ClassificarFragment extends Fragment {
     private RecyclerView recyclerViewEmpresa;
-
     private ArrayList<Empresa> empresas = new ArrayList<>();
     private AdapterClassificar adapterClassificar;
 
@@ -72,15 +72,32 @@ public class ClassificarFragment extends Fragment {
         super.onPrepareOptionsMenu(menu);
     }
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
         if (id == R.id.action_ordenar) {
+            Toast.makeText(getContext(), "Testar ordenação", Toast.LENGTH_SHORT).show();
+            Collections.sort(empresas, adapterClassificar.sortNameEmpresa);
             //Ordenar lista em ordem alfabética
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+    private void sortArrayList() {
+        Collections.sort(empresas, new Comparator<Empresa>() {
+            @Override
+            public int compare(Empresa empresa, Empresa t1) {
+                return empresa.getNomeEmpresa().compareTo(t1.getNomeEmpresa());
+            }
+        });
+        adapterClassificar.notifyDataSetChanged();
+    }
+
+
 
     private void criarEmpresa() {
         Empresa empresa1 = new Empresa();
