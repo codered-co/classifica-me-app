@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.classificame.R;
-import com.example.classificame.activity.ClassificarActivity;
+import com.example.classificame.activity.ClassificandoActivity;
 import com.example.classificame.model.Empresa;
 
 import java.util.ArrayList;
@@ -42,15 +42,17 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
         viewHolderEmpresa.descricaoEmpresa.setText(empresa.getDescricaoEmpresa());
         viewHolderEmpresa.localEmpresa.setText(empresa.getLocalEmpresa());
         viewHolderEmpresa.tipoEmpresa.setText(empresa.getTipoEmpresa());
+        //imagemEmpresa -->
 
         viewHolderEmpresa.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ClassificarActivity.class);
+                Intent intent = new Intent(context, ClassificandoActivity.class);
                 context.startActivity(intent);
             }
         });
     }
+
 
     public static Comparator<Empresa> sortNameEmpresa = new Comparator<Empresa>() {
         @Override
@@ -77,7 +79,6 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
             localEmpresa = itemView.findViewById(R.id.textView_local_empresa_adapter);
             imagemEmpresa = itemView.findViewById(R.id.imageView_empresa_adapter);
             tipoEmpresa = itemView.findViewById(R.id.textView_tipo_empresa_adapter);
-
         }
     }
 
