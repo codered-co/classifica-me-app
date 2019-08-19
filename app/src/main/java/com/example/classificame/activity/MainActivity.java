@@ -18,6 +18,7 @@ import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -48,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
     private CallbackManager callbackManager;
     private GoogleSignInClient mGoogleSignInClient;
 
-    private boolean confirmar = false;
-
     private FirebaseAuth auth;
     private DatabaseReference firebase;
     private ValueEventListener listener;
@@ -64,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
 
         callbackManager = CallbackManager.Factory.create();
         auth = ConfigFirebase.getAuth();
+        //auth.signOut();
+        //LoginManager.getInstance().logOut();
         firebase = ConfigFirebase.getDatabase();
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -155,31 +156,29 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void verificarPerfil(){
-        if (!confirmar) {
-            listener = firebase.child("usuario").addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    String idUsuario = "";
-                    if (auth.getCurrentUser().getEmail() != null) {
-                        idUsuario = Base64Helper.codificarBase64(auth.getCurrentUser().getEmail());
-                    }
-
-                    if (!idUsuario.isEmpty() && dataSnapshot.hasChild(idUsuario)) {
-                        startActivity(new Intent(MainActivity.this, ContainerActivity.class));
-                        finish();
-                    } else {
-                        startActivity(new Intent(MainActivity.this, CadastroActivity.class));
-                        finish();
-                    }
+    private void verificarPerfil() {
+        listener = firebase.child("usuario").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String idUsuario = "";
+                if (auth.getCurrentUser().getEmail() != null) {
+                    idUsuario = Base64Helper.codificarBase64(auth.getCurrentUser().getEmail());
                 }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                if (!idUsuario.isEmpty() && dataSnapshot.hasChild(idUsuario)) {
+                    startActivity(new Intent(MainActivity.this, ContainerActivity.class));
+                    finish();
+                } else {
+                    startActivity(new Intent(MainActivity.this, CadastroActivity.class));
+                    finish();
                 }
-            });
-        }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void handleFacebookAcessToken(AccessToken token) {
@@ -190,10 +189,9 @@ public class MainActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Log.d("Facebook: ", "signInWithCredential:success");
                             verificarPerfil();
-                            confirmar = true;
                         } else {
                             Log.w("FacebookLogin: ", "Login com Facebook falhou.", task.getException());
                             Toast.makeText(MainActivity.this, "Falha na autenticação", Toast.LENGTH_SHORT).show();
