@@ -1,17 +1,25 @@
 package com.example.classificame.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.classificame.R;
+import com.example.classificame.helper.Base64Helper;
+import com.example.classificame.model.Empresa;
+import com.example.classificame.model.Voto;
 
 public class AdicionarEmpresaActivity extends AppCompatActivity {
 
     private EditText editTextNome, editTextDescricao, editTextRua,
             editTextBairro, editTextNumero, editTextCidade,
-            editTextEstado,editTextCategoria, editTextTipo;
+            editTextEstado,editTextCategoria, editTextTipo,
+            editTextCnpj;
     private Button buttonSalvarEmpresa;
 
     @Override
@@ -28,8 +36,57 @@ public class AdicionarEmpresaActivity extends AppCompatActivity {
         editTextEstado = findViewById(R.id.editText_estado_empresa);
         editTextCategoria = findViewById(R.id.editText_categoria_empresa);
         editTextTipo = findViewById(R.id.editText_tipo_empresa);
+        editTextCnpj = findViewById(R.id.editText_cnpj_empresa);
         buttonSalvarEmpresa = findViewById(R.id.button_salvar_empresa);
 
+        buttonSalvarEmpresa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nome = editTextNome.getText().toString();
+                String descricao = editTextDescricao.getText().toString();
+                String rua = editTextRua.getText().toString();
+                String bairro = editTextBairro.getText().toString();
+                String numero = editTextNumero.getText().toString();
+                String cidade = editTextCidade.getText().toString();
+                String estado = editTextEstado.getText().toString();
+                String categoria = editTextCategoria.getText().toString();
+                String tipo = editTextTipo.getText().toString();
+                String cnpj = editTextCnpj.getText().toString();
 
+                esconderTeclado();
+
+                Empresa empresa = new Empresa();
+                Voto voto = new Voto(0.0, 0.0, 0.0, 0.0);
+                
+                empresa.setNomeEmpresa(nome);
+                empresa.setDescricaoEmpresa(descricao);
+                empresa.setRuaEmpresa(rua);
+                empresa.setBairroEmpresa(bairro);
+                empresa.setNumeroEmpresa(numero);
+                empresa.setCategoriaEmpresa(cidade);
+                empresa.setEstadoEmpresa(estado);
+                empresa.setCategoriaEmpresa(categoria);
+                empresa.setTipoEmpresa(tipo);
+                empresa.setCnpjEmpresa(cnpj);
+                empresa.setVoto(voto);
+                empresa.setTotalVotos(0);
+                empresa.setClassificacaoEmpresa(0.0);
+
+                salvarEmpresa(empresa);
+            }
+        });
+    }
+
+    private void esconderTeclado(){
+        InputMethodManager inputManager = (InputMethodManager) AdicionarEmpresaActivity.this.getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputManager.hideSoftInputFromWindow(buttonSalvarEmpresa.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+    }
+
+    private void salvarEmpresa(Empresa empresa){
+        String idEmpresa = Base64Helper.codificarBase64(empresa.getCnpjEmpresa());
+        empresa.setIdEmpresa(idEmpresa);
+        empresa.salvarEmpresa();
+        startActivity(new Intent(AdicionarEmpresaActivity.this, ContainerActivity.class));
+        finish();
     }
 }

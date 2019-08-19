@@ -1,14 +1,59 @@
 package com.example.classificame.model;
 
+import com.example.classificame.config.ConfigFirebase;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
+
 public class Empresa {
 
 
-    private String nomeEmpresa, descricaoEmpresa, cidadeEmpresa,
+    private String idEmpresa, nomeEmpresa, descricaoEmpresa, cidadeEmpresa,
             estadoEmpresa, ruaEmpresa, bairroEmpresa, numeroEmpresa,
-            categoriaEmpresa, imagemEmpresa, tipoEmpresa;
-    private float atendimentoCliente, formaPagamento, servicoEntrega,
-            possibilidadeVoltar, classificacaoEmpresa;
-    private int votosEmpresa;
+            categoriaEmpresa, imagemEmpresa, tipoEmpresa, cnpjEmpresa;
+    private int totalVotos;
+    private double classificacaoEmpresa;
+    private Voto voto;
+
+    public void salvarEmpresa() {
+        DatabaseReference firebase = ConfigFirebase.getDatabase();
+
+        firebase.child("empresa")
+                .child(this.idEmpresa)
+                .setValue(this);
+    }
+
+    public double getClassificacaoEmpresa() {
+        return classificacaoEmpresa;
+    }
+
+    public void setClassificacaoEmpresa(double classificacaoEmpresa) {
+        this.classificacaoEmpresa = classificacaoEmpresa;
+    }
+
+    public Voto getVoto() {
+        return voto;
+    }
+
+    public void setVoto(Voto voto) {
+        this.voto = voto;
+    }
+
+    public String getCnpjEmpresa() {
+        return cnpjEmpresa;
+    }
+
+    public void setCnpjEmpresa(String cnpjEmpresa) {
+        this.cnpjEmpresa = cnpjEmpresa;
+    }
+
+    @Exclude
+    public String getIdEmpresa() {
+        return idEmpresa;
+    }
+
+    public void setIdEmpresa(String idEmpresa) {
+        this.idEmpresa = idEmpresa;
+    }
 
     public String getRuaEmpresa() {
         return ruaEmpresa;
@@ -90,52 +135,12 @@ public class Empresa {
         this.tipoEmpresa = tipoEmpresa;
     }
 
-    public float getAtendimentoCliente() {
-        return atendimentoCliente;
+    public int getTotalVotos() {
+        return totalVotos;
     }
 
-    public void setAtendimentoCliente(float atendimentoCliente) {
-        this.atendimentoCliente = atendimentoCliente;
-    }
-
-    public float getFormaPagamento() {
-        return formaPagamento;
-    }
-
-    public void setFormaPagamento(float formaPagamento) {
-        this.formaPagamento = formaPagamento;
-    }
-
-    public float getServicoEntrega() {
-        return servicoEntrega;
-    }
-
-    public void setServicoEntrega(float servicoEntrega) {
-        this.servicoEntrega = servicoEntrega;
-    }
-
-    public float getPossibilidadeVoltar() {
-        return possibilidadeVoltar;
-    }
-
-    public void setPossibilidadeVoltar(float possibilidadeVoltar) {
-        this.possibilidadeVoltar = possibilidadeVoltar;
-    }
-
-    public float getClassificacaoEmpresa() {
-        return classificacaoEmpresa;
-    }
-
-    public void setClassificacaoEmpresa(float classificacaoEmpresa) {
-        this.classificacaoEmpresa = classificacaoEmpresa;
-    }
-
-    public int getVotosEmpresa() {
-        return votosEmpresa;
-    }
-
-    public void setVotosEmpresa(int votosEmpresa) {
-        this.votosEmpresa = votosEmpresa;
+    public void setTotalVotos(int totalVotos) {
+        this.totalVotos = totalVotos;
 
     }
 }

@@ -39,13 +39,13 @@ public class AdaterRanking extends RecyclerView.Adapter<AdaterRanking.AdapterRan
 
         adapterRankingViewHolder.textViewNomeEmpresa.setText(empresa.getNomeEmpresa());
         adapterRankingViewHolder.textViewDescricaoEmpresa.setText(empresa.getDescricaoEmpresa());
-        adapterRankingViewHolder.textViewLocalEmpresa.setText(empresa.getLocalEmpresa());
+        //adapterRankingViewHolder.textViewLocalEmpresa.setText(empresa.getLocalEmpresa());
         adapterRankingViewHolder.textViewCategoriaEmpresa.setText(empresa.getCategoriaEmpresa());
 
         String teste = String.valueOf(empresa.getClassificacaoEmpresa());
         adapterRankingViewHolder.textViewClassificaEmpresa.setText(teste);
 
-        float classificacao = empresa.getClassificacaoEmpresa();
+        double classificacao = empresa.getClassificacaoEmpresa();
 
         if ( classificacao >= 5 ){
             adapterRankingViewHolder.imageViewClassificacaoEmpresa.setImageResource(R.drawable.srv_ic_rating_amazing);

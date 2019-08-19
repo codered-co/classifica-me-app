@@ -45,7 +45,7 @@ public class RankingFragment extends Fragment {
         recyclerViewRankingEmpresas.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
-        Empresa empresa1 = new Empresa();
+        /*Empresa empresa1 = new Empresa();
         empresa1.setNomeEmpresa("Code Red");
         empresa1.setDescricaoEmpresa("Empresa de Teste");
         empresa1.setLocalEmpresa("Itaperuna - RJ");
@@ -62,7 +62,7 @@ public class RankingFragment extends Fragment {
 
 
         empresaArrayList.add(empresa1);
-        empresaArrayList.add(empresa2);
+        empresaArrayList.add(empresa2);*/
 
         adaterRanking = new AdaterRanking(empresaArrayList, getContext());
         recyclerViewRankingEmpresas.setAdapter(adaterRanking);

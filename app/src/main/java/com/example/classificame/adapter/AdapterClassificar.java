@@ -40,7 +40,7 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
         Empresa empresa = empresas.get(posicao);
         viewHolderEmpresa.nomeEmpresa.setText(empresa.getNomeEmpresa());
         viewHolderEmpresa.descricaoEmpresa.setText(empresa.getDescricaoEmpresa());
-        viewHolderEmpresa.localEmpresa.setText(empresa.getLocalEmpresa());
+        //viewHolderEmpresa.localEmpresa.setText(empresa.getLocalEmpresa());
         viewHolderEmpresa.tipoEmpresa.setText(empresa.getTipoEmpresa());
         //imagemEmpresa -->
 

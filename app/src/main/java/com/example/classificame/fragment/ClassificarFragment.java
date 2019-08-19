@@ -92,7 +92,7 @@ public class ClassificarFragment extends Fragment {
     }
 
     private void criarEmpresa() {
-        Empresa empresa1 = new Empresa();
+        /*Empresa empresa1 = new Empresa();
         empresa1.setNomeEmpresa("CodeRed");
         empresa1.setCategoriaEmpresa("Tecnologia");
         empresa1.setDescricaoEmpresa("Programar se aprende aqui");
@@ -114,7 +114,7 @@ public class ClassificarFragment extends Fragment {
         empresa3.setDescricaoEmpresa("Programar se aprende aqui");
         empresa3.setLocalEmpresa("Itaperuna-RJ");
         empresa3.setTipoEmpresa("Privada/Pública");
-        empresas.add(empresa3);
+        empresas.add(empresa3);*/
     }
 
     private void recuperarEmpresa() {
