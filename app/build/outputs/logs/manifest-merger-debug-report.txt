@@ -255,10 +255,10 @@ activity#com.example.classificame.activity.CadastroActivity
 ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:42:9-63
 	android:name
 		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:42:19-60
-activity#com.example.classificame.activity.ClassificarActivity
-ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:43:9-66
+activity#com.example.classificame.activity.ClassificandoActivity
+ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:43:9-68
 	android:name
-		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:43:19-63
+		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:43:19-65
 activity#com.example.classificame.activity.SugerirEmpresaActivity
 ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:44:9-69
 	android:name

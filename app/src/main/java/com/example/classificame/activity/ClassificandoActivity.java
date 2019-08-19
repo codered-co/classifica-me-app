@@ -70,15 +70,15 @@ public class ClassificandoActivity extends AppCompatActivity {
 
 
     public int pegarValor(TextView textView) {
-        int valorRankin = 0;
+        int valorRankin;
         String ranking = textView.getText().toString();
-        if (ranking.contentEquals("Bronze")) {
+        if (ranking == getString(R.string.srv_awful)) {
             valorRankin = 2;
-        } else if (ranking.contentEquals("Prata")) {
+        } else if (ranking == getString(R.string.srv_meh)) {
             valorRankin = 3;
-        } else if (ranking.contentEquals("Ouro")) {
+        } else if (ranking == getString(R.string.srv_good)) {
             valorRankin = 4;
-        } else if (ranking.contentEquals("Diamante")) {
+        } else if (ranking == getString(R.string.srv_amazing)) {
             valorRankin = 5;
         } else {
             valorRankin = 0;
@@ -104,7 +104,7 @@ public class ClassificandoActivity extends AppCompatActivity {
                 float rankingServicoEntrega = pegarValor(textViewValorServicoEntrega);
                 float rankingPossibilidadeVoltar = pegarValor(textViewValorPossibilidadeVoltar);
 
-
+                    // post das notas a empresa
             }
         });
     }
