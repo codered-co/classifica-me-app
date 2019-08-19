@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Classifica.me</string>
 
-    <string name="facebook_app_id">424595208146175</string> <string name="fb_login_protocol_scheme">fb424595208146175</string>
+    <string name="facebook_app_id">424595208146175</string>
+    <string name="fb_login_protocol_scheme">fb424595208146175</string>
 
     <string-array name="dia">
         <item>Dia</item>
@@ -84,7 +85,7 @@
         <item>Varre-Sai</item>
     </string-array>
 
-    
+
     <string name="title_activity_app">Classifica.me</string>
     <string name="title_classificar">Classificar</string>
     <string name="title_perfil">Perfil</string>

@@ -3,18 +3,35 @@ package com.example.classificame.model;
 public class Empresa {
 
 
-    private String nomeEmpresa, descricaoEmpresa, localEmpresa, categoriaEmpresa, imagemEmpresa, tipoEmpresa;
-    private float atendimentoCliente, formaPagamento, servicoEntrega, possibilidadeVoltar, classificacaoEmpresa;
+    private String nomeEmpresa, descricaoEmpresa, cidadeEmpresa,
+            estadoEmpresa, ruaEmpresa, bairroEmpresa, numeroEmpresa,
+            categoriaEmpresa, imagemEmpresa, tipoEmpresa;
+    private float atendimentoCliente, formaPagamento, servicoEntrega,
+            possibilidadeVoltar, classificacaoEmpresa;
     private int votosEmpresa;
 
+    public String getRuaEmpresa() {
+        return ruaEmpresa;
+    }
 
-    public Empresa() {
-        this.nomeEmpresa = nomeEmpresa;
-        this.descricaoEmpresa = descricaoEmpresa;
-        this.localEmpresa = localEmpresa;
-        this.categoriaEmpresa = categoriaEmpresa;
-        this.imagemEmpresa = imagemEmpresa;
-        this.tipoEmpresa = tipoEmpresa;
+    public void setRuaEmpresa(String ruaEmpresa) {
+        this.ruaEmpresa = ruaEmpresa;
+    }
+
+    public String getBairroEmpresa() {
+        return bairroEmpresa;
+    }
+
+    public void setBairroEmpresa(String bairroEmpresa) {
+        this.bairroEmpresa = bairroEmpresa;
+    }
+
+    public String getNumeroEmpresa() {
+        return numeroEmpresa;
+    }
+
+    public void setNumeroEmpresa(String numeroEmpresa) {
+        this.numeroEmpresa = numeroEmpresa;
     }
 
     public String getNomeEmpresa() {
@@ -33,12 +50,20 @@ public class Empresa {
         this.descricaoEmpresa = descricaoEmpresa;
     }
 
-    public String getLocalEmpresa() {
-        return localEmpresa;
+    public String getCidadeEmpresa() {
+        return cidadeEmpresa;
     }
 
-    public void setLocalEmpresa(String localEmpresa) {
-        this.localEmpresa = localEmpresa;
+    public void setCidadeEmpresa(String cidadeEmpresa) {
+        this.cidadeEmpresa = cidadeEmpresa;
+    }
+
+    public String getEstadoEmpresa() {
+        return estadoEmpresa;
+    }
+
+    public void setEstadoEmpresa(String estadoEmpresa) {
+        this.estadoEmpresa = estadoEmpresa;
     }
 
     public String getCategoriaEmpresa() {

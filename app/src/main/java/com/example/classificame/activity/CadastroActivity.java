@@ -136,6 +136,7 @@ public class CadastroActivity extends AppCompatActivity {
                                                             usuario.setEstado(estado);
                                                             usuario.setPais(pais);
                                                             usuario.setTelefone(telefone);
+                                                            usuario.setAdmin(false);
 
                                                             cadastrarUsuario();
                                                         } else {

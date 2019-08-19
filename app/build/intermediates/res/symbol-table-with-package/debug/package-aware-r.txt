@@ -1202,6 +1202,7 @@ id bottom
 id box_count
 id button
 id buttonPanel
+id button_adicionar_empresa
 id button_cadastrar
 id button_entrar
 id button_enviar_sugestao
@@ -1548,6 +1549,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_adicionar_empresa
 layout activity_cadastro
 layout activity_classificar
 layout activity_container
