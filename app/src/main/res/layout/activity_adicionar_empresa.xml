@@ -16,6 +16,7 @@
             android:id="@+id/editText_nome_empresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textCapWords|textCapSentences"
             android:hint="Nome" />
     </android.support.design.widget.TextInputLayout>
 
@@ -27,6 +28,7 @@
             android:id="@+id/editText_descricao_empresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textCapWords|textCapSentences"
             android:hint="Descrição" />
     </android.support.design.widget.TextInputLayout>
 
@@ -38,6 +40,7 @@
             android:id="@+id/editText_rua_empresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textCapWords|textCapSentences"
             android:hint="Rua" />
     </android.support.design.widget.TextInputLayout>
 
@@ -49,6 +52,7 @@
             android:id="@+id/editText_bairro_empresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textCapWords|textCapSentences"
             android:hint="Bairro" />
     </android.support.design.widget.TextInputLayout>
 
@@ -60,6 +64,7 @@
             android:id="@+id/editText_numero_empresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:hint="Numero" />
     </android.support.design.widget.TextInputLayout>
 
@@ -71,6 +76,7 @@
             android:id="@+id/editText_cidade_empresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textCapWords|textCapSentences"
             android:hint="Cidade" />
     </android.support.design.widget.TextInputLayout>
 
@@ -82,6 +88,9 @@
             android:id="@+id/editText_estado_empresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textCapCharacters"
+            android:maxLength="2"
+
             android:hint="Estado" />
     </android.support.design.widget.TextInputLayout>
 
@@ -93,6 +102,7 @@
             android:id="@+id/editText_categoria_empresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textCapWords|textCapSentences"
             android:hint="Categoria" />
     </android.support.design.widget.TextInputLayout>
 
@@ -104,6 +114,7 @@
             android:id="@+id/editText_tipo_empresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textCapWords|textCapSentences"
             android:hint="Tipo" />
     </android.support.design.widget.TextInputLayout>
 
@@ -115,6 +126,8 @@
             android:id="@+id/editText_cnpj_empresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="14"
             android:hint="CNPJ" />
     </android.support.design.widget.TextInputLayout>
 

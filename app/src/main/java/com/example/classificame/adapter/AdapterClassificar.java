@@ -32,16 +32,23 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
     @Override
     public ViewHolderEmpresa onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.adapter_classificar, viewGroup, false);
+
         return new ViewHolderEmpresa(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderEmpresa viewHolderEmpresa, int posicao) {
         Empresa empresa = empresas.get(posicao);
-        viewHolderEmpresa.nomeEmpresa.setText(empresa.getNomeEmpresa());
-        viewHolderEmpresa.descricaoEmpresa.setText(empresa.getDescricaoEmpresa());
-        //viewHolderEmpresa.localEmpresa.setText(empresa.getLocalEmpresa());
-        viewHolderEmpresa.tipoEmpresa.setText(empresa.getTipoEmpresa());
+        String local = empresa.getRua() + ", " +
+                empresa.getNumero() + ", " +
+                empresa.getBairro() + ", " +
+                empresa.getCidade() + " - " +
+                empresa.getEstado();
+
+        viewHolderEmpresa.nomeEmpresa.setText(empresa.getNome());
+        viewHolderEmpresa.descricaoEmpresa.setText(empresa.getDescricao());
+        viewHolderEmpresa.localEmpresa.setText(local);
+        viewHolderEmpresa.tipoEmpresa.setText(empresa.getTipo());
         //imagemEmpresa -->
 
         viewHolderEmpresa.itemView.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +64,7 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
     public static Comparator<Empresa> sortNameEmpresa = new Comparator<Empresa>() {
         @Override
         public int compare(Empresa empresa, Empresa t1) {
-            return empresa.getNomeEmpresa().compareTo(t1.getNomeEmpresa());
+            return empresa.getNome().compareTo(t1.getNome());
         }
     };
 

@@ -16,12 +16,12 @@ import com.example.classificame.model.Empresa;
 
 import java.util.ArrayList;
 
-public class AdaterRanking extends RecyclerView.Adapter<AdaterRanking.AdapterRankingViewHolder> {
+public class AdapterRanking extends RecyclerView.Adapter<AdapterRanking.AdapterRankingViewHolder> {
 
     private ArrayList<Empresa> empresaArrayList;
     private Context context;
 
-    public AdaterRanking(ArrayList<Empresa> empresaArrayList, Context context) {
+    public AdapterRanking(ArrayList<Empresa> empresaArrayList, Context context) {
         this.empresaArrayList = empresaArrayList;
         this.context = context;
     }
@@ -30,22 +30,28 @@ public class AdaterRanking extends RecyclerView.Adapter<AdaterRanking.AdapterRan
     @Override
     public AdapterRankingViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.adapter_ranking, viewGroup, false);
+
         return new AdapterRankingViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull AdapterRankingViewHolder adapterRankingViewHolder, int posicao) {
         Empresa empresa = empresaArrayList.get(posicao);
+        String local = empresa.getRua() + ", " +
+                empresa.getNumero() + ", " +
+                empresa.getBairro() + ", " +
+                empresa.getCidade() + " - " +
+                empresa.getEstado();
 
-        adapterRankingViewHolder.textViewNomeEmpresa.setText(empresa.getNomeEmpresa());
-        adapterRankingViewHolder.textViewDescricaoEmpresa.setText(empresa.getDescricaoEmpresa());
-        //adapterRankingViewHolder.textViewLocalEmpresa.setText(empresa.getLocalEmpresa());
-        adapterRankingViewHolder.textViewCategoriaEmpresa.setText(empresa.getCategoriaEmpresa());
+        adapterRankingViewHolder.textViewNomeEmpresa.setText(empresa.getNome());
+        adapterRankingViewHolder.textViewDescricaoEmpresa.setText(empresa.getDescricao());
+        adapterRankingViewHolder.textViewLocalEmpresa.setText(local);
+        adapterRankingViewHolder.textViewCategoriaEmpresa.setText(empresa.getCategoria());
 
-        String teste = String.valueOf(empresa.getClassificacaoEmpresa());
+        String teste = String.valueOf(empresa.getClassificacao());
         adapterRankingViewHolder.textViewClassificaEmpresa.setText(teste);
 
-        double classificacao = empresa.getClassificacaoEmpresa();
+        double classificacao = empresa.getClassificacao();
 
         if ( classificacao >= 5 ){
             adapterRankingViewHolder.imageViewClassificacaoEmpresa.setImageResource(R.drawable.srv_ic_rating_amazing);

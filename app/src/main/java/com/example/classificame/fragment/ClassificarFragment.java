@@ -77,7 +77,6 @@ public class ClassificarFragment extends Fragment {
         adapterClassificar = new AdapterClassificar(empresas, getContext());
         recyclerViewEmpresa.setAdapter(adapterClassificar);
 
-        criarEmpresa();
     }
 
     @Override
@@ -89,32 +88,6 @@ public class ClassificarFragment extends Fragment {
             adapterClassificar.notifyDataSetChanged();
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private void criarEmpresa() {
-        /*Empresa empresa1 = new Empresa();
-        empresa1.setNomeEmpresa("CodeRed");
-        empresa1.setCategoriaEmpresa("Tecnologia");
-        empresa1.setDescricaoEmpresa("Programar se aprende aqui");
-        empresa1.setLocalEmpresa("Itaperuna-RJ");
-        empresa1.setTipoEmpresa("Privada/Pública");
-        empresas.add(empresa1);
-
-        Empresa empresa2 = new Empresa();
-        empresa2.setNomeEmpresa("Braseiro");
-        empresa2.setCategoriaEmpresa("Tecnologia");
-        empresa2.setDescricaoEmpresa("Programar se aprende aqui");
-        empresa2.setLocalEmpresa("Itaperuna-RJ");
-        empresa2.setTipoEmpresa("Privada/Pública");
-        empresas.add(empresa2);
-
-        Empresa empresa3 = new Empresa();
-        empresa3.setNomeEmpresa("Ampla");
-        empresa3.setCategoriaEmpresa("Tecnologia");
-        empresa3.setDescricaoEmpresa("Programar se aprende aqui");
-        empresa3.setLocalEmpresa("Itaperuna-RJ");
-        empresa3.setTipoEmpresa("Privada/Pública");
-        empresas.add(empresa3);*/
     }
 
     private void recuperarEmpresa() {

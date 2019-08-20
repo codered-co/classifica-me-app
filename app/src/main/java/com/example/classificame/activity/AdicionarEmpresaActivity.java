@@ -48,7 +48,7 @@ public class AdicionarEmpresaActivity extends AppCompatActivity {
                 String bairro = editTextBairro.getText().toString();
                 String numero = editTextNumero.getText().toString();
                 String cidade = editTextCidade.getText().toString();
-                String estado = editTextEstado.getText().toString();
+                String estado = editTextEstado.getText().toString().toUpperCase();
                 String categoria = editTextCategoria.getText().toString();
                 String tipo = editTextTipo.getText().toString();
                 String cnpj = editTextCnpj.getText().toString();
@@ -57,20 +57,20 @@ public class AdicionarEmpresaActivity extends AppCompatActivity {
 
                 Empresa empresa = new Empresa();
                 Voto voto = new Voto(0.0, 0.0, 0.0, 0.0);
-                
-                empresa.setNomeEmpresa(nome);
-                empresa.setDescricaoEmpresa(descricao);
-                empresa.setRuaEmpresa(rua);
-                empresa.setBairroEmpresa(bairro);
-                empresa.setNumeroEmpresa(numero);
-                empresa.setCategoriaEmpresa(cidade);
-                empresa.setEstadoEmpresa(estado);
-                empresa.setCategoriaEmpresa(categoria);
-                empresa.setTipoEmpresa(tipo);
-                empresa.setCnpjEmpresa(cnpj);
+
+                empresa.setNome(nome);
+                empresa.setDescricao(descricao);
+                empresa.setRua(rua);
+                empresa.setBairro(bairro);
+                empresa.setNumero(numero);
+                empresa.setCategoria(cidade);
+                empresa.setEstado(estado);
+                empresa.setCategoria(categoria);
+                empresa.setTipo(tipo);
+                empresa.setCnpj(cnpj);
                 empresa.setVoto(voto);
                 empresa.setTotalVotos(0);
-                empresa.setClassificacaoEmpresa(0.0);
+                empresa.setClassificacao(0.0);
 
                 salvarEmpresa(empresa);
             }
@@ -83,8 +83,8 @@ public class AdicionarEmpresaActivity extends AppCompatActivity {
     }
 
     private void salvarEmpresa(Empresa empresa){
-        String idEmpresa = Base64Helper.codificarBase64(empresa.getCnpjEmpresa());
-        empresa.setIdEmpresa(idEmpresa);
+        String idEmpresa = Base64Helper.codificarBase64(empresa.getCnpj());
+        empresa.setId(idEmpresa);
         empresa.salvarEmpresa();
         startActivity(new Intent(AdicionarEmpresaActivity.this, ContainerActivity.class));
         finish();
