@@ -128,14 +128,15 @@ public class CadastroActivity extends AppCompatActivity {
                                                             usuario.setNome(nome);
                                                             usuario.setEmail(email);
                                                             usuario.setSenha(senha);
-                                                            usuario.setDiaNascimento(Integer.parseInt(diaNascimento));
+                                                            usuario.setDiaNascimento(diaNascimento);
                                                             usuario.setMesNascimento(mesNascimento);
-                                                            usuario.setAnoNascimento(Integer.parseInt(anoNascimento));
+                                                            usuario.setAnoNascimento(anoNascimento);
                                                             usuario.setSexo(sexo);
                                                             usuario.setCidade(cidade);
                                                             usuario.setEstado(estado);
                                                             usuario.setPais(pais);
                                                             usuario.setTelefone(telefone);
+                                                            usuario.setAdmin(false);
 
                                                             cadastrarUsuario();
                                                         } else {

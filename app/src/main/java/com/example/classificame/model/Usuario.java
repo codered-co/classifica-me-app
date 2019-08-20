@@ -6,8 +6,10 @@ import com.google.firebase.database.Exclude;
 
 public class Usuario {
 
-    private String id, nome, email, senha, cidade, estado, pais, sexo, mesNascimento, telefone;
-    private int diaNascimento, anoNascimento;
+    private String id, nome, email, senha, cidade, estado,
+            pais, sexo, mesNascimento, telefone, diaNascimento,
+            anoNascimento;
+    private boolean admin;
 
     public void salvarUsuario() {
         DatabaseReference firebase = ConfigFirebase.getDatabase();
@@ -15,6 +17,14 @@ public class Usuario {
         firebase.child("usuario")
                 .child(this.id)
                 .setValue(this);
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 
     public String getTelefone() {
@@ -91,11 +101,11 @@ public class Usuario {
         this.sexo = sexo;
     }
 
-    public int getDiaNascimento() {
+    public String getDiaNascimento() {
         return diaNascimento;
     }
 
-    public void setDiaNascimento(int diaNascimento) {
+    public void setDiaNascimento(String diaNascimento) {
         this.diaNascimento = diaNascimento;
     }
 
@@ -107,11 +117,11 @@ public class Usuario {
         this.mesNascimento = mesNascimento;
     }
 
-    public int getAnoNascimento() {
+    public String getAnoNascimento() {
         return anoNascimento;
     }
 
-    public void setAnoNascimento(int anoNascimento) {
+    public void setAnoNascimento(String anoNascimento) {
         this.anoNascimento = anoNascimento;
     }
 }
