@@ -16,6 +16,10 @@ public class Gamificacao {
         this.nomeAcao = nomeAcao;
     }
 
+    public Gamificacao() {
+
+    }
+
     public Usuario getUsuario() {
         return usuario;
     }

@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.classificame.R;
 import com.example.classificame.activity.EditarPerfilActivity;
@@ -66,26 +65,55 @@ public class PerfilFragment extends Fragment {
         auth = ConfigFirebase.getAuth();
         firebase = ConfigFirebase.getDatabase();
 
-      //  textViewNome = view.findViewById(R.id.textView_nome_perfil);
-       // textViewCidade = view.findViewById(R.id.textView_cidade_perfil);
-       // textViewTipoConsumidor = view.findViewById(R.id.textView_consumidor_perfil);
-       // textViewDataNascimento = view.findViewById(R.id.textView_data_perfil);
-        progressBarNivel = view.findViewById(R.id.progressBar_perfil_user);
+        // textViewNome = view.findViewById(R.id.textView_nome_perfil);
+        // textViewCidade = view.findViewById(R.id.textView_cidade_perfil);
+        // textViewTipoConsumidor = view.findViewById(R.id.textView_consumidor_perfil);
+        // textViewDataNascimento = view.findViewById(R.id.textView_data_perfil);
+        //progressBarNivel = view.findViewById(R.id.progressBar_perfil_user);
         imageViewPerfil = view.findViewById(R.id.imageView_perfil_usuario);
         //imageViewEmblema = view.findViewById(R.id.imageView_emblema_perfil);
+
+        //RecyclerView
         recyclerViewGamificacao = view.findViewById(R.id.recyclerView_perfil_gamificacao);
         recyclerViewGamificacao.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapterGamificacao = new AdapterGamificacao();
+        //Adapter
+        adapterGamificacao = new AdapterGamificacao(gamificacoes, getContext());
         recyclerViewGamificacao.setAdapter(adapterGamificacao);
 
+        alimentaGamificacao();
 
         return view;
+    }
+    public void alimentaGamificacao() {
+        Gamificacao gamificacao1 = new Gamificacao();
+        gamificacao1.setNomeAcao("First vote");
+        gamificacoes.add(gamificacao1);
+
+        Gamificacao gamificacao2 = new Gamificacao();
+        gamificacao2.setNomeAcao("Engaged Consumer");
+        gamificacoes.add(gamificacao2);
+
+        Gamificacao gamificacao3 = new Gamificacao();
+        gamificacao3.setNomeAcao("Communicate");
+        gamificacoes.add(gamificacao3);
+
+        Gamificacao gamificacao4 = new Gamificacao();
+        gamificacao4.setNomeAcao("Knowing the market");
+        gamificacoes.add(gamificacao4);
+
+        Gamificacao gamificacao5 = new Gamificacao();
+        gamificacao5.setNomeAcao("Buy");
+        gamificacoes.add(gamificacao5);
+
+        Gamificacao gamificacao6 = new Gamificacao();
+        gamificacao6.setNomeAcao("Business");
+        gamificacoes.add(gamificacao6);
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        //recuperarPerfil();
+        recuperarPerfil();
     }
 
     @Override
