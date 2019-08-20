@@ -6,12 +6,14 @@ public class Gamificacao {
     private Empresa empresa;
     private Integer qntVotoGamificao;
     private Integer levelGamificacao;
+    private String nomeAcao;
 
-    public Gamificacao(Usuario usuario, Empresa empresa, Integer qntVotoGamificao, Integer levelGamificacao) {
+    public Gamificacao(Usuario usuario, Empresa empresa, Integer qntVotoGamificao, Integer levelGamificacao, String nomeAcao) {
         this.usuario = usuario;
         this.empresa = empresa;
         this.qntVotoGamificao = qntVotoGamificao;
         this.levelGamificacao = levelGamificacao;
+        this.nomeAcao = nomeAcao;
     }
 
     public Usuario getUsuario() {
@@ -44,5 +46,13 @@ public class Gamificacao {
 
     public void setLevelGamificacao(Integer levelGamificacao) {
         this.levelGamificacao = levelGamificacao;
+    }
+
+    public String getNomeAcao() {
+        return nomeAcao;
+    }
+
+    public void setNomeAcao(String nomeAcao) {
+        this.nomeAcao = nomeAcao;
     }
 }

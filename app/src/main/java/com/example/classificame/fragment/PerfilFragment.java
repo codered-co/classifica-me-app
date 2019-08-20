@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,8 +21,10 @@ import android.widget.Toast;
 import com.example.classificame.R;
 import com.example.classificame.activity.EditarPerfilActivity;
 import com.example.classificame.activity.MainActivity;
+import com.example.classificame.adapter.AdapterGamificacao;
 import com.example.classificame.config.ConfigFirebase;
 import com.example.classificame.helper.Base64Helper;
+import com.example.classificame.model.Gamificacao;
 import com.example.classificame.model.Usuario;
 import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,6 +32,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -39,6 +45,10 @@ public class PerfilFragment extends Fragment {
             textViewTipoConsumidor;
     private ProgressBar progressBarNivel;
     private ImageView imageViewPerfil, imageViewEmblema;
+
+    private RecyclerView recyclerViewGamificacao;
+    private ArrayList<Gamificacao> gamificacoes = new ArrayList<>();
+    private AdapterGamificacao adapterGamificacao;
 
     private Usuario usuario;
 
@@ -56,13 +66,18 @@ public class PerfilFragment extends Fragment {
         auth = ConfigFirebase.getAuth();
         firebase = ConfigFirebase.getDatabase();
 
-        textViewNome = view.findViewById(R.id.textView_nome_perfil);
-        textViewCidade = view.findViewById(R.id.textView_cidade_perfil);
-        textViewTipoConsumidor = view.findViewById(R.id.textView_consumidor_perfil);
-        textViewDataNascimento = view.findViewById(R.id.textView_data_perfil);
+      //  textViewNome = view.findViewById(R.id.textView_nome_perfil);
+       // textViewCidade = view.findViewById(R.id.textView_cidade_perfil);
+       // textViewTipoConsumidor = view.findViewById(R.id.textView_consumidor_perfil);
+       // textViewDataNascimento = view.findViewById(R.id.textView_data_perfil);
         progressBarNivel = view.findViewById(R.id.progressBar_perfil_user);
         imageViewPerfil = view.findViewById(R.id.imageView_perfil_usuario);
-        imageViewEmblema = view.findViewById(R.id.imageView_emblema_perfil);
+        //imageViewEmblema = view.findViewById(R.id.imageView_emblema_perfil);
+        recyclerViewGamificacao = view.findViewById(R.id.recyclerView_perfil_gamificacao);
+        recyclerViewGamificacao.setLayoutManager(new LinearLayoutManager(getContext()));
+        adapterGamificacao = new AdapterGamificacao();
+        recyclerViewGamificacao.setAdapter(adapterGamificacao);
+
 
         return view;
     }
@@ -70,7 +85,7 @@ public class PerfilFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        recuperarPerfil();
+        //recuperarPerfil();
     }
 
     @Override
