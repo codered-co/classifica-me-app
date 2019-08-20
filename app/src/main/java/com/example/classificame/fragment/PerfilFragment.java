@@ -14,7 +14,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.classificame.R;
@@ -40,9 +39,8 @@ import java.util.ArrayList;
 
 public class PerfilFragment extends Fragment {
 
-    private TextView textViewNome, textViewCidade, textViewDataNascimento,
-            textViewTipoConsumidor;
-    private ProgressBar progressBarNivel;
+    private TextView textViewNome, textViewDataNascimento, tituloUsuarioGamificacao;
+
     private ImageView imageViewPerfil, imageViewEmblema;
 
     private RecyclerView recyclerViewGamificacao;
@@ -65,13 +63,14 @@ public class PerfilFragment extends Fragment {
         auth = ConfigFirebase.getAuth();
         firebase = ConfigFirebase.getDatabase();
 
-        // textViewNome = view.findViewById(R.id.textView_nome_perfil);
+        textViewNome = view.findViewById(R.id.textView_nome_perfil);
         // textViewCidade = view.findViewById(R.id.textView_cidade_perfil);
         // textViewTipoConsumidor = view.findViewById(R.id.textView_consumidor_perfil);
-        // textViewDataNascimento = view.findViewById(R.id.textView_data_perfil);
-        //progressBarNivel = view.findViewById(R.id.progressBar_perfil_user);
+        textViewDataNascimento = view.findViewById(R.id.textView_data_perfil);
+
+        tituloUsuarioGamificacao = view.findViewById(R.id.textView_titulo_usuario_perfil);
         imageViewPerfil = view.findViewById(R.id.imageView_perfil_usuario);
-        //imageViewEmblema = view.findViewById(R.id.imageView_emblema_perfil);
+        imageViewEmblema = view.findViewById(R.id.imageView_emblema_perfil_usuario);
 
         //RecyclerView
         recyclerViewGamificacao = view.findViewById(R.id.recyclerView_perfil_gamificacao);
@@ -85,29 +84,44 @@ public class PerfilFragment extends Fragment {
         return view;
     }
     public void alimentaGamificacao() {
+
         Gamificacao gamificacao1 = new Gamificacao();
-        gamificacao1.setNomeAcao("First vote");
+        gamificacao1.setNomeConquista("First vote");
+        gamificacao1.setImagemConquista(R.drawable.ic_votefirst);
+        gamificacao1.setImagemDesbloquear(R.drawable.ic_lock);
         gamificacoes.add(gamificacao1);
 
         Gamificacao gamificacao2 = new Gamificacao();
-        gamificacao2.setNomeAcao("Engaged Consumer");
+        gamificacao2.setNomeConquista("Engaged Consumer");
+        gamificacao2.setImagemConquista(R.drawable.ic_engagedconsumer);
+        gamificacao2.setImagemDesbloquear(R.drawable.ic_lock);
         gamificacoes.add(gamificacao2);
 
         Gamificacao gamificacao3 = new Gamificacao();
-        gamificacao3.setNomeAcao("Communicate");
+        gamificacao3.setNomeConquista("Communicate");
+        gamificacao3.setImagemConquista(R.drawable.ic_communicate);
+        gamificacao3.setImagemDesbloquear(R.drawable.ic_lock);
         gamificacoes.add(gamificacao3);
 
         Gamificacao gamificacao4 = new Gamificacao();
-        gamificacao4.setNomeAcao("Knowing the market");
+        gamificacao4.setNomeConquista("Knowing the market");
+        gamificacao4.setImagemConquista(R.drawable.ic_knowingthemarket);
+        gamificacao4.setImagemDesbloquear(R.drawable.ic_block);
         gamificacoes.add(gamificacao4);
 
         Gamificacao gamificacao5 = new Gamificacao();
-        gamificacao5.setNomeAcao("Buy");
+        gamificacao5.setNomeConquista("Buy");
+        gamificacao5.setImagemConquista(R.drawable.ic_buy);
+        gamificacao5.setImagemDesbloquear(R.drawable.ic_block);
         gamificacoes.add(gamificacao5);
 
         Gamificacao gamificacao6 = new Gamificacao();
-        gamificacao6.setNomeAcao("Business");
+        gamificacao6.setNomeConquista("Business");
+        gamificacao6.setImagemConquista(R.drawable.ic_champion);
+        gamificacao6.setImagemDesbloquear(R.drawable.ic_block);
         gamificacoes.add(gamificacao6);
+
+        tituloUsuarioGamificacao.setText("Communicater");
     }
 
     @Override
@@ -183,7 +197,7 @@ public class PerfilFragment extends Fragment {
 
                 textViewNome.setText(usuario.getNome());
                 textViewDataNascimento.setText(dataNascimento);
-                textViewCidade.setText(local);
+                //textViewCidade.setText(local);
             }
 
             @Override

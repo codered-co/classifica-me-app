@@ -4,20 +4,57 @@ public class Gamificacao {
 
     private Usuario usuario;
     private Empresa empresa;
-    private Integer qntVotoGamificao;
-    private Integer levelGamificacao;
-    private String nomeAcao;
+    private Integer qntVotoGamificacao;
+    private String nomeConquista;
+    private int imagemEmblemaUsuario;
+    private int imagemConquista;
+    private int imagemIconBlock;
+    private String tituloUsuarioGamificacao;
 
-    public Gamificacao(Usuario usuario, Empresa empresa, Integer qntVotoGamificao, Integer levelGamificacao, String nomeAcao) {
-        this.usuario = usuario;
-        this.empresa = empresa;
-        this.qntVotoGamificao = qntVotoGamificao;
-        this.levelGamificacao = levelGamificacao;
-        this.nomeAcao = nomeAcao;
-    }
 
     public Gamificacao() {
 
+    }
+
+
+    public String getTituloGamificacao() {
+        return tituloUsuarioGamificacao;
+    }
+
+    public void setTituloGamificacao(String tituloGamificacao) {
+        this.tituloUsuarioGamificacao = tituloGamificacao;
+    }
+
+    public Integer getQntVotoGamificacao() {
+        return qntVotoGamificacao;
+    }
+
+    public void setQntVotoGamificacao(Integer qntVotoGamificacao) {
+        this.qntVotoGamificacao = qntVotoGamificacao;
+    }
+
+    public int getImagemEmblemaUsuario() {
+        return imagemEmblemaUsuario;
+    }
+
+    public void setImagemEmblemaUsuario(int imagemEmblemaUsuario) {
+        this.imagemEmblemaUsuario = imagemEmblemaUsuario;
+    }
+
+    public int getImagemConquista() {
+        return imagemConquista;
+    }
+
+    public void setImagemConquista(int imagemConquista) {
+        this.imagemConquista = imagemConquista;
+    }
+
+    public int getImagemDesbloquear() {
+        return imagemIconBlock;
+    }
+
+    public void setImagemDesbloquear(int imagemDesbloquear) {
+        this.imagemIconBlock = imagemDesbloquear;
     }
 
     public Usuario getUsuario() {
@@ -37,26 +74,27 @@ public class Gamificacao {
     }
 
     public Integer getQntVotoGamificao() {
-        return qntVotoGamificao;
+        return qntVotoGamificacao;
     }
 
     public void setQntVotoGamificao(Integer qntVotoGamificao) {
-        this.qntVotoGamificao = qntVotoGamificao;
+        this.qntVotoGamificacao = qntVotoGamificao;
     }
 
-    public Integer getLevelGamificacao() {
-        return levelGamificacao;
+    public String getNomeConquista() {
+        return nomeConquista;
     }
 
-    public void setLevelGamificacao(Integer levelGamificacao) {
-        this.levelGamificacao = levelGamificacao;
+    public void setNomeConquista(String nomeConquista) {
+        this.nomeConquista = nomeConquista;
     }
 
-    public String getNomeAcao() {
-        return nomeAcao;
+
+    private void desbloqueiaConquista() {
+
     }
 
-    public void setNomeAcao(String nomeAcao) {
-        this.nomeAcao = nomeAcao;
+    private void alterarTituloUsuario() {
+
     }
 }

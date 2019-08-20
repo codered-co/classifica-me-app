@@ -34,7 +34,11 @@ public class AdapterGamificacao extends RecyclerView.Adapter<AdapterGamificacao.
     @Override
     public void onBindViewHolder(@NonNull ViewHolderGamificacao viewHolderGamificacao, int posicao) {
         Gamificacao gamificacao = gamificacoes.get(posicao);
-        viewHolderGamificacao.nomeAcaoDesbloqueada.setText(gamificacao.getNomeAcao());
+        viewHolderGamificacao.nomeConquista.setText(gamificacao.getNomeConquista());
+        viewHolderGamificacao.imagemConquista.setImageResource(gamificacao.getImagemConquista());
+        viewHolderGamificacao.imagemIconBlock.setImageResource(gamificacao.getImagemDesbloquear());
+
+        //Implementar click no item da listView
     }
 
     @Override
@@ -44,16 +48,16 @@ public class AdapterGamificacao extends RecyclerView.Adapter<AdapterGamificacao.
 
     public class ViewHolderGamificacao extends RecyclerView.ViewHolder {
 
-        private ImageView imagemBloqueado;
-        private ImageView imagemEmblemaDesbloqueado;
-        private TextView nomeAcaoDesbloqueada;
+        private ImageView imagemIconBlock;
+        private ImageView imagemConquista;
+        private TextView nomeConquista;
 
         public ViewHolderGamificacao(@NonNull View itemView) {
             super(itemView);
 
-            imagemBloqueado = itemView.findViewById(R.id.imageView_icon_block_gamificacao);
-            imagemEmblemaDesbloqueado = itemView.findViewById(R.id.imageView_emblema_gamificacao);
-            nomeAcaoDesbloqueada = itemView.findViewById(R.id.textView_nome_gamificacao_desbloqueada);
+            imagemIconBlock = itemView.findViewById(R.id.imageView_icon_block_gamificacao);
+            imagemConquista = itemView.findViewById(R.id.imageView_emblema_gamificacao);
+            nomeConquista = itemView.findViewById(R.id.textView_nome_gamificacao_desbloqueada);
         }
     }
 
