@@ -25,13 +25,13 @@ public class ContainerActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_classificar:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.layout_container, new ClassificarFragment(), "classificar").commit();
+                    chamaFragment(new ClassificarFragment(), "classificar");
                     return true;
                 case R.id.navigation_perfil:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.layout_container, new PerfilFragment(), "perfil").commit();
+                    chamaFragment(new PerfilFragment(), "perfil");
                     return true;
                 case R.id.navigation_ranking:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.layout_container, new RankingFragment(), "home").commit();
+                    chamaFragment(new RankingFragment(), "home");
                     return true;
             }
             return false;
@@ -45,8 +45,8 @@ public class ContainerActivity extends AppCompatActivity {
 
         navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.layout_container, new RankingFragment()).commit();
+        
+        chamaFragment(new RankingFragment(), "home");
     }
 
     @Override
@@ -64,5 +64,9 @@ public class ContainerActivity extends AppCompatActivity {
         } else {
             navView.setSelectedItemId(R.id.navigation_ranking);
         }
+    }
+
+    public void chamaFragment(Fragment fragment, String tag){
+        getSupportFragmentManager().beginTransaction().replace(R.id.layout_container, fragment, tag).commit();
     }
 }
