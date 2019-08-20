@@ -45,7 +45,7 @@ public class ContainerActivity extends AppCompatActivity {
 
         navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        
+
         chamaFragment(new RankingFragment(), "home");
     }
 
