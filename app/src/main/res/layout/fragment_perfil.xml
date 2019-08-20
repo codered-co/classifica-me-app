@@ -32,26 +32,25 @@
                 tools:ignore="MissingConstraints" />
 
             <TextView
-                android:id="@+id/textView_proximo_nivel_perfil"
+                android:id="@+id/textView_nome_perfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="45dp"
+                android:text="Nome"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="8dp"
-                android:text="Próximo nível"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-
-            <ProgressBar
-                android:id="@+id/progressBar_perfil_user"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="300dp"
-                android:layout_height="20dp"
                 android:layout_gravity="center"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="8dp"
-                android:scrollbarStyle="insideInset" />
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.523"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView_data_perfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data de Nascimento"
+                android:textSize="14sp"
+                android:layout_gravity="center" />
 
 
         </LinearLayout>
@@ -62,7 +61,10 @@
             android:layout_marginTop="200dp"
             android:gravity="center"
             android:orientation="vertical">
-
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerView_perfil_gamificacao"
                 android:layout_width="match_parent"
@@ -70,5 +72,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent" />
+            </ScrollView>
         </LinearLayout>
 </android.support.constraint.ConstraintLayout>
