@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Sem Ranking"
+                android:text="@string/srv_no_rating"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textSize="16dp" />
 
@@ -92,7 +92,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Sem Ranking"
+                android:text="@string/srv_no_rating"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textSize="16dp" />
 
@@ -116,7 +116,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Sem Ranking"
+                android:text="@string/srv_no_rating"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textSize="16dp" />
 
@@ -141,7 +141,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Sem Ranking"
+                android:text="@string/srv_no_rating"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textSize="16dp" />
 
