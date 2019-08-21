@@ -12,7 +12,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.classificame.R;
 import com.example.classificame.adapter.AdapterClassificar;
@@ -20,7 +19,6 @@ import com.example.classificame.model.Empresa;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 
 /**
@@ -36,8 +34,6 @@ public class ClassificarFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_classificar, container, false);
-
-
         return view;
     }
 
@@ -76,6 +72,8 @@ public class ClassificarFragment extends Fragment {
         //Adapter
         adapterClassificar = new AdapterClassificar(empresas, getContext());
         recyclerViewEmpresa.setAdapter(adapterClassificar);
+
+        //Chamar método "CriarEmpresa" para exibir lista se quiser..
 
     }
 

@@ -1,7 +1,7 @@
-#Wed Aug 21 12:42:20 BRT 2019
-base.0=C\:\\Users\\ivanv\\AndroidStudioProjects\\classifica-me-app\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
+#Wed Aug 21 16:12:56 BRT 2019
+base.0=C\:\\Users\\Cliente\\classifica.me-app\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\ivanv\\AndroidStudioProjects\\classifica-me-app\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out
+base.1=C\:\\Users\\Cliente\\classifica.me-app\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out
