@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Aug 21 15:18:45 BRT 2019
+#Wed Aug 21 16:12:56 BRT 2019
 1.base=C\:\\Users\\Cliente\\classifica.me-app\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
 0.baseType=DIRECTORY
 1.baseType=DIRECTORY

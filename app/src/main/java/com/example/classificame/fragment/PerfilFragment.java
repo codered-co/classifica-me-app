@@ -16,9 +16,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.classificame.R;
 import com.example.classificame.activity.AdicionarEmpresaActivity;
+import com.example.classificame.activity.CadastroActivity;
 import com.example.classificame.activity.EditarPerfilActivity;
 import com.example.classificame.activity.MainActivity;
 import com.example.classificame.adapter.AdapterGamificacao;
@@ -73,6 +75,8 @@ public class PerfilFragment extends Fragment {
         imageViewPerfil = view.findViewById(R.id.imageView_perfil_usuario);
         imageViewEmblema = view.findViewById(R.id.imageView_emblema_perfil);
         buttonAdicionarEmpresa = view.findViewById(R.id.button_adicionar_empresa);
+
+        buttonAdicionarEmpresa.setVisibility(View.GONE);
 
         buttonAdicionarEmpresa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -191,26 +195,28 @@ public class PerfilFragment extends Fragment {
         getActivity().finish();
         startActivity(new Intent(getContext(), MainActivity.class));
     }
-
     private void recuperarPerfil() {
         String idUsuario = Base64Helper.codificarBase64(auth.getCurrentUser().getEmail());
         listener = firebase.child("usuario").child(idUsuario).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                usuario = dataSnapshot.getValue(Usuario.class);
+                if (dataSnapshot.getValue() != null){
+                    usuario = dataSnapshot.getValue(Usuario.class);
 
-                String dataNascimento = usuario.getDiaNascimento() + "/" +
-                        switchMes(usuario.getMesNascimento()) + "/" +
-                        usuario.getAnoNascimento();
-                String local = usuario.getCidade() + " - " + usuario.getEstado();
+                    String dataNascimento = usuario.getDiaNascimento() + "/" +
+                            switchMes(usuario.getMesNascimento()) + "/" +
+                            usuario.getAnoNascimento();
 
-                textViewNome.setText(usuario.getNome());
-                textViewDataNascimento.setText(dataNascimento);
+                    textViewNome.setText(usuario.getNome());
+                    textViewDataNascimento.setText(dataNascimento);
 
-               if (usuario.isAdmin()){
-                    buttonAdicionarEmpresa.setVisibility(View.VISIBLE);
+                    if (usuario.isAdmin()){
+                        buttonAdicionarEmpresa.setVisibility(View.VISIBLE);
+                    }
                 } else {
-                    buttonAdicionarEmpresa.setVisibility(View.GONE);
+                    Toast.makeText(getContext(), "Perfil não encontrado. Por favor, cadastre seu perfil.", Toast.LENGTH_SHORT).show();
+                    getActivity().finish();
+                    startActivity(new Intent(getContext(), CadastroActivity.class));
                 }
             }
 
@@ -223,7 +229,7 @@ public class PerfilFragment extends Fragment {
 
     private String switchMes(String mes) {
         String numeroMes = "";
-        switch (mes){
+        switch (mes.toLowerCase()){
             case "janeiro":
                 numeroMes = "01";
                 break;

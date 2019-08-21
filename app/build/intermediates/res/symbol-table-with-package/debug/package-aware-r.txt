@@ -1215,10 +1215,8 @@ id buttonPanel
 id button_adicionar_empresa
 id button_cadastrar
 id button_entrar
-id button_enviar_sugestao
 id button_facebook
 id button_google
-id button_login_email
 id button_salvar_empresa
 id button_submit_valor
 id cancel_action
@@ -1381,13 +1379,9 @@ id progress_bar
 id progress_circular
 id progress_horizontal
 id radio
-id radioButton_Privada
-id radioButton_Publica
 id radioButton_feminino
 id radioButton_masculino
 id radioButton_null
-id radioButton_null2
-id radioGroup_Sugestao
 id radioGroup_sexo
 id recycleView_ranking_empresas
 id recyclerViewClassificar
@@ -1431,9 +1425,7 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
-id spinner_categoria
 id spinner_dia
-id spinner_local
 id spinner_mes
 id spinner_paises
 id split_action_bar
@@ -1454,7 +1446,6 @@ id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id text
 id text2
-id textInputLayout1
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
@@ -1577,9 +1568,7 @@ layout activity_classificar
 layout activity_container
 layout activity_descricao_conquista
 layout activity_editar_perfil
-layout activity_login
 layout activity_main
-layout activity_sugerir_empresa
 layout adapter_classificar
 layout adapter_gamificacao
 layout adapter_ranking

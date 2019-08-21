@@ -420,10 +420,6 @@
         "source": "C:\\Users\\Cliente\\.gradle\\caches\\transforms-2\\files-2.1\\87c61a16a7eed5fb60b6cc6f1402e03f\\res\\color\\abc_search_url_text.xml"
     },
     {
-        "merged": "C:\\Users\\Cliente\\classifica.me-app\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sugerir_empresa.xml.flat",
-        "source": "C:\\Users\\Cliente\\classifica.me-app\\app\\src\\main\\res\\layout\\activity_sugerir_empresa.xml"
-    },
-    {
         "merged": "C:\\Users\\Cliente\\classifica.me-app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Cliente\\classifica.me-app\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
@@ -818,10 +814,6 @@
     {
         "merged": "C:\\Users\\Cliente\\classifica.me-app\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_btn_colored_text_material.xml.flat",
         "source": "C:\\Users\\Cliente\\.gradle\\caches\\transforms-2\\files-2.1\\87c61a16a7eed5fb60b6cc6f1402e03f\\res\\color-v23\\abc_btn_colored_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Cliente\\classifica.me-app\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
-        "source": "C:\\Users\\Cliente\\classifica.me-app\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
         "merged": "C:\\Users\\Cliente\\classifica.me-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
