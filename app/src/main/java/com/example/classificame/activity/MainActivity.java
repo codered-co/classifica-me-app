@@ -43,7 +43,6 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
@@ -60,8 +59,9 @@ public class MainActivity extends AppCompatActivity {
     private Usuario usuario;
 
     private FirebaseAuth auth;
-    private DatabaseReference firebase;
     private ValueEventListener listener;
+
+    private int contador = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,9 +72,8 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         auth = ConfigFirebase.getAuth();
-        firebase = ConfigFirebase.getDatabase();
-        //auth.signOut();
-        //LoginManager.getInstance().logOut();
+        /*LoginManager.getInstance().logOut();
+        auth.signOut();*/
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -96,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //loginButton.setLoginText("Entrar com o Facebook");
         callbackManager = CallbackManager.Factory.create();
         buttonFacebook.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -121,8 +119,8 @@ public class MainActivity extends AppCompatActivity {
                 String email = editTextEmail.getText().toString();
                 String senha = editTextSenha.getText().toString().trim();
 
-                if (!email.isEmpty()){
-                    if (!senha.isEmpty()){
+                if (!email.isEmpty()) {
+                    if (!senha.isEmpty()) {
                         esconderTeclado();
 
                         usuario = new Usuario();
@@ -148,8 +146,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        if (listener != null) {
-            firebase.removeEventListener(listener);
+        if (listener != null){
+            ConfigFirebase.getDatabase().removeEventListener(listener);
         }
     }
 
@@ -176,18 +174,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void validarLogin(){
+    private void validarLogin() {
         auth.signInWithEmailAndPassword(usuario.getEmail(), usuario.getSenha()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
+                if (task.isSuccessful()) {
                     try {
                         Thread.sleep(800);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    startActivity(new Intent(MainActivity.this, ContainerActivity.class));
-                    finish();
+                    verificarPerfil();
                 } else {
                     String excecao = "";
                     try {
@@ -216,8 +213,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.d("Facebook: ", "signInWithCredential:success");
-                            startActivity(new Intent(MainActivity.this, ContainerActivity.class));
-                            finish();
+                            verificarPerfil();
                         } else {
                             Log.w("FacebookLogin: ", "Login com Facebook falhou.", task.getException());
                             Toast.makeText(MainActivity.this, "Falha na autenticação", Toast.LENGTH_SHORT).show();
@@ -241,8 +237,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.d("GoogleSignIn: ", "signInWithCredential:success");
-                            startActivity(new Intent(MainActivity.this, ContainerActivity.class));
-                            finish();
+                            verificarPerfil();
                         } else {
                             Log.w("GoogleSignIn: ", "Cadastro com Google falhou", task.getException());
                             Toast.makeText(MainActivity.this, "Falha na autenticação.", Toast.LENGTH_SHORT).show();
@@ -251,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    private void esconderTeclado(){
+    private void esconderTeclado() {
         InputMethodManager inputManager = (InputMethodManager) MainActivity.this.getSystemService(Context.INPUT_METHOD_SERVICE);
         inputManager.hideSoftInputFromWindow(buttonLogin.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
     }
@@ -261,7 +256,37 @@ public class MainActivity extends AppCompatActivity {
         campo.requestFocus();
     }
 
-    public void cadastrar(View view) {
+    public void cadastrarUsuario(View view) {
         startActivity(new Intent(MainActivity.this, CadastroActivity.class));
+        finish();
+    }
+
+    private void verificarPerfil(){
+        listener = ConfigFirebase.getDatabase().child("usuario")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (contador == 0) {
+                            String idUsuario = "";
+                            if (auth.getCurrentUser().getEmail() != null) {
+                                idUsuario = Base64Helper.codificarBase64(auth.getCurrentUser().getEmail());
+                            }
+
+                            if (!dataSnapshot.hasChild(idUsuario) || idUsuario.equals("")) {
+                                finish();
+                                startActivity(new Intent(MainActivity.this, CadastroActivity.class));
+                            } else {
+                                finish();
+                                startActivity(new Intent(MainActivity.this, ContainerActivity.class));
+                            }
+                            contador = 1;
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
     }
 }

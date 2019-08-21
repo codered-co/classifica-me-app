@@ -40,7 +40,6 @@
         <activity android:name=".activity.EditarPerfilActivity" />
         <activity android:name=".activity.CadastroActivity" />
         <activity android:name=".activity.ClassificandoActivity" />
-        <activity android:name=".activity.SugerirEmpresaActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

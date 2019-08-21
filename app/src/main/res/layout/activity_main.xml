@@ -84,7 +84,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="cadastrar"
+                    android:onClick="cadastrarUsuario"
                     android:text=" Cadastre-se."
                     android:textColor="@android:color/black"
                     android:textStyle="bold" />
@@ -107,8 +107,8 @@
                 android:layout_marginBottom="8dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"/>
+                android:paddingLeft="11dp"
+                android:paddingRight="11dp"/>
 
             <com.google.android.gms.common.SignInButton
                 android:id="@+id/button_google"

@@ -54,7 +54,6 @@
         <activity android:name="com.example.classificame.activity.EditarPerfilActivity" />
         <activity android:name="com.example.classificame.activity.CadastroActivity" />
         <activity android:name="com.example.classificame.activity.ClassificandoActivity" />
-        <activity android:name="com.example.classificame.activity.SugerirEmpresaActivity" />
         <activity android:name="com.example.classificame.activity.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

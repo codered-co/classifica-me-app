@@ -36,7 +36,7 @@ import java.util.Locale;
 public class CadastroActivity extends AppCompatActivity {
 
     private TextInputEditText editTextNome, editTextEmail, editTextSenha, editTextConfirmarSenha,
-            editTextAno,editTextCidade, editTextEstado, editTextTelefone;
+            editTextAno, editTextCidade, editTextEstado, editTextTelefone;
     private RadioGroup radioGroup;
     private RadioButton radioButtonSelecionado, radioButtonNull;
     private Spinner spinnerDia, spinnerMes, spinnerPaises;
@@ -48,7 +48,6 @@ public class CadastroActivity extends AppCompatActivity {
     private Usuario usuario;
 
     private FirebaseAuth auth;
-    private FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +97,7 @@ public class CadastroActivity extends AppCompatActivity {
                 String confirmarSenha = editTextConfirmarSenha.getText().toString().trim();
                 String telefone = editTextTelefone.getText().toString();
                 String diaNascimento = spinnerDia.getSelectedItem().toString();
-                String mesNascimento = spinnerMes.getSelectedItem().toString().toLowerCase();
+                String mesNascimento = spinnerMes.getSelectedItem().toString();
                 String anoNascimento = editTextAno.getText().toString();
                 String cidade = editTextCidade.getText().toString();
                 String estado = editTextEstado.getText().toString().toUpperCase();
@@ -108,60 +107,70 @@ public class CadastroActivity extends AppCompatActivity {
                 radioButtonSelecionado = findViewById(id);
                 String sexo = radioButtonSelecionado.getText().toString();
 
-                if (auth.getCurrentUser() != null && auth.getCurrentUser().getEmail() == null) {
-                    auth.getCurrentUser().updateEmail(email);
-                }
-
                 if (!nome.isEmpty()) {
                     if (!email.isEmpty()) {
-                        if (!senha.isEmpty()|| auth.getCurrentUser() != null) {
-                            if (!confirmarSenha.isEmpty()|| auth.getCurrentUser() != null) {
-                                if (!anoNascimento.isEmpty()) {
-                                    if (!cidade.isEmpty()) {
-                                        if (!estado.isEmpty()) {
-                                            if (!pais.isEmpty()) {
-                                                if (!sexo.equals("")) {
-                                                    if (confirmarSenha.equals(senha) || auth.getCurrentUser() != null) {
-                                                        if (!telefone.isEmpty()) {
-                                                            esconderTeclado();
+                        if (!senha.isEmpty() || auth.getCurrentUser() != null) {
+                            if (!confirmarSenha.isEmpty() || auth.getCurrentUser() != null) {
+                                if (confirmarSenha.equals(senha) || auth.getCurrentUser() != null) {
+                                    if (!telefone.isEmpty()) {
+                                        if (!sexo.equals("")) {
+                                            if (!diaNascimento.equals("Dia")) {
+                                                if (!mesNascimento.equals("Mês")) {
+                                                    if (!anoNascimento.isEmpty()) {
+                                                        if (!cidade.isEmpty()) {
+                                                            if (!estado.isEmpty()) {
+                                                                esconderTeclado();
 
-                                                            usuario = new Usuario();
-                                                            usuario.setNome(nome);
-                                                            usuario.setEmail(email);
-                                                            usuario.setSenha(senha);
-                                                            usuario.setDiaNascimento(diaNascimento);
-                                                            usuario.setMesNascimento(mesNascimento);
-                                                            usuario.setAnoNascimento(anoNascimento);
-                                                            usuario.setSexo(sexo);
-                                                            usuario.setCidade(cidade);
-                                                            usuario.setEstado(estado);
-                                                            usuario.setPais(pais);
-                                                            usuario.setTelefone(telefone);
-                                                            usuario.setAdmin(false);
+                                                                usuario = new Usuario();
+                                                                usuario.setNome(nome);
+                                                                usuario.setEmail(email);
+                                                                usuario.setSenha(senha);
+                                                                usuario.setDiaNascimento(diaNascimento);
+                                                                usuario.setMesNascimento(mesNascimento);
+                                                                usuario.setAnoNascimento(anoNascimento);
+                                                                usuario.setSexo(sexo);
+                                                                usuario.setCidade(cidade);
+                                                                usuario.setEstado(estado);
+                                                                usuario.setPais(pais);
+                                                                usuario.setTelefone(telefone);
+                                                                usuario.setAdmin(false);
 
-                                                            cadastrarUsuario();
+                                                                if (auth.getCurrentUser() != null && auth.getCurrentUser().getEmail() == null) {
+                                                                    auth.getCurrentUser().updateEmail(email);
+                                                                }
+
+                                                                cadastrarUsuario();
+                                                            } else {
+                                                                campoVazio(editTextEstado);
+                                                            }
                                                         } else {
-                                                            campoVazio(editTextTelefone);
+                                                            campoVazio(editTextCidade);
                                                         }
                                                     } else {
-                                                        editTextSenha.setError("Senhas não conferem");
-                                                        editTextConfirmarSenha.setError("Senhas não conferem");
-                                                        editTextSenha.requestFocus();
+                                                        campoVazio(editTextAno);
                                                     }
                                                 } else {
-                                                    Toast.makeText(CadastroActivity.this, "Selecione um Sexo.", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(CadastroActivity.this,
+                                                            "Selecione um Mês válido.",
+                                                            Toast.LENGTH_SHORT).show();
                                                 }
                                             } else {
-                                                Toast.makeText(CadastroActivity.this, "Selecione um País", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(CadastroActivity.this,
+                                                        "Selecione um Dia válido",
+                                                        Toast.LENGTH_SHORT).show();
                                             }
                                         } else {
-                                            campoVazio(editTextEstado);
+                                            Toast.makeText(CadastroActivity.this,
+                                                    "Selecione um Sexo.",
+                                                    Toast.LENGTH_SHORT).show();
                                         }
                                     } else {
-                                        campoVazio(editTextCidade);
+                                        campoVazio(editTextTelefone);
                                     }
                                 } else {
-                                    campoVazio(editTextAno);
+                                    editTextSenha.setError("Senhas não conferem");
+                                    editTextConfirmarSenha.setError("Senhas não conferem");
+                                    editTextSenha.requestFocus();
                                 }
                             } else {
                                 campoVazio(editTextConfirmarSenha);
@@ -204,7 +213,7 @@ public class CadastroActivity extends AppCompatActivity {
         spinnerPaises.setSelection(paisesAdapter.getPosition("Brasil"));
     }
 
-    private void esconderTeclado(){
+    private void esconderTeclado() {
         InputMethodManager inputManager = (InputMethodManager) CadastroActivity.this.getSystemService(Context.INPUT_METHOD_SERVICE);
         inputManager.hideSoftInputFromWindow(buttonCadastrar.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
     }
@@ -252,7 +261,7 @@ public class CadastroActivity extends AppCompatActivity {
         }
     }
 
-    private void salvarUsuario(Usuario usuario){
+    private void salvarUsuario(Usuario usuario) {
         String idUsuario = Base64Helper.codificarBase64(usuario.getEmail());
         usuario.setId(idUsuario);
         usuario.salvarUsuario();
