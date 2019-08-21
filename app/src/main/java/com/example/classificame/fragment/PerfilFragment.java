@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.classificame.R;
 import com.example.classificame.activity.AdicionarEmpresaActivity;
+import com.example.classificame.activity.CadastroActivity;
 import com.example.classificame.activity.EditarPerfilActivity;
 import com.example.classificame.activity.MainActivity;
 import com.example.classificame.config.ConfigFirebase;
@@ -67,6 +68,8 @@ public class PerfilFragment extends Fragment {
         imageViewPerfil = view.findViewById(R.id.imageView_perfil_usuario);
         imageViewEmblema = view.findViewById(R.id.imageView_emblema_perfil);
         buttonAdicionarEmpresa = view.findViewById(R.id.button_adicionar_empresa);
+
+        buttonAdicionarEmpresa.setVisibility(View.GONE);
 
         buttonAdicionarEmpresa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,21 +145,25 @@ public class PerfilFragment extends Fragment {
         listener = firebase.child("usuario").child(idUsuario).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                usuario = dataSnapshot.getValue(Usuario.class);
+                if (dataSnapshot.getValue() != null){
+                    usuario = dataSnapshot.getValue(Usuario.class);
 
-                String dataNascimento = usuario.getDiaNascimento() + "/" +
-                        switchMes(usuario.getMesNascimento()) + "/" +
-                        usuario.getAnoNascimento();
-                String local = usuario.getCidade() + " - " + usuario.getEstado();
+                    String dataNascimento = usuario.getDiaNascimento() + "/" +
+                            switchMes(usuario.getMesNascimento()) + "/" +
+                            usuario.getAnoNascimento();
+                    String local = usuario.getCidade() + " - " + usuario.getEstado();
 
-                textViewNome.setText(usuario.getNome());
-                textViewDataNascimento.setText(dataNascimento);
-                textViewCidade.setText(local);
+                    textViewNome.setText(usuario.getNome());
+                    textViewDataNascimento.setText(dataNascimento);
+                    textViewCidade.setText(local);
 
-                if (usuario.isAdmin()){
-                    buttonAdicionarEmpresa.setVisibility(View.VISIBLE);
+                    if (usuario.isAdmin()){
+                        buttonAdicionarEmpresa.setVisibility(View.VISIBLE);
+                    }
                 } else {
-                    buttonAdicionarEmpresa.setVisibility(View.GONE);
+                    Toast.makeText(getContext(), "Perfil não encontrado. Por favor, cadastre seu perfil.", Toast.LENGTH_SHORT).show();
+                    getActivity().finish();
+                    startActivity(new Intent(getContext(), CadastroActivity.class));
                 }
             }
 
