@@ -16,7 +16,6 @@ public class Gamificacao {
 
     }
 
-
     public String getTituloGamificacao() {
         return tituloUsuarioGamificacao;
     }

@@ -39,7 +39,7 @@ import java.util.ArrayList;
 
 public class PerfilFragment extends Fragment {
 
-    private TextView textViewNome, textViewDataNascimento, tituloUsuarioGamificacao;
+    private TextView textViewNome, textViewDataNascimento, textViewTituloUsuarioGamificacao;
 
     private ImageView imageViewPerfil, imageViewEmblema;
 
@@ -63,12 +63,10 @@ public class PerfilFragment extends Fragment {
         auth = ConfigFirebase.getAuth();
         firebase = ConfigFirebase.getDatabase();
 
+        textViewTituloUsuarioGamificacao = view.findViewById(R.id.textView_titulo_usuario_perfil);
         textViewNome = view.findViewById(R.id.textView_nome_perfil);
-        // textViewCidade = view.findViewById(R.id.textView_cidade_perfil);
-        // textViewTipoConsumidor = view.findViewById(R.id.textView_consumidor_perfil);
         textViewDataNascimento = view.findViewById(R.id.textView_data_perfil);
 
-        tituloUsuarioGamificacao = view.findViewById(R.id.textView_titulo_usuario_perfil);
         imageViewPerfil = view.findViewById(R.id.imageView_perfil_usuario);
         imageViewEmblema = view.findViewById(R.id.imageView_emblema_perfil_usuario);
 
@@ -79,49 +77,49 @@ public class PerfilFragment extends Fragment {
         adapterGamificacao = new AdapterGamificacao(gamificacoes, getContext());
         recyclerViewGamificacao.setAdapter(adapterGamificacao);
 
-        alimentaGamificacao();
-
+        criaGamificacao();
         return view;
     }
-    public void alimentaGamificacao() {
+
+    public void criaGamificacao() {
 
         Gamificacao gamificacao1 = new Gamificacao();
-        gamificacao1.setNomeConquista("First vote");
+        gamificacao1.setNomeConquista("Primeiro voto");
         gamificacao1.setImagemConquista(R.drawable.ic_votefirst);
         gamificacao1.setImagemDesbloquear(R.drawable.ic_lock);
         gamificacoes.add(gamificacao1);
 
         Gamificacao gamificacao2 = new Gamificacao();
-        gamificacao2.setNomeConquista("Engaged Consumer");
+        gamificacao2.setNomeConquista("Consumidor Engajado");
         gamificacao2.setImagemConquista(R.drawable.ic_engagedconsumer);
         gamificacao2.setImagemDesbloquear(R.drawable.ic_lock);
         gamificacoes.add(gamificacao2);
 
         Gamificacao gamificacao3 = new Gamificacao();
-        gamificacao3.setNomeConquista("Communicate");
+        gamificacao3.setNomeConquista("Comunicador");
         gamificacao3.setImagemConquista(R.drawable.ic_communicate);
         gamificacao3.setImagemDesbloquear(R.drawable.ic_lock);
         gamificacoes.add(gamificacao3);
 
         Gamificacao gamificacao4 = new Gamificacao();
-        gamificacao4.setNomeConquista("Knowing the market");
+        gamificacao4.setNomeConquista("Conhecendo o mercado");
         gamificacao4.setImagemConquista(R.drawable.ic_knowingthemarket);
         gamificacao4.setImagemDesbloquear(R.drawable.ic_block);
         gamificacoes.add(gamificacao4);
 
         Gamificacao gamificacao5 = new Gamificacao();
-        gamificacao5.setNomeConquista("Buy");
+        gamificacao5.setNomeConquista("Compra consciente");
         gamificacao5.setImagemConquista(R.drawable.ic_buy);
         gamificacao5.setImagemDesbloquear(R.drawable.ic_block);
         gamificacoes.add(gamificacao5);
 
         Gamificacao gamificacao6 = new Gamificacao();
-        gamificacao6.setNomeConquista("Business");
+        gamificacao6.setNomeConquista("Campeão");
         gamificacao6.setImagemConquista(R.drawable.ic_champion);
         gamificacao6.setImagemDesbloquear(R.drawable.ic_block);
         gamificacoes.add(gamificacao6);
 
-        tituloUsuarioGamificacao.setText("Communicater");
+        textViewTituloUsuarioGamificacao.setText("Comunicador");
     }
 
     @Override
@@ -197,7 +195,6 @@ public class PerfilFragment extends Fragment {
 
                 textViewNome.setText(usuario.getNome());
                 textViewDataNascimento.setText(dataNascimento);
-                //textViewCidade.setText(local);
             }
 
             @Override
