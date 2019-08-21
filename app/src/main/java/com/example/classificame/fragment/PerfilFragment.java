@@ -169,7 +169,7 @@ public class PerfilFragment extends Fragment {
 
     private String switchMes(String mes) {
         String numeroMes = "";
-        switch (mes){
+        switch (mes.toLowerCase()){
             case "janeiro":
                 numeroMes = "01";
                 break;

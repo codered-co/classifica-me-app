@@ -51,7 +51,6 @@
         <activity
             android:name="com.example.classificame.activity.ContainerActivity"
             android:label="@string/title_activity_app" />
-        <activity android:name="com.example.classificame.activity.LoginActivity" />
         <activity android:name="com.example.classificame.activity.EditarPerfilActivity" />
         <activity android:name="com.example.classificame.activity.CadastroActivity" />
         <activity android:name="com.example.classificame.activity.ClassificandoActivity" />
@@ -191,11 +190,6 @@
                 <action android:name="com.android.vending.INSTALL_REFERRER" />
             </intent-filter>
         </receiver>
-
-        <provider
-            android:name="com.android.tools.ir.server.InstantRunContentProvider"
-            android:authorities="com.example.classificame.com.android.tools.ir.server.InstantRunContentProvider"
-            android:multiprocess="true" />
     </application>
 
 </manifest>

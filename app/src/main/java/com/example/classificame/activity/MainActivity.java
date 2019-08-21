@@ -1,19 +1,24 @@
 package com.example.classificame.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.classificame.R;
 import com.example.classificame.config.ConfigFirebase;
 import com.example.classificame.helper.Base64Helper;
+import com.example.classificame.model.Usuario;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -33,6 +38,8 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -43,11 +50,14 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int RC_SIGN_IN = 9001;
 
-    private Button buttonCadastrar, buttonLoginEmail;
+    private TextInputEditText editTextEmail, editTextSenha;
+    private Button buttonLogin;
     private LoginButton buttonFacebook;
     private SignInButton buttonGoogle;
     private CallbackManager callbackManager;
     private GoogleSignInClient mGoogleSignInClient;
+
+    private Usuario usuario;
 
     private FirebaseAuth auth;
     private DatabaseReference firebase;
@@ -61,11 +71,10 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-        callbackManager = CallbackManager.Factory.create();
         auth = ConfigFirebase.getAuth();
+        firebase = ConfigFirebase.getDatabase();
         //auth.signOut();
         //LoginManager.getInstance().logOut();
-        firebase = ConfigFirebase.getDatabase();
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -73,8 +82,9 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        buttonCadastrar = findViewById(R.id.button_cadastrar);
-        buttonLoginEmail = findViewById(R.id.button_login_email);
+        editTextEmail = findViewById(R.id.editText_email);
+        editTextSenha = findViewById(R.id.editText_senha);
+        buttonLogin = findViewById(R.id.button_entrar);
         buttonFacebook = findViewById(R.id.button_facebook);
         buttonGoogle = findViewById(R.id.button_google);
 
@@ -87,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //loginButton.setLoginText("Entrar com o Facebook");
+        callbackManager = CallbackManager.Factory.create();
         buttonFacebook.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -104,17 +115,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonCadastrar.setOnClickListener(new View.OnClickListener() {
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, CadastroActivity.class));
-            }
-        });
+                String email = editTextEmail.getText().toString();
+                String senha = editTextSenha.getText().toString().trim();
 
-        buttonLoginEmail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                if (!email.isEmpty()){
+                    if (!senha.isEmpty()){
+                        esconderTeclado();
+
+                        usuario = new Usuario();
+                        usuario.setEmail(email);
+                        usuario.setSenha(senha);
+                        validarLogin();
+                    } else {
+                        campoVazio(editTextSenha);
+                    }
+                } else {
+                    campoVazio(editTextEmail);
+                }
             }
         });
     }
@@ -156,27 +176,32 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void verificarPerfil() {
-        listener = firebase.child("usuario").addValueEventListener(new ValueEventListener() {
+    private void validarLogin(){
+        auth.signInWithEmailAndPassword(usuario.getEmail(), usuario.getSenha()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String idUsuario = "";
-                if (auth.getCurrentUser().getEmail() != null) {
-                    idUsuario = Base64Helper.codificarBase64(auth.getCurrentUser().getEmail());
-                }
-
-                if (!idUsuario.isEmpty() && dataSnapshot.hasChild(idUsuario)) {
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    try {
+                        Thread.sleep(800);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     startActivity(new Intent(MainActivity.this, ContainerActivity.class));
                     finish();
                 } else {
-                    startActivity(new Intent(MainActivity.this, CadastroActivity.class));
-                    finish();
+                    String excecao = "";
+                    try {
+                        throw task.getException();
+                    } catch (FirebaseAuthInvalidCredentialsException e) {
+                        excecao = "Email ou senha inválidos";
+                    } catch (FirebaseAuthInvalidUserException e) {
+                        excecao = "Usuario nao está cadastrado";
+                    } catch (Exception e) {
+                        excecao = "Erro";
+                        e.printStackTrace();
+                    }
+                    Toast.makeText(MainActivity.this, excecao, Toast.LENGTH_SHORT).show();
                 }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }
@@ -191,7 +216,8 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.d("Facebook: ", "signInWithCredential:success");
-                            verificarPerfil();
+                            startActivity(new Intent(MainActivity.this, ContainerActivity.class));
+                            finish();
                         } else {
                             Log.w("FacebookLogin: ", "Login com Facebook falhou.", task.getException());
                             Toast.makeText(MainActivity.this, "Falha na autenticação", Toast.LENGTH_SHORT).show();
@@ -215,12 +241,27 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.d("GoogleSignIn: ", "signInWithCredential:success");
-                            verificarPerfil();
+                            startActivity(new Intent(MainActivity.this, ContainerActivity.class));
+                            finish();
                         } else {
                             Log.w("GoogleSignIn: ", "Cadastro com Google falhou", task.getException());
                             Toast.makeText(MainActivity.this, "Falha na autenticação.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+    }
+
+    private void esconderTeclado(){
+        InputMethodManager inputManager = (InputMethodManager) MainActivity.this.getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputManager.hideSoftInputFromWindow(buttonLogin.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+    }
+
+    private void campoVazio(EditText campo) {
+        campo.setError("Preencha este campo.");
+        campo.requestFocus();
+    }
+
+    public void cadastrar(View view) {
+        startActivity(new Intent(MainActivity.this, CadastroActivity.class));
     }
 }

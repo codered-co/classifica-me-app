@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-54:12
+ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-53:12
+INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-53:12
+INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-53:12
+INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-53:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\ivanv\.gradle\caches\transforms-2\files-2.1\e223175f434aa4ac568e0de4ff56fd20\AndroidManifest.xml:17:1-24:12
 MERGED from [com.facebook.android:facebook-login:5.4.0] C:\Users\ivanv\.gradle\caches\transforms-2\files-2.1\87be9306fde587a522d8e9809703561e\AndroidManifest.xml:21:1-31:12
 MERGED from [app.youkai.simpleratingview:library:1.0.0] C:\Users\ivanv\.gradle\caches\transforms-2\files-2.1\5fb0a96a903af9cc33980b5086b5a414\AndroidManifest.xml:2:1-13:12
@@ -68,20 +68,20 @@ MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\ivanv\.gradle\cache
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\ivanv\.gradle\caches\transforms-2\files-2.1\01fed1054997b3adc79428a9036cddd8\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\ivanv\.gradle\caches\transforms-2\files-2.1\2f199878d608e2138a6bb5b10d3a54b8\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\ivanv\.gradle\caches\transforms-2\files-2.1\265bfe78ec8f443729ec73c0bc0048fe\AndroidManifest.xml:2:1-7:12
-INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-54:12
-INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-53:12
+INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-53:12
+INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-53:12
 	package
 		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:3:5-39
 		INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-54:12
+		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-53:12
 		INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-54:12
+		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:1-53:12
 		INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:2:11-69
@@ -118,7 +118,7 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] C:
 	android:name
 		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:6:22-76
 application
-ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:8:5-52:19
+ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:8:5-51:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\ivanv\.gradle\caches\transforms-2\files-2.1\e223175f434aa4ac568e0de4ff56fd20\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\ivanv\.gradle\caches\transforms-2\files-2.1\e223175f434aa4ac568e0de4ff56fd20\AndroidManifest.xml:22:5-20
 MERGED from [com.facebook.android:facebook-login:5.4.0] C:\Users\ivanv\.gradle\caches\transforms-2\files-2.1\87be9306fde587a522d8e9809703561e\AndroidManifest.xml:28:5-29:19
@@ -247,40 +247,36 @@ ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\A
 		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:39:13-55
 	android:name
 		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:38:13-55
-activity#com.example.classificame.activity.LoginActivity
-ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:40:9-60
-	android:name
-		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:40:19-57
 activity#com.example.classificame.activity.EditarPerfilActivity
-ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:41:9-67
+ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:40:9-67
 	android:name
-		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:41:19-64
+		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:40:19-64
 activity#com.example.classificame.activity.CadastroActivity
-ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:42:9-63
+ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:41:9-63
 	android:name
-		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:42:19-60
+		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:41:19-60
 activity#com.example.classificame.activity.ClassificandoActivity
-ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:43:9-68
+ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:42:9-68
 	android:name
-		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:43:19-65
+		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:42:19-65
 activity#com.example.classificame.activity.SugerirEmpresaActivity
-ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:44:9-69
+ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:43:9-69
 	android:name
-		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:44:19-66
+		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:43:19-66
 activity#com.example.classificame.activity.MainActivity
-ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:45:9-51:20
+ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:44:9-50:20
 	android:name
-		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:45:19-56
+		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:44:19-56
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:46:13-50:29
+ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:45:13-49:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:47:17-69
+ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:46:17-69
 	android:name
-		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:47:25-66
+		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:46:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:49:17-77
+ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:48:17-77
 	android:name
-		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:49:27-74
+		ADDED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml:48:27-74
 uses-sdk
 INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\ivanv\AndroidStudioProjects\classifica-me-app\app\src\main\AndroidManifest.xml

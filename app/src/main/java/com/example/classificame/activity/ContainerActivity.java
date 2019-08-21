@@ -1,6 +1,7 @@
 package com.example.classificame.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
@@ -11,11 +12,22 @@ import android.support.annotation.NonNull;
 import android.view.MenuItem;
 
 import com.example.classificame.R;
+import com.example.classificame.config.ConfigFirebase;
 import com.example.classificame.fragment.ClassificarFragment;
 import com.example.classificame.fragment.PerfilFragment;
 import com.example.classificame.fragment.RankingFragment;
+import com.example.classificame.helper.Base64Helper;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 public class ContainerActivity extends AppCompatActivity {
+
+    private ValueEventListener listener;
+    private DatabaseReference firebase;
+    private FirebaseAuth auth;
 
     private BottomNavigationView navView;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -47,6 +59,9 @@ public class ContainerActivity extends AppCompatActivity {
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.layout_container, new RankingFragment()).commit();
+
+        auth = ConfigFirebase.getAuth();
+        firebase = ConfigFirebase.getDatabase();
     }
 
     @Override
@@ -64,5 +79,41 @@ public class ContainerActivity extends AppCompatActivity {
         } else {
             navView.setSelectedItemId(R.id.navigation_ranking);
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        verificarPerfil();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (listener != null) {
+            firebase.removeEventListener(listener);
+        }
+    }
+
+    private void verificarPerfil() {
+        listener = firebase.child("usuario").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String idUsuario = "";
+                if (auth.getCurrentUser().getEmail() != null) {
+                    idUsuario = Base64Helper.codificarBase64(auth.getCurrentUser().getEmail());
+                }
+
+                if (!dataSnapshot.hasChild(idUsuario)) {
+                    startActivity(new Intent(ContainerActivity.this, CadastroActivity.class));
+                    finish();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }

@@ -48,6 +48,7 @@ public class CadastroActivity extends AppCompatActivity {
     private Usuario usuario;
 
     private FirebaseAuth auth;
+    private FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,7 +108,7 @@ public class CadastroActivity extends AppCompatActivity {
                 radioButtonSelecionado = findViewById(id);
                 String sexo = radioButtonSelecionado.getText().toString();
 
-                if (auth.getCurrentUser().getEmail() == null) {
+                if (auth.getCurrentUser() != null && auth.getCurrentUser().getEmail() == null) {
                     auth.getCurrentUser().updateEmail(email);
                 }
 
@@ -120,7 +121,7 @@ public class CadastroActivity extends AppCompatActivity {
                                         if (!estado.isEmpty()) {
                                             if (!pais.isEmpty()) {
                                                 if (!sexo.equals("")) {
-                                                    if (confirmarSenha.equals(senha)) {
+                                                    if (confirmarSenha.equals(senha) || auth.getCurrentUser() != null) {
                                                         if (!telefone.isEmpty()) {
                                                             esconderTeclado();
 

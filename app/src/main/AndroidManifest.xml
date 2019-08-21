@@ -37,7 +37,6 @@
         <activity
             android:name=".activity.ContainerActivity"
             android:label="@string/title_activity_app" />
-        <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.EditarPerfilActivity" />
         <activity android:name=".activity.CadastroActivity" />
         <activity android:name=".activity.ClassificandoActivity" />
