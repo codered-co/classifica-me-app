@@ -72,8 +72,8 @@ public class ClassificarFragment extends Fragment {
         //Adapter
         adapterClassificar = new AdapterClassificar(empresas, getContext());
         recyclerViewEmpresa.setAdapter(adapterClassificar);
-        criarEmpresa();
 
+        //Chamar método "CriarEmpresa" para exibir lista se quiser..
     }
 
     @Override

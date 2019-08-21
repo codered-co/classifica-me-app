@@ -68,7 +68,7 @@ public class PerfilFragment extends Fragment {
         textViewDataNascimento = view.findViewById(R.id.textView_data_perfil);
 
         imageViewPerfil = view.findViewById(R.id.imageView_perfil_usuario);
-        imageViewEmblema = view.findViewById(R.id.imageView_emblema_perfil_usuario);
+        imageViewEmblema = view.findViewById(R.id.imageView_emblema_perfil);
 
         //RecyclerView
         recyclerViewGamificacao = view.findViewById(R.id.recyclerView_perfil_gamificacao);
