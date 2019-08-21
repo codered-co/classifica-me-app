@@ -13,10 +13,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.classificame.R;
+import com.example.classificame.activity.AdicionarEmpresaActivity;
 import com.example.classificame.activity.EditarPerfilActivity;
 import com.example.classificame.activity.MainActivity;
 import com.example.classificame.adapter.AdapterGamificacao;
@@ -42,6 +44,7 @@ public class PerfilFragment extends Fragment {
     private TextView textViewNome, textViewDataNascimento, textViewTituloUsuarioGamificacao;
 
     private ImageView imageViewPerfil, imageViewEmblema;
+    private Button buttonAdicionarEmpresa;
 
     private RecyclerView recyclerViewGamificacao;
     private ArrayList<Gamificacao> gamificacoes = new ArrayList<>();
@@ -69,6 +72,14 @@ public class PerfilFragment extends Fragment {
 
         imageViewPerfil = view.findViewById(R.id.imageView_perfil_usuario);
         imageViewEmblema = view.findViewById(R.id.imageView_emblema_perfil);
+        buttonAdicionarEmpresa = view.findViewById(R.id.button_adicionar_empresa);
+
+        buttonAdicionarEmpresa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), AdicionarEmpresaActivity.class));
+            }
+        });
 
         //RecyclerView
         recyclerViewGamificacao = view.findViewById(R.id.recyclerView_perfil_gamificacao);
@@ -195,6 +206,12 @@ public class PerfilFragment extends Fragment {
 
                 textViewNome.setText(usuario.getNome());
                 textViewDataNascimento.setText(dataNascimento);
+
+               if (usuario.isAdmin()){
+                    buttonAdicionarEmpresa.setVisibility(View.VISIBLE);
+                } else {
+                    buttonAdicionarEmpresa.setVisibility(View.GONE);
+                }
             }
 
             @Override

@@ -1,116 +1,145 @@
 package com.example.classificame.model;
 
+import com.example.classificame.config.ConfigFirebase;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
+
 public class Empresa {
 
 
-    private String nomeEmpresa, descricaoEmpresa, localEmpresa, categoriaEmpresa, imagemEmpresa, tipoEmpresa;
-    private float atendimentoCliente, formaPagamento, servicoEntrega, possibilidadeVoltar, classificacaoEmpresa;
-    private int votosEmpresa;
+    private String id, nome, descricao, cidade,
+            estado, rua, bairro, numero,
+            categoria, imagem, tipo, cnpj;
+    private int totalVotos;
+    private double classificacao;
+    private Voto voto;
 
+    public void salvarEmpresa() {
+        DatabaseReference firebase = ConfigFirebase.getDatabase();
 
-    public Empresa() {
-        this.nomeEmpresa = nomeEmpresa;
-        this.descricaoEmpresa = descricaoEmpresa;
-        this.localEmpresa = localEmpresa;
-        this.categoriaEmpresa = categoriaEmpresa;
-        this.imagemEmpresa = imagemEmpresa;
-        this.tipoEmpresa = tipoEmpresa;
+        firebase.child("empresa")
+                .child(this.id)
+                .setValue(this);
     }
 
-    public String getNomeEmpresa() {
-        return nomeEmpresa;
+    @Exclude
+    public String getId() {
+        return id;
     }
 
-    public void setNomeEmpresa(String nomeEmpresa) {
-        this.nomeEmpresa = nomeEmpresa;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getDescricaoEmpresa() {
-        return descricaoEmpresa;
+    public String getNome() {
+        return nome;
     }
 
-    public void setDescricaoEmpresa(String descricaoEmpresa) {
-        this.descricaoEmpresa = descricaoEmpresa;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getLocalEmpresa() {
-        return localEmpresa;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setLocalEmpresa(String localEmpresa) {
-        this.localEmpresa = localEmpresa;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public String getCategoriaEmpresa() {
-        return categoriaEmpresa;
+    public String getCidade() {
+        return cidade;
     }
 
-    public void setCategoriaEmpresa(String categoriaEmpresa) {
-        this.categoriaEmpresa = categoriaEmpresa;
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
-    public String getImagemEmpresa() {
-        return imagemEmpresa;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setImagemEmpresa(String imagemEmpresa) {
-        this.imagemEmpresa = imagemEmpresa;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
-    public String getTipoEmpresa() {
-        return tipoEmpresa;
+    public String getRua() {
+        return rua;
     }
 
-    public void setTipoEmpresa(String tipoEmpresa) {
-        this.tipoEmpresa = tipoEmpresa;
+    public void setRua(String rua) {
+        this.rua = rua;
     }
 
-    public float getAtendimentoCliente() {
-        return atendimentoCliente;
+    public String getBairro() {
+        return bairro;
     }
 
-    public void setAtendimentoCliente(float atendimentoCliente) {
-        this.atendimentoCliente = atendimentoCliente;
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
     }
 
-    public float getFormaPagamento() {
-        return formaPagamento;
+    public String getNumero() {
+        return numero;
     }
 
-    public void setFormaPagamento(float formaPagamento) {
-        this.formaPagamento = formaPagamento;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 
-    public float getServicoEntrega() {
-        return servicoEntrega;
+    public String getCategoria() {
+        return categoria;
     }
 
-    public void setServicoEntrega(float servicoEntrega) {
-        this.servicoEntrega = servicoEntrega;
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
-    public float getPossibilidadeVoltar() {
-        return possibilidadeVoltar;
+    public String getImagem() {
+        return imagem;
     }
 
-    public void setPossibilidadeVoltar(float possibilidadeVoltar) {
-        this.possibilidadeVoltar = possibilidadeVoltar;
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
     }
 
-    public float getClassificacaoEmpresa() {
-        return classificacaoEmpresa;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setClassificacaoEmpresa(float classificacaoEmpresa) {
-        this.classificacaoEmpresa = classificacaoEmpresa;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
-    public int getVotosEmpresa() {
-        return votosEmpresa;
+    public String getCnpj() {
+        return cnpj;
     }
 
-    public void setVotosEmpresa(int votosEmpresa) {
-        this.votosEmpresa = votosEmpresa;
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
 
+    public int getTotalVotos() {
+        return totalVotos;
+    }
+
+    public void setTotalVotos(int totalVotos) {
+        this.totalVotos = totalVotos;
+    }
+
+    public double getClassificacao() {
+        return classificacao;
+    }
+
+    public void setClassificacao(double classificacao) {
+        this.classificacao = classificacao;
+    }
+
+    public Voto getVoto() {
+        return voto;
+    }
+
+    public void setVoto(Voto voto) {
+        this.voto = voto;
     }
 }

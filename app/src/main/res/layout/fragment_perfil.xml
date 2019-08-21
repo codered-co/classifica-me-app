@@ -13,7 +13,7 @@
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="230dp"
             android:background="@color/colorPrimary"
             android:gravity="center_vertical"
             android:orientation="vertical"
@@ -94,13 +94,29 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView_data_perfil" />
+
+
+                <Button
+                    android:id="@+id/button_adicionar_empresa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Adicionar Empresa"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView_titulo_usuario_perfil"
+                    app:layout_constraintVertical_bias="0.45" />
+
             </android.support.constraint.ConstraintLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="230dp"
             android:gravity="center"
             android:orientation="vertical">
             <ScrollView
@@ -116,4 +132,6 @@
                 app:layout_constraintStart_toStartOf="parent" />
             </ScrollView>
         </LinearLayout>
+
+>>>>>>> origin/master
 </android.support.constraint.ConstraintLayout>
