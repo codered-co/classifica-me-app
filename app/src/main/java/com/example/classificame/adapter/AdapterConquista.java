@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.classificame.R;
 import com.example.classificame.model.Gamificacao;
@@ -37,6 +38,14 @@ public class AdapterGamificacao extends RecyclerView.Adapter<AdapterGamificacao.
         viewHolderGamificacao.nomeConquista.setText(gamificacao.getNomeConquista());
         viewHolderGamificacao.imagemConquista.setImageResource(gamificacao.getImagemConquista());
         viewHolderGamificacao.imagemIconBlock.setImageResource(gamificacao.getImagemDesbloquear());
+        
+        viewHolderGamificacao.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "Conquista em breve", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         //Implementar click no item da listView
     }

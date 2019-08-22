@@ -27,6 +27,8 @@ public class AdicionarEmpresaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adicionar_empresa);
 
+        getSupportActionBar().setTitle("Adicionar Empresa");
+
         editTextNome = findViewById(R.id.editText_nome_empresa);
         editTextDescricao = findViewById(R.id.editText_descricao_empresa);
         editTextRua = findViewById(R.id.editText_rua_empresa);

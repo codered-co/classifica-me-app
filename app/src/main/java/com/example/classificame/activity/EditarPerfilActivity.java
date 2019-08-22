@@ -52,6 +52,8 @@ public class EditarPerfilActivity extends AppCompatActivity {
         auth = ConfigFirebase.getAuth();
         firebase = ConfigFirebase.getDatabase();
 
+        getSupportActionBar().setTitle("Editar Perfil");
+
         editTextNome = findViewById(R.id.editText_nome_edit_perfil);
         editTextCidade = findViewById(R.id.editText_cidade_edit_perfil);
         editTextEstado = findViewById(R.id.editText_estado);
