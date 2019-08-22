@@ -195,72 +195,72 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Cliente\.g
 		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:10:9-35
 	android:theme
 		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:15:9-40
-activity#com.example.classificame.activity.AdicionarEmpresaActivity
-ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:16:9-80
-	android:name
-		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:16:19-68
 meta-data#com.facebook.sdk.ApplicationId
-ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:18:9-20:55
+ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:17:9-19:55
 	android:value
-		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:20:13-52
+		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:19:13-52
 	android:name
-		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:19:13-58
+		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:18:13-58
 activity#com.facebook.FacebookActivity
-ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:22:9-25:48
+ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:21:9-24:48
 MERGED from [com.facebook.android:facebook-common:5.4.0] C:\Users\Cliente\.gradle\caches\transforms-2\files-2.1\aeb58014ad3fb4def3b4a65c42c699c2\AndroidManifest.xml:29:9-32:66
 MERGED from [com.facebook.android:facebook-common:5.4.0] C:\Users\Cliente\.gradle\caches\transforms-2\files-2.1\aeb58014ad3fb4def3b4a65c42c699c2\AndroidManifest.xml:29:9-32:66
 	android:label
-		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:25:13-45
+		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:24:13-45
 	android:configChanges
-		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:24:13-96
+		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:23:13-96
 	android:theme
 		ADDED from [com.facebook.android:facebook-common:5.4.0] C:\Users\Cliente\.gradle\caches\transforms-2\files-2.1\aeb58014ad3fb4def3b4a65c42c699c2\AndroidManifest.xml:32:13-63
 	android:name
-		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:23:13-57
+		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:22:13-57
 activity#com.facebook.CustomTabActivity
-ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:26:9-37:20
+ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:25:9-36:20
 MERGED from [com.facebook.android:facebook-common:5.4.0] C:\Users\Cliente\.gradle\caches\transforms-2\files-2.1\aeb58014ad3fb4def3b4a65c42c699c2\AndroidManifest.xml:34:9-67
 MERGED from [com.facebook.android:facebook-common:5.4.0] C:\Users\Cliente\.gradle\caches\transforms-2\files-2.1\aeb58014ad3fb4def3b4a65c42c699c2\AndroidManifest.xml:34:9-67
 	android:exported
-		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:28:13-36
+		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:27:13-36
 	android:name
-		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:27:13-58
+		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:26:13-58
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:@string/fb_login_protocol_scheme
-ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:29:13-36:29
+ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:28:13-35:29
 action#android.intent.action.VIEW
-ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:30:17-69
+ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:29:17-69
 	android:name
-		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:30:25-66
+		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:29:25-66
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:32:17-76
+ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:31:17-76
 	android:name
-		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:32:27-73
+		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:31:27-73
 category#android.intent.category.BROWSABLE
-ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:33:17-78
+ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:32:17-78
 	android:name
-		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:33:27-75
+		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:32:27-75
 data
-ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:35:17-75
+ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:34:17-75
 	android:scheme
-		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:35:23-72
+		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:34:23-72
 activity#com.example.classificame.activity.ContainerActivity
-ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:38:9-40:58
+ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:37:9-39:58
 	android:label
-		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:40:13-55
-	android:name
 		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:39:13-55
+	android:name
+		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:38:13-55
 activity#com.example.classificame.activity.EditarPerfilActivity
-ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:41:9-67
+ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:40:9-67
 	android:name
-		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:41:19-64
+		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:40:19-64
 activity#com.example.classificame.activity.CadastroActivity
-ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:42:9-63
+ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:41:9-63
 	android:name
-		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:42:19-60
+		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:41:19-60
 activity#com.example.classificame.activity.ClassificandoActivity
-ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:43:9-68
+ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:42:9-68
 	android:name
-		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:43:19-65
+		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:42:19-65
+activity#com.example.classificame.activity.AdicionarEmpresaActivity
+ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:43:9-80
+	android:name
+		ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:43:19-68
 activity#com.example.classificame.activity.DescricaoConquistaActivity
 ADDED from C:\Users\Cliente\classifica.me-app\app\src\main\AndroidManifest.xml:44:9-82
 	android:name

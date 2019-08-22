@@ -66,7 +66,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="140dp"
             android:layout_marginTop="45dp"
-            android:text="Nome empresa"
             android:textSize="14sp" />
 
         <TextView
@@ -75,7 +74,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="140dp"
             android:layout_marginTop="75dp"
-            android:text="Descrição"
             android:textSize="14sp" />
 
         <TextView
@@ -84,7 +82,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="140dp"
             android:layout_marginTop="105dp"
-            android:text="Local"
             android:textSize="14sp" />
 
         <TextView
@@ -93,7 +90,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="140dp"
             android:layout_marginTop="135dp"
-            android:text="Tipo empresa"
             android:textSize="14sp" />
 
         <ImageButton
