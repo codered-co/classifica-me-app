@@ -1,7 +1,9 @@
 package com.example.classificame.adapter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -35,7 +37,7 @@ public class AdapterRanking extends RecyclerView.Adapter<AdapterRanking.AdapterR
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterRankingViewHolder adapterRankingViewHolder, int posicao) {
+    public void onBindViewHolder(@NonNull AdapterRankingViewHolder adapterRankingViewHolder, final int posicao) {
         Empresa empresa = empresaArrayList.get(posicao);
         String local = empresa.getRua() + ", " +
                 empresa.getNumero() + ", " +
@@ -65,12 +67,30 @@ public class AdapterRanking extends RecyclerView.Adapter<AdapterRanking.AdapterR
             adapterRankingViewHolder.imageViewClassificacaoEmpresa.setImageResource(R.drawable.ic_arrow);
         }
 
-
         adapterRankingViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Empresa empresa = empresaArrayList.get(posicao);
+                String endereco = empresa.getRua() + ", " +
+                        empresa.getBairro() + ", Nº " +
+                        empresa.getNumero() + ", " +
+                        empresa.getCidade() + " - " +
+                        empresa.getEstado();
+                Fragment fragment = new DescricaoEmpresaFragment();
+
+                Bundle bundle = new Bundle();
+                bundle.putString("NomeEmpresa", empresa.getNome());
+                bundle.putString("DescricaoEmpresa", empresa.getDescricao());
+                bundle.putString("TipoEmpresa", empresa.getTipo());
+                bundle.putString("CategoriaEmpresa", empresa.getCategoria());
+                bundle.putString("TelefoneEmpresa", empresa.getTelefone());
+                bundle.putString("CnpjEmpresa", empresa.getCnpj());
+                bundle.putString("EnderecoEmpresa", endereco);
+
+                fragment.setArguments(bundle);
+
                 ((FragmentActivity)context).getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.layout_container, new DescricaoEmpresaFragment(), "descricao")
+                        .replace(R.id.layout_container, fragment, "descricao")
                         .commit();
             }
         });

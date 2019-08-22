@@ -19,7 +19,7 @@ public class AdicionarEmpresaActivity extends AppCompatActivity {
     private EditText editTextNome, editTextDescricao, editTextRua,
             editTextBairro, editTextNumero, editTextCidade,
             editTextEstado,editTextCategoria, editTextTipo,
-            editTextCnpj;
+            editTextCnpj, editTextTelefone;
     private Button buttonSalvarEmpresa;
 
     @Override
@@ -37,6 +37,7 @@ public class AdicionarEmpresaActivity extends AppCompatActivity {
         editTextCategoria = findViewById(R.id.editText_categoria_empresa);
         editTextTipo = findViewById(R.id.editText_tipo_empresa);
         editTextCnpj = findViewById(R.id.editText_cnpj_empresa);
+        editTextTelefone = findViewById(R.id.editText_telefone);
         buttonSalvarEmpresa = findViewById(R.id.button_salvar_empresa);
 
         buttonSalvarEmpresa.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +53,7 @@ public class AdicionarEmpresaActivity extends AppCompatActivity {
                 String categoria = editTextCategoria.getText().toString();
                 String tipo = editTextTipo.getText().toString();
                 String cnpj = editTextCnpj.getText().toString();
+                String telefone = editTextTelefone.getText().toString();
 
                 esconderTeclado();
 
@@ -68,6 +70,7 @@ public class AdicionarEmpresaActivity extends AppCompatActivity {
                 empresa.setCategoria(categoria);
                 empresa.setTipo(tipo);
                 empresa.setCnpj(cnpj);
+                empresa.setTelefone(telefone);
                 empresa.setVoto(voto);
                 empresa.setTotalVotos(0);
                 empresa.setClassificacao(0.0);

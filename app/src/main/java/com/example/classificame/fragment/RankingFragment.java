@@ -42,11 +42,11 @@ public class RankingFragment extends Fragment {
 
         firebase = ConfigFirebase.getDatabase();
 
-        RecyclerView recyclerViewRankingEmpresas = view.findViewById(R.id.recycleView_ranking_empresas);
-        recyclerViewRankingEmpresas.setLayoutManager(new LinearLayoutManager(getContext()));
+        RecyclerView recyclerViewEmpresas = view.findViewById(R.id.recycleView_ranking_empresas);
+        recyclerViewEmpresas.setLayoutManager(new LinearLayoutManager(getContext()));
 
         adapterRanking = new AdapterRanking(empresas, getContext());
-        recyclerViewRankingEmpresas.setAdapter(adapterRanking);
+        recyclerViewEmpresas.setAdapter(adapterRanking);
 
         return view;
     }
