@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".activity.CadastroActivity">
 
     <ScrollView
@@ -42,8 +42,8 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_pessoa"
                     android:drawablePadding="5dp"
-                    android:inputType="textCapWords|textCapSentences"
-                    android:hint="Nome" />
+                    android:hint="Nome"
+                    android:inputType="textCapWords|textCapSentences" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -56,8 +56,8 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_email"
                     android:drawablePadding="5dp"
-                    android:inputType="textEmailAddress"
-                    android:hint="E-mail" />
+                    android:hint="E-mail"
+                    android:inputType="textEmailAddress" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -70,8 +70,8 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_senha"
                     android:drawablePadding="5dp"
-                    android:inputType="textPassword"
-                    android:hint="Senha" />
+                    android:hint="Senha"
+                    android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -84,8 +84,8 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_confirmar"
                     android:drawablePadding="5dp"
-                    android:inputType="textPassword"
-                    android:hint="Confirmar senha" />
+                    android:hint="Confirmar senha"
+                    android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -96,7 +96,8 @@
                     android:id="@+id/editText_telefone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Telefone" />
+                    android:hint="Telefone"
+                    android:inputType="number" />
             </android.support.design.widget.TextInputLayout>
 
             <RadioGroup
@@ -123,9 +124,9 @@
 
                 <RadioButton
                     android:id="@+id/radioButton_null"
-                    android:text=""
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="" />
 
             </RadioGroup>
 
@@ -144,13 +145,13 @@
                     android:id="@+id/spinner_dia"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center" />
 
                 <Spinner
                     android:id="@+id/spinner_mes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center" />
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="100dp"
@@ -207,8 +208,8 @@
                 android:id="@+id/button_cadastrar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cadastrar"
-                android:layout_margin="8dp"/>
+                android:layout_margin="8dp"
+                android:text="Cadastrar" />
 
         </LinearLayout>
 

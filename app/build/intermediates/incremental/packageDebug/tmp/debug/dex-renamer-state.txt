@@ -1,4 +1,4 @@
-#Tue Aug 20 17:29:28 BRT 2019
+#Thu Aug 22 12:09:55 BRT 2019
 base.0=C\:\\Users\\Cliente\\classifica.me-app\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
 path.1=classes.dex
 renamed.1=classes2.dex

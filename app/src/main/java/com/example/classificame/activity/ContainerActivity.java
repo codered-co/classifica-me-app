@@ -1,7 +1,6 @@
 package com.example.classificame.activity;
 
 import android.content.DialogInterface;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,16 +15,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.classificame.R;
 import com.example.classificame.activity.AdicionarEmpresaActivity;
+import com.example.classificame.activity.CadastroActivity;
 import com.example.classificame.activity.EditarPerfilActivity;
 import com.example.classificame.activity.MainActivity;
+import com.example.classificame.adapter.AdapterGamificacao;
 import com.example.classificame.config.ConfigFirebase;
 import com.example.classificame.helper.Base64Helper;
+import com.example.classificame.model.Gamificacao;
 import com.example.classificame.model.Usuario;
 import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,17 +35,22 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 
 public class PerfilFragment extends Fragment {
 
-    private TextView textViewNome, textViewCidade, textViewDataNascimento,
-            textViewTipoConsumidor;
-    private ProgressBar progressBarNivel;
+    private TextView textViewNome, textViewDataNascimento, textViewTituloUsuarioGamificacao;
+
     private ImageView imageViewPerfil, imageViewEmblema;
     private Button buttonAdicionarEmpresa;
+
+    private RecyclerView recyclerViewGamificacao;
+    private ArrayList<Gamificacao> gamificacoes = new ArrayList<>();
+    private AdapterGamificacao adapterGamificacao;
 
     private Usuario usuario;
 
@@ -59,14 +68,15 @@ public class PerfilFragment extends Fragment {
         auth = ConfigFirebase.getAuth();
         firebase = ConfigFirebase.getDatabase();
 
+        textViewTituloUsuarioGamificacao = view.findViewById(R.id.textView_titulo_usuario_perfil);
         textViewNome = view.findViewById(R.id.textView_nome_perfil);
-        textViewCidade = view.findViewById(R.id.textView_cidade_perfil);
-        textViewTipoConsumidor = view.findViewById(R.id.textView_consumidor_perfil);
         textViewDataNascimento = view.findViewById(R.id.textView_data_perfil);
-        progressBarNivel = view.findViewById(R.id.progressBar_perfil_user);
+
         imageViewPerfil = view.findViewById(R.id.imageView_perfil_usuario);
         imageViewEmblema = view.findViewById(R.id.imageView_emblema_perfil);
         buttonAdicionarEmpresa = view.findViewById(R.id.button_adicionar_empresa);
+
+        buttonAdicionarEmpresa.setVisibility(View.GONE);
 
         buttonAdicionarEmpresa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +85,56 @@ public class PerfilFragment extends Fragment {
             }
         });
 
+        //RecyclerView
+        recyclerViewGamificacao = view.findViewById(R.id.recyclerView_perfil_gamificacao);
+        recyclerViewGamificacao.setLayoutManager(new LinearLayoutManager(getContext()));
+        //Adapter
+        adapterGamificacao = new AdapterGamificacao(gamificacoes, getContext());
+        recyclerViewGamificacao.setAdapter(adapterGamificacao);
+
+        criaGamificacao();
         return view;
+    }
+
+    public void criaGamificacao() {
+
+        Gamificacao gamificacao1 = new Gamificacao();
+        gamificacao1.setNomeConquista("Primeiro voto");
+        gamificacao1.setImagemConquista(R.drawable.ic_votefirst);
+        gamificacao1.setImagemDesbloquear(R.drawable.ic_lock);
+        gamificacoes.add(gamificacao1);
+
+        Gamificacao gamificacao2 = new Gamificacao();
+        gamificacao2.setNomeConquista("Consumidor Engajado");
+        gamificacao2.setImagemConquista(R.drawable.ic_engagedconsumer);
+        gamificacao2.setImagemDesbloquear(R.drawable.ic_lock);
+        gamificacoes.add(gamificacao2);
+
+        Gamificacao gamificacao3 = new Gamificacao();
+        gamificacao3.setNomeConquista("Comunicador");
+        gamificacao3.setImagemConquista(R.drawable.ic_communicate);
+        gamificacao3.setImagemDesbloquear(R.drawable.ic_lock);
+        gamificacoes.add(gamificacao3);
+
+        Gamificacao gamificacao4 = new Gamificacao();
+        gamificacao4.setNomeConquista("Conhecendo o mercado");
+        gamificacao4.setImagemConquista(R.drawable.ic_knowingthemarket);
+        gamificacao4.setImagemDesbloquear(R.drawable.ic_block);
+        gamificacoes.add(gamificacao4);
+
+        Gamificacao gamificacao5 = new Gamificacao();
+        gamificacao5.setNomeConquista("Compra consciente");
+        gamificacao5.setImagemConquista(R.drawable.ic_buy);
+        gamificacao5.setImagemDesbloquear(R.drawable.ic_block);
+        gamificacoes.add(gamificacao5);
+
+        Gamificacao gamificacao6 = new Gamificacao();
+        gamificacao6.setNomeConquista("Campeão");
+        gamificacao6.setImagemConquista(R.drawable.ic_champion);
+        gamificacao6.setImagemDesbloquear(R.drawable.ic_block);
+        gamificacoes.add(gamificacao6);
+
+        textViewTituloUsuarioGamificacao.setText("Comunicador");
     }
 
     @Override
@@ -136,27 +195,28 @@ public class PerfilFragment extends Fragment {
         getActivity().finish();
         startActivity(new Intent(getContext(), MainActivity.class));
     }
-
     private void recuperarPerfil() {
         String idUsuario = Base64Helper.codificarBase64(auth.getCurrentUser().getEmail());
         listener = firebase.child("usuario").child(idUsuario).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                usuario = dataSnapshot.getValue(Usuario.class);
+                if (dataSnapshot.getValue() != null){
+                    usuario = dataSnapshot.getValue(Usuario.class);
 
-                String dataNascimento = usuario.getDiaNascimento() + "/" +
-                        switchMes(usuario.getMesNascimento()) + "/" +
-                        usuario.getAnoNascimento();
-                String local = usuario.getCidade() + " - " + usuario.getEstado();
+                    String dataNascimento = usuario.getDiaNascimento() + "/" +
+                            switchMes(usuario.getMesNascimento()) + "/" +
+                            usuario.getAnoNascimento();
 
-                textViewNome.setText(usuario.getNome());
-                textViewDataNascimento.setText(dataNascimento);
-                textViewCidade.setText(local);
+                    textViewNome.setText(usuario.getNome());
+                    textViewDataNascimento.setText(dataNascimento);
 
-                if (usuario.isAdmin()){
-                    buttonAdicionarEmpresa.setVisibility(View.VISIBLE);
+                    if (usuario.isAdmin()){
+                        buttonAdicionarEmpresa.setVisibility(View.VISIBLE);
+                    }
                 } else {
-                    buttonAdicionarEmpresa.setVisibility(View.GONE);
+                    Toast.makeText(getContext(), "Perfil não encontrado. Por favor, cadastre seu perfil.", Toast.LENGTH_SHORT).show();
+                    getActivity().finish();
+                    startActivity(new Intent(getContext(), CadastroActivity.class));
                 }
             }
 
@@ -169,7 +229,7 @@ public class PerfilFragment extends Fragment {
 
     private String switchMes(String mes) {
         String numeroMes = "";
-        switch (mes){
+        switch (mes.toLowerCase()){
             case "janeiro":
                 numeroMes = "01";
                 break;
