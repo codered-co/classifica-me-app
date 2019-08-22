@@ -25,8 +25,6 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.classificame.activity.AdicionarEmpresaActivity" />
-
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
@@ -54,6 +52,7 @@
         <activity android:name="com.example.classificame.activity.EditarPerfilActivity" />
         <activity android:name="com.example.classificame.activity.CadastroActivity" />
         <activity android:name="com.example.classificame.activity.ClassificandoActivity" />
+        <activity android:name="com.example.classificame.activity.AdicionarEmpresaActivity" />
         <activity android:name="com.example.classificame.activity.DescricaoConquistaActivity" />
         <activity android:name="com.example.classificame.activity.MainActivity" >
             <intent-filter>

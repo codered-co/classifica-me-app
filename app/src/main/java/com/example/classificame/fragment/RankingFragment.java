@@ -2,6 +2,7 @@ package com.example.classificame.fragment;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -13,7 +14,12 @@ import android.view.ViewGroup;
 
 import com.example.classificame.R;
 import com.example.classificame.adapter.AdapterRanking;
+import com.example.classificame.config.ConfigFirebase;
 import com.example.classificame.model.Empresa;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -22,33 +28,30 @@ import java.util.ArrayList;
  */
 public class RankingFragment extends Fragment {
 
-    private AdapterRanking adapterRanking;
-    private ArrayList<Empresa> empresaArrayList = new ArrayList<>();
+    private DatabaseReference firebase;
+    private ValueEventListener listener;
 
-    public RankingFragment() {
-        // Required empty public constructor
-    }
+    private AdapterRanking adapterRanking;
+    private ArrayList<Empresa> empresas = new ArrayList<>();
+    private Empresa empresa;
+
+    public RankingFragment() { }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ranking, container, false);
-    }
+        View view = inflater.inflate(R.layout.fragment_ranking, container, false);
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+        firebase = ConfigFirebase.getDatabase();
 
-        RecyclerView recyclerViewRankingEmpresas = getView().findViewById(R.id.recycleView_ranking_empresas);
+        RecyclerView recyclerViewRankingEmpresas = view.findViewById(R.id.recycleView_ranking_empresas);
         recyclerViewRankingEmpresas.setLayoutManager(new LinearLayoutManager(getContext()));
 
-
-
-        adapterRanking = new AdapterRanking(empresaArrayList, getContext());
+        adapterRanking = new AdapterRanking(empresas, getContext());
         recyclerViewRankingEmpresas.setAdapter(adapterRanking);
 
+        return view;
     }
 
     @Override
@@ -57,5 +60,38 @@ public class RankingFragment extends Fragment {
 
         BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.nav_view);
         bottomNavigationView.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        recuperarEmpresas();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (listener != null){
+            firebase.removeEventListener(listener);
+        }
+    }
+
+    private void recuperarEmpresas(){
+        listener = firebase.child("empresa").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                empresas.clear();
+                for (DataSnapshot dados : dataSnapshot.getChildren()) {
+                    empresa = dados.getValue(Empresa.class);
+                    empresas.add(empresa);
+                }
+                adapterRanking.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }
