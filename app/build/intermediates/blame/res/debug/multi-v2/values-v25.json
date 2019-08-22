@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Cliente\\classifica.me-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v25\\values-v25.xml",
+            "outputFile": "C:\\Users\\ivanv\\AndroidStudioProjects\\classifica-me-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v25\\values-v25.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Cliente\\.gradle\\caches\\transforms-2\\files-2.1\\87c61a16a7eed5fb60b6cc6f1402e03f\\res\\values-v25\\values-v25.xml",
+                    "source": "C:\\Users\\ivanv\\.gradle\\caches\\transforms-2\\files-2.1\\42754af4736a95d9c56d3232196a0c44\\res\\values-v25\\values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",

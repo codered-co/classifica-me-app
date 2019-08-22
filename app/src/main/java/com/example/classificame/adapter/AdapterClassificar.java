@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.classificame.R;
 import com.example.classificame.activity.ClassificandoActivity;
+import com.example.classificame.helper.Base64Helper;
 import com.example.classificame.model.Empresa;
 
 import java.util.ArrayList;
@@ -60,6 +61,12 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
 
                 bundle.putString("NomeEmpresa", empresaSelecionada.getNome());
                 bundle.putString("DescricaoEmpresa", empresaSelecionada.getDescricao());
+                bundle.putString("IdEmpresa", Base64Helper.codificarBase64(empresaSelecionada.getCnpj()));
+                bundle.putDouble("VotoAtendimentoCliente", empresaSelecionada.getVoto().getAtendimentoCliente());
+                bundle.putDouble("VotoFormaPagamento", empresaSelecionada.getVoto().getFormaPagamento());
+                bundle.putDouble("VotoPossibilidadedeVoltar", empresaSelecionada.getVoto().getPossibilidadeVoltar());
+                bundle.putDouble("VotoServicoEntrega", empresaSelecionada.getVoto().getServicoEntrega());
+
                 Intent intent = new Intent(context, ClassificandoActivity.class);
                 intent.putExtras(bundle);
                 context.startActivity(intent);
