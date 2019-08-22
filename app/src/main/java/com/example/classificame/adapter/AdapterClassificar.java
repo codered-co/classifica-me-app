@@ -2,6 +2,7 @@ package com.example.classificame.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -37,7 +38,7 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderEmpresa viewHolderEmpresa, int posicao) {
+    public void onBindViewHolder(@NonNull ViewHolderEmpresa viewHolderEmpresa, final int posicao) {
         Empresa empresa = empresas.get(posicao);
         String local = empresa.getRua() + ", " +
                 empresa.getNumero() + ", " +
@@ -54,7 +55,13 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
         viewHolderEmpresa.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Empresa empresaSelecionada = empresas.get(posicao);
+                Bundle bundle = new Bundle();
+
+                bundle.putString("NomeEmpresa", empresaSelecionada.getNome());
+                bundle.putString("DescricaoEmpresa", empresaSelecionada.getDescricao());
                 Intent intent = new Intent(context, ClassificandoActivity.class);
+                intent.putExtras(bundle);
                 context.startActivity(intent);
             }
         });

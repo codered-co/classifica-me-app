@@ -1,5 +1,6 @@
 package com.example.classificame.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.classificame.R;
+import com.example.classificame.config.ConfigFirebase;
+import com.example.classificame.model.Empresa;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import app.youkai.simpleratingview.SimpleRatingView;
 
@@ -22,11 +27,17 @@ public class ClassificandoActivity extends AppCompatActivity {
     private TextView textViewValorServicoEntrega;
     private TextView textViewValorPossibilidadeVoltar;
 
+    private Empresa empresa;
+
+    private DatabaseReference firebase;
+    private ValueEventListener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classificar);
+
+        firebase = ConfigFirebase.getDatabase();
 
         ratingViewAtendimentoCliente = findViewById(R.id.simpleRatingView_atendimento_cliente);
         ratingViewFormaPagamento = findViewById(R.id.simpleRatingView_forma_pagamento);
@@ -38,24 +49,40 @@ public class ClassificandoActivity extends AppCompatActivity {
         textViewValorServicoEntrega = findViewById(R.id.textView_ratingValue_qualidade_produto);
         textViewValorPossibilidadeVoltar = findViewById(R.id.textView_ratingValue_possibilidade_voltar);
 
-
         TextView textViewNomeEmpresa = findViewById(R.id.textView_nome_empresa_classificar);
         TextView textViewDescricaoEmpresa = findViewById(R.id.textView_descricao_empresa_classificar);
-
 
         addListenerOnRatingBar(ratingViewAtendimentoCliente, textViewValorAtendimentoCliente);
         addListenerOnRatingBar(ratingViewFormaPagamento, textViewValorFormaPagamento);
         addListenerOnRatingBar(ratingViewServicoEntrega, textViewValorServicoEntrega);
         addListenerOnRatingBar(ratingViewPossibilidadeVoltar, textViewValorPossibilidadeVoltar);
 
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
+        textViewNomeEmpresa.setText( bundle.getString("NomeEmpresa"));
+        textViewDescricaoEmpresa.setText(bundle.getString("DescricaoEmpresa"));
+
         addListenerOnButtonEnviar();
     }
 
-    public void buscarInformacoes(){
-
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        recuperarEmpresa();
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (listener != null){
+            firebase.removeEventListener(listener);
+        }
+    }
+
+    public void recuperarEmpresa(){
+
+    }
 
     public void addListenerOnRatingBar(SimpleRatingView simpleRatingView, final TextView txtRatingValue) {
         //if rating value is changed,
@@ -67,7 +94,6 @@ public class ClassificandoActivity extends AppCompatActivity {
             }
         });
     }
-
 
     public int pegarValor(TextView textView) {
         int valorRankin;
@@ -86,13 +112,11 @@ public class ClassificandoActivity extends AppCompatActivity {
         return valorRankin;
     }
 
-
     public void addListenerOnButtonEnviar() {
         textViewValorAtendimentoCliente = findViewById(R.id.textView_ratingValue_atendimento_cliente);
         textViewValorFormaPagamento = findViewById(R.id.textView_ratingValue_forma_pagamento);
         textViewValorServicoEntrega = findViewById(R.id.textView_ratingValue_qualidade_produto);
         textViewValorPossibilidadeVoltar = findViewById(R.id.textView_ratingValue_possibilidade_voltar);
-
 
         Button buttonSubmit = findViewById(R.id.button_submit_valor);
         //if click, then display the current rating value.
@@ -104,7 +128,7 @@ public class ClassificandoActivity extends AppCompatActivity {
                 float rankingServicoEntrega = pegarValor(textViewValorServicoEntrega);
                 float rankingPossibilidadeVoltar = pegarValor(textViewValorPossibilidadeVoltar);
 
-                    // post das notas a empresa
+
             }
         });
     }
