@@ -4,11 +4,12 @@
     <item
         android:id="@+id/action_logout"
         android:title="Sair"
-        app:showAsAction="always">
+        android:orderInCategory="2">
     </item>
     <item
         android:id="@+id/action_editar"
-        android:title="Editar perfil">
+        android:title="Editar perfil"
+        android:orderInCategory="1">
     </item>
     <item
         android:id="@+id/action_ordenar"

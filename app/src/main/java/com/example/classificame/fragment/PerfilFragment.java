@@ -171,13 +171,13 @@ public class PerfilFragment extends Fragment {
         if (item1 != null) {
             item1.setVisible(false);
         }
+
         super.onPrepareOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
         if (id == R.id.action_logout) {
             encerrarSessao();
         }
@@ -210,9 +210,9 @@ public class PerfilFragment extends Fragment {
                     textViewNome.setText(usuario.getNome());
                     textViewDataNascimento.setText(dataNascimento);
 
-                    if (usuario.isAdmin()){
-                        buttonAdicionarEmpresa.setVisibility(View.VISIBLE);
-                    }
+                    verificaAdmin(usuario);
+
+
                 } else {
                     Toast.makeText(getContext(), "Perfil não encontrado. Por favor, cadastre seu perfil.", Toast.LENGTH_SHORT).show();
                     getActivity().finish();
@@ -227,6 +227,11 @@ public class PerfilFragment extends Fragment {
         });
     }
 
+    public void verificaAdmin(Usuario usuario) {
+        if (usuario.isAdmin()){
+            buttonAdicionarEmpresa.setVisibility(View.VISIBLE);
+        }
+    }
     private String switchMes(String mes) {
         String numeroMes = "";
         switch (mes.toLowerCase()){

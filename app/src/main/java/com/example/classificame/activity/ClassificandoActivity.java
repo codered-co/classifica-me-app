@@ -37,6 +37,8 @@ public class ClassificandoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classificar);
 
+        getSupportActionBar().setTitle("Classificar");
+
         firebase = ConfigFirebase.getDatabase();
 
         ratingViewAtendimentoCliente = findViewById(R.id.simpleRatingView_atendimento_cliente);

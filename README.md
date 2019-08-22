@@ -25,13 +25,13 @@ O projeto classifica.me surgiu durante uma das maiores feiras de empreendedorism
 
 Nós usamos o Git e Github para controlar e compartilhar nosso projeto. 
 * Link do repositório do web site no github: (https://github.com/codered-co/classifica-me-web)
-* Link do repositório do aplicativo no github (https://github.com/codered-co/classifica-me-app)
+* Link do repositório do aplicativo no github: (https://github.com/codered-co/classifica-me-app)
 
 ## Autores
 
 * **Comunidade Codered** - [Codered](https://codered.online)
 
-* Veja a lista de [contribuidores](https://github.com/codered-co/classifica-me-web/contributors) que participaram deste projeto.
+* Veja a lista de [contribuidores](https://github.com/codered-co/classifica-me-app/contributors) que participaram deste projeto.
 
  - [Guilherme Romer (Designer)](https://github.com/guiromer)
  - [Gustavo Souza (Programador)](https://github.com/gussouzauni)
