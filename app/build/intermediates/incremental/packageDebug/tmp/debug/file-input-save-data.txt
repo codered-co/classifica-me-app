@@ -1,11 +1,11 @@
 #Internal package file, do not edit.
-#Thu Aug 22 12:35:18 BRT 2019
-1.base=C\:\\Users\\Cliente\\classifica.me-app\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
+#Thu Aug 22 14:00:57 BRT 2019
+1.base=C\:\\Users\\ivanv\\AndroidStudioProjects\\classifica-me-app\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
 0.baseType=DIRECTORY
 1.baseType=DIRECTORY
 count=2
 1.set=DEX
 0.path=classes.dex
 0.set=DEX
-0.base=C\:\\Users\\Cliente\\classifica.me-app\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out
+0.base=C\:\\Users\\ivanv\\AndroidStudioProjects\\classifica-me-app\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out
 1.path=classes.dex

@@ -1,8 +1,22 @@
 package com.example.classificame.model;
 
+import com.example.classificame.config.ConfigFirebase;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
+
 public class Voto {
     private double atendimentoCliente, formaPagamento, servicoEntrega,
             possibilidadeVoltar;
+    private String idEmpresaAvaliada;
+
+    public void salvarVoto() {
+        DatabaseReference firebase = ConfigFirebase.getDatabase();
+
+        firebase.child("empresa")
+                .child(this.idEmpresaAvaliada)
+                .child("voto")
+                .setValue(this);
+    }
 
     public Voto(double atendimentoCliente, double formaPagamento, double servicoEntrega, double possibilidadeVoltar) {
         this.atendimentoCliente = atendimentoCliente;
@@ -12,6 +26,15 @@ public class Voto {
     }
 
     public Voto() {
+    }
+
+    @Exclude
+    public String getIdEmpresaAvaliada() {
+        return idEmpresaAvaliada;
+    }
+
+    public void setIdEmpresaAvaliada(String idEmpresaAvaliada) {
+        this.idEmpresaAvaliada = idEmpresaAvaliada;
     }
 
     public double getAtendimentoCliente() {
