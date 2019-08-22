@@ -8,10 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.classificame.R;
-import com.example.classificame.config.ConfigFirebase;
-import com.example.classificame.model.Empresa;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
+import com.example.classificame.model.Voto;
 
 import app.youkai.simpleratingview.SimpleRatingView;
 
@@ -27,17 +24,13 @@ public class ClassificandoActivity extends AppCompatActivity {
     private TextView textViewValorServicoEntrega;
     private TextView textViewValorPossibilidadeVoltar;
 
-    private Empresa empresa;
-
-    private DatabaseReference firebase;
-    private ValueEventListener listener;
+    private Bundle bundle;
+    private String idEmpresa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classificar);
-
-        firebase = ConfigFirebase.getDatabase();
 
         ratingViewAtendimentoCliente = findViewById(R.id.simpleRatingView_atendimento_cliente);
         ratingViewFormaPagamento = findViewById(R.id.simpleRatingView_forma_pagamento);
@@ -58,7 +51,7 @@ public class ClassificandoActivity extends AppCompatActivity {
         addListenerOnRatingBar(ratingViewPossibilidadeVoltar, textViewValorPossibilidadeVoltar);
 
         Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
+        bundle = intent.getExtras();
 
         textViewNomeEmpresa.setText( bundle.getString("NomeEmpresa"));
         textViewDescricaoEmpresa.setText(bundle.getString("DescricaoEmpresa"));
@@ -66,22 +59,11 @@ public class ClassificandoActivity extends AppCompatActivity {
         addListenerOnButtonEnviar();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        recuperarEmpresa();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if (listener != null){
-            firebase.removeEventListener(listener);
-        }
-    }
-
-    public void recuperarEmpresa(){
-
+    public void salvarVoto(Voto voto) {
+        idEmpresa = bundle.getString("IdEmpresa");
+        voto.setIdEmpresaAvaliada(idEmpresa);
+        voto.salvarVoto();
+        finish();
     }
 
     public void addListenerOnRatingBar(SimpleRatingView simpleRatingView, final TextView txtRatingValue) {
@@ -96,20 +78,27 @@ public class ClassificandoActivity extends AppCompatActivity {
     }
 
     public int pegarValor(TextView textView) {
-        int valorRankin;
+        int valorRanking;
         String ranking = textView.getText().toString();
-        if (ranking == getString(R.string.srv_awful)) {
-            valorRankin = 2;
-        } else if (ranking == getString(R.string.srv_meh)) {
-            valorRankin = 3;
-        } else if (ranking == getString(R.string.srv_good)) {
-            valorRankin = 4;
-        } else if (ranking == getString(R.string.srv_amazing)) {
-            valorRankin = 5;
-        } else {
-            valorRankin = 0;
+
+        switch (ranking){
+            case "Bronze":
+                valorRanking = 2;
+                break;
+            case "Prata":
+                valorRanking = 3;
+                break;
+            case "Ouro":
+                valorRanking = 4;
+                break;
+            case "Diamante":
+                valorRanking = 5;
+                break;
+            default:
+                valorRanking = 0;
         }
-        return valorRankin;
+
+        return valorRanking;
     }
 
     public void addListenerOnButtonEnviar() {
@@ -123,12 +112,24 @@ public class ClassificandoActivity extends AppCompatActivity {
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                float rankingAtendimentoCliente = pegarValor(textViewValorAtendimentoCliente);
-                float rankingFormaPagamento = pegarValor(textViewValorFormaPagamento);
-                float rankingServicoEntrega = pegarValor(textViewValorServicoEntrega);
-                float rankingPossibilidadeVoltar = pegarValor(textViewValorPossibilidadeVoltar);
+                double votoAtendimentoCliente = pegarValor(textViewValorAtendimentoCliente);
+                double votoFormaPagamento = pegarValor(textViewValorFormaPagamento);
+                double votoServicoEntrega = pegarValor(textViewValorServicoEntrega);
+                double votoPossibilidadeVoltar = pegarValor(textViewValorPossibilidadeVoltar);
 
+                Voto votoRecuperado = new Voto();
+                votoRecuperado.setAtendimentoCliente(bundle.getDouble("VotoAtendimentoCliente"));
+                votoRecuperado.setServicoEntrega(bundle.getDouble("VotoServicoEntrega"));
+                votoRecuperado.setPossibilidadeVoltar(bundle.getDouble("VotoPossibilidadedeVoltar"));
+                votoRecuperado.setFormaPagamento(bundle.getDouble("VotoFormaPagamento"));
 
+                Voto voto = new Voto();
+                voto.setAtendimentoCliente(votoRecuperado.getAtendimentoCliente() + votoAtendimentoCliente);
+                voto.setFormaPagamento(votoRecuperado.getFormaPagamento() + votoFormaPagamento);
+                voto.setServicoEntrega(votoRecuperado.getServicoEntrega() + votoServicoEntrega);
+                voto.setPossibilidadeVoltar(votoRecuperado.getPossibilidadeVoltar() + votoPossibilidadeVoltar);
+
+                salvarVoto(voto);
             }
         });
     }
