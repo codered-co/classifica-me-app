@@ -9,7 +9,7 @@ public class Empresa {
 
     private String id, nome, descricao, cidade,
             estado, rua, bairro, numero,
-            categoria, imagem, tipo, cnpj;
+            categoria, imagem, tipo, cnpj, telefone;
     private int totalVotos;
     private double classificacao;
     private Voto voto;
@@ -133,6 +133,14 @@ public class Empresa {
 
     public void setClassificacao(double classificacao) {
         this.classificacao = classificacao;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     public Voto getVoto() {

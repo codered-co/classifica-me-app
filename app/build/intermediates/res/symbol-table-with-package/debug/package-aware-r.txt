@@ -1455,7 +1455,6 @@ id textView3
 id textView4
 id textView_atendimento_cliente
 id textView_categoria_descricao_empresa
-id textView_cidade_descricao_empresa
 id textView_classificacao_empresa_adapter_ranking
 id textView_cnpj_descricao_empresa
 id textView_data_perfil

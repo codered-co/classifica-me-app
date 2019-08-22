@@ -15,18 +15,27 @@ import android.view.ViewGroup;
 
 import com.example.classificame.R;
 import com.example.classificame.adapter.AdapterClassificar;
+import com.example.classificame.config.ConfigFirebase;
 import com.example.classificame.model.Empresa;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
-
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ClassificarFragment extends Fragment {
+
+    private DatabaseReference firebase;
+    private ValueEventListener listener;
+
     private RecyclerView recyclerViewEmpresa;
     private ArrayList<Empresa> empresas = new ArrayList<>();
+    private Empresa empresa;
     private AdapterClassificar adapterClassificar;
 
     @Nullable
@@ -34,6 +43,15 @@ public class ClassificarFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_classificar, container, false);
+
+        firebase = ConfigFirebase.getDatabase();
+
+        recyclerViewEmpresa = view.findViewById(R.id.recyclerViewClassificar);
+        recyclerViewEmpresa.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        adapterClassificar = new AdapterClassificar(empresas, getContext());
+        recyclerViewEmpresa.setAdapter(adapterClassificar);
+
         return view;
     }
 
@@ -63,21 +81,6 @@ public class ClassificarFragment extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        //Recycler
-        recyclerViewEmpresa = getView().findViewById(R.id.recyclerViewClassificar);
-        recyclerViewEmpresa.setLayoutManager(new LinearLayoutManager(getContext()));
-        //Adapter
-        adapterClassificar = new AdapterClassificar(empresas, getContext());
-        recyclerViewEmpresa.setAdapter(adapterClassificar);
-
-        //Chamar método "CriarEmpresa" para exibir lista se quiser..
-
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
@@ -88,8 +91,37 @@ public class ClassificarFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
-    private void recuperarEmpresa() {
-        //Firebase
+    @Override
+    public void onStart() {
+        super.onStart();
+        recuperarEmpresas();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (listener != null){
+            firebase.removeEventListener(listener);
+        }
+    }
+
+    private void recuperarEmpresas() {
+        listener = firebase.child("empresa").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                empresas.clear();
+                for (DataSnapshot dados : dataSnapshot.getChildren()) {
+                    empresa = dados.getValue(Empresa.class);
+                    empresas.add(empresa);
+                }
+                adapterClassificar.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }
 
