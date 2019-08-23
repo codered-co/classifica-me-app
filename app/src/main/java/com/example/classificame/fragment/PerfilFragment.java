@@ -23,10 +23,10 @@ import com.example.classificame.activity.AdicionarEmpresaActivity;
 import com.example.classificame.activity.CadastroActivity;
 import com.example.classificame.activity.EditarPerfilActivity;
 import com.example.classificame.activity.MainActivity;
-import com.example.classificame.adapter.AdapterGamificacao;
+import com.example.classificame.adapter.AdapterConquista;
 import com.example.classificame.config.ConfigFirebase;
 import com.example.classificame.helper.Base64Helper;
-import com.example.classificame.model.Gamificacao;
+import com.example.classificame.model.Conquista;
 import com.example.classificame.model.Usuario;
 import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
@@ -49,8 +49,8 @@ public class PerfilFragment extends Fragment {
     private Button buttonAdicionarEmpresa;
 
     private RecyclerView recyclerViewGamificacao;
-    private ArrayList<Gamificacao> gamificacoes = new ArrayList<>();
-    private AdapterGamificacao adapterGamificacao;
+    private ArrayList<Conquista> conquistas = new ArrayList<>();
+    private AdapterConquista adapterConquista;
 
     private Usuario usuario;
 
@@ -89,8 +89,8 @@ public class PerfilFragment extends Fragment {
         recyclerViewGamificacao = view.findViewById(R.id.recyclerView_perfil_gamificacao);
         recyclerViewGamificacao.setLayoutManager(new LinearLayoutManager(getContext()));
         //Adapter
-        adapterGamificacao = new AdapterGamificacao(gamificacoes, getContext());
-        recyclerViewGamificacao.setAdapter(adapterGamificacao);
+        adapterConquista = new AdapterConquista(conquistas, getContext());
+        recyclerViewGamificacao.setAdapter(adapterConquista);
 
         criaGamificacao();
         return view;
@@ -98,41 +98,41 @@ public class PerfilFragment extends Fragment {
 
     public void criaGamificacao() {
 
-        Gamificacao gamificacao1 = new Gamificacao();
-        gamificacao1.setNomeConquista("Primeiro voto");
-        gamificacao1.setImagemConquista(R.drawable.ic_votefirst);
-        gamificacao1.setImagemDesbloquear(R.drawable.ic_lock);
-        gamificacoes.add(gamificacao1);
+        Conquista conquista1 = new Conquista();
+        conquista1.setNomeConquista("Primeiro voto");
+        conquista1.setImagemEmblemaConquista(R.drawable.ic_votefirst);
+        conquista1.setImagemDesbloquearConquista(R.drawable.ic_lock);
+        conquistas.add(conquista1);
 
-        Gamificacao gamificacao2 = new Gamificacao();
-        gamificacao2.setNomeConquista("Consumidor Engajado");
-        gamificacao2.setImagemConquista(R.drawable.ic_engagedconsumer);
-        gamificacao2.setImagemDesbloquear(R.drawable.ic_lock);
-        gamificacoes.add(gamificacao2);
+        Conquista conquista2 = new Conquista();
+        conquista2.setNomeConquista("Consumidor Engajado");
+        conquista2.setImagemEmblemaConquista(R.drawable.ic_engagedconsumer);
+        conquista2.setImagemDesbloquearConquista(R.drawable.ic_lock);
+        conquistas.add(conquista2);
 
-        Gamificacao gamificacao3 = new Gamificacao();
-        gamificacao3.setNomeConquista("Comunicador");
-        gamificacao3.setImagemConquista(R.drawable.ic_communicate);
-        gamificacao3.setImagemDesbloquear(R.drawable.ic_lock);
-        gamificacoes.add(gamificacao3);
+        Conquista conquista3 = new Conquista();
+        conquista3.setNomeConquista("Comunicador");
+        conquista3.setImagemEmblemaConquista(R.drawable.ic_communicate);
+        conquista3.setImagemDesbloquearConquista(R.drawable.ic_lock);
+        conquistas.add(conquista3);
 
-        Gamificacao gamificacao4 = new Gamificacao();
-        gamificacao4.setNomeConquista("Conhecendo o mercado");
-        gamificacao4.setImagemConquista(R.drawable.ic_knowingthemarket);
-        gamificacao4.setImagemDesbloquear(R.drawable.ic_block);
-        gamificacoes.add(gamificacao4);
+        Conquista conquista4 = new Conquista();
+        conquista4.setNomeConquista("Conhecendo o mercado");
+        conquista4.setImagemEmblemaConquista(R.drawable.ic_knowingthemarket);
+        conquista4.setImagemDesbloquearConquista(R.drawable.ic_block);
+        conquistas.add(conquista4);
 
-        Gamificacao gamificacao5 = new Gamificacao();
-        gamificacao5.setNomeConquista("Compra consciente");
-        gamificacao5.setImagemConquista(R.drawable.ic_buy);
-        gamificacao5.setImagemDesbloquear(R.drawable.ic_block);
-        gamificacoes.add(gamificacao5);
+        Conquista conquista5 = new Conquista();
+        conquista5.setNomeConquista("Compra consciente");
+        conquista5.setImagemEmblemaConquista(R.drawable.ic_buy);
+        conquista5.setImagemDesbloquearConquista(R.drawable.ic_block);
+        conquistas.add(conquista5);
 
-        Gamificacao gamificacao6 = new Gamificacao();
-        gamificacao6.setNomeConquista("Campeão");
-        gamificacao6.setImagemConquista(R.drawable.ic_champion);
-        gamificacao6.setImagemDesbloquear(R.drawable.ic_block);
-        gamificacoes.add(gamificacao6);
+        Conquista conquista6 = new Conquista();
+        conquista6.setNomeConquista("Campeão");
+        conquista6.setImagemEmblemaConquista(R.drawable.ic_champion);
+        conquista6.setImagemDesbloquearConquista(R.drawable.ic_block);
+        conquistas.add(conquista6);
 
         textViewTituloUsuarioGamificacao.setText("Comunicador");
     }

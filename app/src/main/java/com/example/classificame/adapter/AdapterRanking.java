@@ -64,7 +64,7 @@ public class AdapterRanking extends RecyclerView.Adapter<AdapterRanking.AdapterR
         } else if (classificacao >= 2 && classificacao < 3){
             adapterRankingViewHolder.imageViewClassificacaoEmpresa.setImageResource(R.drawable.srv_ic_rating_awful);
         } else {
-            adapterRankingViewHolder.imageViewClassificacaoEmpresa.setImageResource(R.drawable.ic_arrow);
+            //adapterRankingViewHolder.imageViewClassificacaoEmpresa.setImageResource(R.drawable.ic_arrow);
         }
 
         adapterRankingViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
