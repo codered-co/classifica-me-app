@@ -1310,7 +1310,6 @@ id ifRoom
 id image
 id imageView_classificacao_empresa_adapter_ranking
 id imageView_conquista_descricao_conquista
-id imageView_descricao_empresa_adapter
 id imageView_descricao_empresa_adapter_ranking
 id imageView_emblema_conquista
 id imageView_emblema_perfil
@@ -1323,7 +1322,6 @@ id imageView_nome_empresa_adapter
 id imageView_nome_empresa_adapter_ranking
 id imageView_perfil_descricao_empresa
 id imageView_perfil_usuario
-id imageView_seta
 id imageView_tipo_empresa_adapter
 id imageView_tipo_empresa_adapter_ranking
 id imageView_user_perfil
@@ -1460,7 +1458,6 @@ id textView_cnpj_descricao_empresa
 id textView_data_perfil
 id textView_desc_descricao_empresa
 id textView_descricao_conquista
-id textView_descricao_empresa_adapter
 id textView_descricao_empresa_adapter_ranking
 id textView_descricao_empresa_classificar
 id textView_endereco_descricao_empresa
@@ -1618,8 +1615,14 @@ layout support_simple_spinner_dropdown_item
 layout view_simpleratingview
 menu bottom_nav_menu
 menu menu_toolbar
+mipmap amazing_rating_value
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap srv_ic_rating_amazing
+mipmap srv_ic_rating_amazing_round
+mipmap srv_ic_rating_awful
+mipmap srv_ic_rating_good
+mipmap srv_ic_rating_meh
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

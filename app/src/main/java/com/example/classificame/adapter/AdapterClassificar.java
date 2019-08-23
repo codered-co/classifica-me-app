@@ -48,7 +48,6 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
                 empresa.getEstado();
 
         viewHolderEmpresa.nomeEmpresa.setText(empresa.getNome());
-        viewHolderEmpresa.descricaoEmpresa.setText(empresa.getDescricao());
         viewHolderEmpresa.localEmpresa.setText(local);
         viewHolderEmpresa.tipoEmpresa.setText(empresa.getTipo());
         //imagemEmpresa -->
@@ -89,14 +88,13 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
 
     public class ViewHolderEmpresa extends RecyclerView.ViewHolder {
 
-        private TextView nomeEmpresa, descricaoEmpresa, localEmpresa, tipoEmpresa;
+        private TextView nomeEmpresa, localEmpresa, tipoEmpresa;
         private ImageView imagemEmpresa;
 
         public ViewHolderEmpresa(@NonNull View itemView) {
             super(itemView);
 
             nomeEmpresa = itemView.findViewById(R.id.textView_nome_empresa_adapter);
-            descricaoEmpresa = itemView.findViewById(R.id.textView_descricao_empresa_adapter);
             localEmpresa = itemView.findViewById(R.id.textView_local_empresa_adapter);
             imagemEmpresa = itemView.findViewById(R.id.imageView_empresa_adapter);
             tipoEmpresa = itemView.findViewById(R.id.textView_tipo_empresa_adapter);

@@ -1,6 +1,7 @@
 package com.example.classificame.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.classificame.R;
+import com.example.classificame.activity.DescricaoConquistaActivity;
 import com.example.classificame.model.Conquista;
 
 import java.util.ArrayList;
@@ -33,7 +35,7 @@ public class AdapterConquista extends RecyclerView.Adapter<AdapterConquista.View
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderConquista viewHolderGamificacao, int posicao) {
+    public void onBindViewHolder(@NonNull final ViewHolderConquista viewHolderGamificacao, int posicao) {
         Conquista conquista = conquistas.get(posicao);
         viewHolderGamificacao.nomeConquista.setText(conquista.getNomeConquista());
         viewHolderGamificacao.imagemConquista.setImageResource(conquista.getImagemEmblemaConquista());
@@ -43,6 +45,8 @@ public class AdapterConquista extends RecyclerView.Adapter<AdapterConquista.View
             @Override
             public void onClick(View view) {
                 Toast.makeText(context, "Conquista em breve", Toast.LENGTH_SHORT).show();
+                //Intent intent = new Intent(context, DescricaoConquistaActivity.class);
+                //context.startActivity(intent);
             }
         });
 
