@@ -1312,11 +1312,11 @@ id imageView_classificacao_empresa_adapter_ranking
 id imageView_conquista_descricao_conquista
 id imageView_descricao_empresa_adapter
 id imageView_descricao_empresa_adapter_ranking
-id imageView_emblema_gamificacao
+id imageView_emblema_conquista
 id imageView_emblema_perfil
 id imageView_empresa_adapter
 id imageView_empresa_adapter_ranking
-id imageView_icon_block_gamificacao
+id imageView_icon_block_conquista
 id imageView_local_empresa_adapter
 id imageView_local_empresa_adapter_ranking
 id imageView_nome_empresa_adapter
@@ -1460,7 +1460,6 @@ id textView_cnpj_descricao_empresa
 id textView_data_perfil
 id textView_desc_descricao_empresa
 id textView_descricao_conquista
-id textView_descricao_desbloqueio
 id textView_descricao_empresa_adapter
 id textView_descricao_empresa_adapter_ranking
 id textView_descricao_empresa_classificar
@@ -1468,12 +1467,12 @@ id textView_endereco_descricao_empresa
 id textView_forma_pagamento
 id textView_local_empresa_adapter
 id textView_local_empresa_adapter_ranking
+id textView_nome_conquista_desbloqueada
 id textView_nome_conquista_descricao
 id textView_nome_descricao_empresa
 id textView_nome_empresa_adapter
 id textView_nome_empresa_adapter_ranking
 id textView_nome_empresa_classificar
-id textView_nome_gamificacao_desbloqueada
 id textView_nome_perfil
 id textView_possibilidade_voltar
 id textView_qualidade_produto
@@ -1569,7 +1568,7 @@ layout activity_descricao_conquista
 layout activity_editar_perfil
 layout activity_main
 layout adapter_classificar
-layout adapter_gamificacao
+layout adapter_conquista
 layout adapter_ranking
 layout com_facebook_activity_layout
 layout com_facebook_device_auth_dialog_fragment

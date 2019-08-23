@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ivanv\\AndroidStudioProjects\\classifica-me-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ivanv\\.gradle\\caches\\transforms-2\\files-2.1\\42754af4736a95d9c56d3232196a0c44\\res\\values-land\\values-land.xml",
+                    "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/520c4bcadddf3784215d09d5c21df042/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ivanv\\.gradle\\caches\\transforms-2\\files-2.1\\e223175f434aa4ac568e0de4ff56fd20\\res\\values-land\\values-land.xml",
+                    "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/912cab05190a2130cb21470b65981807/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

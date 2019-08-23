@@ -11,33 +11,33 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.classificame.R;
-import com.example.classificame.model.Gamificacao;
+import com.example.classificame.model.Conquista;
 
 import java.util.ArrayList;
 
-public class AdapterGamificacao extends RecyclerView.Adapter<AdapterGamificacao.ViewHolderGamificacao> {
+public class AdapterConquista extends RecyclerView.Adapter<AdapterConquista.ViewHolderConquista> {
 
-    private ArrayList<Gamificacao> gamificacoes;
+    private ArrayList<Conquista> conquistas;
     private Context context;
 
-    public AdapterGamificacao(ArrayList<Gamificacao> gamificacoes, Context context) {
-        this.gamificacoes = gamificacoes;
+    public AdapterConquista(ArrayList<Conquista> conquistas, Context context) {
+        this.conquistas = conquistas;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public ViewHolderGamificacao onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.adapter_gamificacao, viewGroup, false);
-        return new ViewHolderGamificacao(view);
+    public ViewHolderConquista onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.adapter_conquista, viewGroup, false);
+        return new ViewHolderConquista(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderGamificacao viewHolderGamificacao, int posicao) {
-        Gamificacao gamificacao = gamificacoes.get(posicao);
-        viewHolderGamificacao.nomeConquista.setText(gamificacao.getNomeConquista());
-        viewHolderGamificacao.imagemConquista.setImageResource(gamificacao.getImagemConquista());
-        viewHolderGamificacao.imagemIconBlock.setImageResource(gamificacao.getImagemDesbloquear());
+    public void onBindViewHolder(@NonNull ViewHolderConquista viewHolderGamificacao, int posicao) {
+        Conquista conquista = conquistas.get(posicao);
+        viewHolderGamificacao.nomeConquista.setText(conquista.getNomeConquista());
+        viewHolderGamificacao.imagemConquista.setImageResource(conquista.getImagemEmblemaConquista());
+        viewHolderGamificacao.imagemIconBlock.setImageResource(conquista.getImagemDesbloquearConquista());
         
         viewHolderGamificacao.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,21 +52,21 @@ public class AdapterGamificacao extends RecyclerView.Adapter<AdapterGamificacao.
 
     @Override
     public int getItemCount() {
-        return gamificacoes.size();
+        return conquistas.size();
     }
 
-    public class ViewHolderGamificacao extends RecyclerView.ViewHolder {
+    public class ViewHolderConquista extends RecyclerView.ViewHolder {
 
         private ImageView imagemIconBlock;
         private ImageView imagemConquista;
         private TextView nomeConquista;
 
-        public ViewHolderGamificacao(@NonNull View itemView) {
+        public ViewHolderConquista(@NonNull View itemView) {
             super(itemView);
 
-            imagemIconBlock = itemView.findViewById(R.id.imageView_icon_block_gamificacao);
-            imagemConquista = itemView.findViewById(R.id.imageView_emblema_gamificacao);
-            nomeConquista = itemView.findViewById(R.id.textView_nome_gamificacao_desbloqueada);
+            imagemIconBlock = itemView.findViewById(R.id.imageView_icon_block_conquista);
+            imagemConquista = itemView.findViewById(R.id.imageView_emblema_conquista);
+            nomeConquista = itemView.findViewById(R.id.textView_nome_conquista_desbloqueada);
         }
     }
 

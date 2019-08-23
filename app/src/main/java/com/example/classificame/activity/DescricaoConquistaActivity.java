@@ -14,7 +14,6 @@ import com.example.classificame.R;
 public class DescricaoConquistaActivity extends AppCompatActivity {
 
     private TextView textViewDescricao;
-    private TextView textViewDescricaoDesbloqueio;
     private ImageView imageViewDescricaoConquista;
     private TextView textViewNomeConquista;
 
@@ -23,7 +22,6 @@ public class DescricaoConquistaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_descricao_conquista);
 
-        textViewDescricaoDesbloqueio = findViewById(R.id.textView_descricao_desbloqueio);
         textViewDescricao = findViewById(R.id.textView_descricao_conquista);
         imageViewDescricaoConquista = findViewById(R.id.imageView_conquista_descricao_conquista);
         textViewNomeConquista = findViewById(R.id.textView_nome_conquista_descricao);
