@@ -31,6 +31,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="30dp"
             android:text="Nome ação"
+            android:textSize="14sp"
             android:textStyle="bold"/>
 
         <ImageView

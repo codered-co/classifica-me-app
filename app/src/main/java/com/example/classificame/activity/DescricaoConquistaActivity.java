@@ -43,6 +43,7 @@ public class DescricaoConquistaActivity extends AppCompatActivity {
         MenuItem item1 = menu.findItem(R.id.action_ordenar);
         MenuItem item2 = menu.findItem(R.id.action_logout);
         MenuItem item3 = menu.findItem(R.id.action_editar);
+        MenuItem item4 = menu.findItem(R.id.action_check);
 
         if (item1 != null) {
             item1.setVisible(false);
@@ -50,6 +51,9 @@ public class DescricaoConquistaActivity extends AppCompatActivity {
             item2.setVisible(false);
         } if (item3 != null) {
             item3.setVisible(false);
+        }
+        if (item4 != null) {
+            item4.setVisible(false);
         }
         return super.onPrepareOptionsMenu(menu);
     }
