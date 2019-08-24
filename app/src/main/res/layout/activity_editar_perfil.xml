@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:gravity="center"
-            android:background="@color/colorPrimary">
+            android:background="@color/lightPurple">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageView_user_perfil"
@@ -98,6 +98,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
+                android:layout_marginRight="25dp"
+
                 android:src="@drawable/ic_confirmar" />
         </LinearLayout>
 

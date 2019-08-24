@@ -632,6 +632,7 @@ color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
 color colorAccent
+color colorNavigation
 color colorPrimary
 color colorPrimaryDark
 color com_facebook_blue
@@ -681,6 +682,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color lightPurple
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1310,7 +1312,6 @@ id ifRoom
 id image
 id imageView_classificacao_empresa_adapter_ranking
 id imageView_conquista_descricao_conquista
-id imageView_descricao_empresa_adapter_ranking
 id imageView_emblema_conquista
 id imageView_emblema_perfil
 id imageView_empresa_adapter
@@ -1450,7 +1451,6 @@ id textStart
 id textView
 id textView2
 id textView3
-id textView4
 id textView_atendimento_cliente
 id textView_categoria_descricao_empresa
 id textView_classificacao_empresa_adapter_ranking
@@ -1458,7 +1458,6 @@ id textView_cnpj_descricao_empresa
 id textView_data_perfil
 id textView_desc_descricao_empresa
 id textView_descricao_conquista
-id textView_descricao_empresa_adapter_ranking
 id textView_descricao_empresa_classificar
 id textView_endereco_descricao_empresa
 id textView_forma_pagamento

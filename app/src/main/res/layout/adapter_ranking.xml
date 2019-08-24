@@ -7,96 +7,100 @@
     <android.support.v7.widget.CardView
         android:id="@+id/cardView_empresa_adapter"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="8dp"
         android:elevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:background="?attr/selectableItemBackground"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imageView_nome_empresa_adapter_ranking"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageView_empresa_adapter_ranking"
+                android:layout_width="100dp"
+                android:layout_height="85dp"
+                android:src="@drawable/ic_pessoa"
+                app:civ_border_width="5dp" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/imageView_nome_empresa_adapter_ranking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_pessoa" />
+
+                    <TextView
+                        android:id="@+id/textView_nome_empresa_adapter_ranking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/imageView_local_empresa_adapter_ranking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_location"/>
+
+                    <TextView
+                        android:id="@+id/textView_local_empresa_adapter_ranking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/imageView_tipo_empresa_adapter_ranking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_dashboard_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/textView_tipo_empresa_adapter_ranking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_gravity="end"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_pessoa"
-            android:layout_marginTop="42dp"
-            android:layout_marginStart="110dp"/>
-
-        <ImageView
-            android:id="@+id/imageView_descricao_empresa_adapter_ranking"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_pessoa"
-            android:layout_marginTop="72dp"
-            android:layout_marginStart="110dp"/>
-
-        <ImageView
-            android:id="@+id/imageView_local_empresa_adapter_ranking"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_location"
-            android:layout_marginTop="102dp"
-            android:layout_marginStart="110dp"/>
-
-
-        <ImageView
-            android:id="@+id/imageView_tipo_empresa_adapter_ranking"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_dashboard_black_24dp"
-            android:layout_marginTop="135dp"
-            android:layout_marginStart="110dp"/>
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imageView_empresa_adapter_ranking"
-            android:layout_width="100dp"
-            android:layout_height="85dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/ic_pessoa"
-            app:civ_border_width="5dp" />
-
-        <TextView
-            android:id="@+id/textView_nome_empresa_adapter_ranking"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginEnd="73dp"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/textView_descricao_empresa_adapter_ranking"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="75dp"
-            android:layout_marginEnd="73dp"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/textView_local_empresa_adapter_ranking"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="105dp"
-            android:layout_marginEnd="73dp"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/textView_tipo_empresa_adapter_ranking"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="135dp"
-            android:layout_marginEnd="73dp"
-            android:textSize="14sp" />
-
+            android:layout_height="wrap_content">
 
             <LinearLayout
-                android:layout_gravity="right|center_vertical"
                 android:layout_marginEnd="20dp"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
@@ -115,6 +119,9 @@
                     android:textSize="35dp" />
 
             </LinearLayout>
+
+        </FrameLayout>
+
 
     </android.support.v7.widget.CardView>
 
