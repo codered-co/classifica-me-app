@@ -42,7 +42,6 @@ public class AdapterRanking extends RecyclerView.Adapter<AdapterRanking.AdapterR
         String local = empresa.getLocal();
 
         adapterRankingViewHolder.textViewNomeEmpresa.setText(empresa.getNome());
-        adapterRankingViewHolder.textViewDescricaoEmpresa.setText(empresa.getDescricao());
         adapterRankingViewHolder.textViewLocalEmpresa.setText(local);
         adapterRankingViewHolder.textViewCategoriaEmpresa.setText(empresa.getCategoria());
 
@@ -95,7 +94,6 @@ public class AdapterRanking extends RecyclerView.Adapter<AdapterRanking.AdapterR
 
     public class AdapterRankingViewHolder extends RecyclerView.ViewHolder {
         TextView textViewNomeEmpresa;
-        TextView textViewDescricaoEmpresa;
         TextView textViewLocalEmpresa;
         TextView textViewCategoriaEmpresa;
         TextView textViewClassificaEmpresa;
@@ -107,7 +105,6 @@ public class AdapterRanking extends RecyclerView.Adapter<AdapterRanking.AdapterR
             super(itemView);
 
             textViewNomeEmpresa = itemView.findViewById(R.id.textView_nome_empresa_adapter_ranking);
-            textViewDescricaoEmpresa = itemView.findViewById(R.id.textView_descricao_empresa_adapter_ranking);
             textViewLocalEmpresa = itemView.findViewById(R.id.textView_local_empresa_adapter_ranking);
             textViewCategoriaEmpresa = itemView.findViewById(R.id.textView_tipo_empresa_adapter_ranking);
             textViewClassificaEmpresa = itemView.findViewById(R.id.textView_classificacao_empresa_adapter_ranking);

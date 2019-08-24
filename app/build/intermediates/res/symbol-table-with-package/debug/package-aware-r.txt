@@ -1312,7 +1312,6 @@ id ifRoom
 id image
 id imageView_classificacao_empresa_adapter_ranking
 id imageView_conquista_descricao_conquista
-id imageView_descricao_empresa_adapter_ranking
 id imageView_emblema_conquista
 id imageView_emblema_perfil
 id imageView_empresa_adapter
@@ -1459,7 +1458,6 @@ id textView_cnpj_descricao_empresa
 id textView_data_perfil
 id textView_desc_descricao_empresa
 id textView_descricao_conquista
-id textView_descricao_empresa_adapter_ranking
 id textView_descricao_empresa_classificar
 id textView_endereco_descricao_empresa
 id textView_forma_pagamento
