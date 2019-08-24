@@ -41,16 +41,9 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
     @Override
     public void onBindViewHolder(@NonNull ViewHolderEmpresa viewHolderEmpresa, final int posicao) {
         Empresa empresa = empresas.get(posicao);
-        String local = empresa.getRua() + ", " +
-                empresa.getNumero() + ", " +
-                empresa.getBairro() + ", " +
-                empresa.getCidade() + " - " +
-                empresa.getEstado();
+        String local = empresa.getLocal();
 
-        viewHolderEmpresa.nomeEmpresa.setText(empresa.getNome());
-        viewHolderEmpresa.descricaoEmpresa.setText(empresa.getDescricao());
-        viewHolderEmpresa.localEmpresa.setText(local);
-        viewHolderEmpresa.tipoEmpresa.setText(empresa.getTipo());
+        setTexts(viewHolderEmpresa, empresa, local);
         //imagemEmpresa -->
 
         viewHolderEmpresa.itemView.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +67,12 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
         });
     }
 
+    private void setTexts(@NonNull ViewHolderEmpresa viewHolderEmpresa, Empresa empresa, String local) {
+        viewHolderEmpresa.nomeEmpresa.setText(empresa.getNome());
+        viewHolderEmpresa.localEmpresa.setText(local);
+        viewHolderEmpresa.tipoEmpresa.setText(empresa.getTipo());
+    }
+
 
     public static Comparator<Empresa> sortNameEmpresa = new Comparator<Empresa>() {
         @Override
@@ -89,14 +88,13 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
 
     public class ViewHolderEmpresa extends RecyclerView.ViewHolder {
 
-        private TextView nomeEmpresa, descricaoEmpresa, localEmpresa, tipoEmpresa;
+        private TextView nomeEmpresa, localEmpresa, tipoEmpresa;
         private ImageView imagemEmpresa;
 
         public ViewHolderEmpresa(@NonNull View itemView) {
             super(itemView);
 
             nomeEmpresa = itemView.findViewById(R.id.textView_nome_empresa_adapter);
-            descricaoEmpresa = itemView.findViewById(R.id.textView_descricao_empresa_adapter);
             localEmpresa = itemView.findViewById(R.id.textView_local_empresa_adapter);
             imagemEmpresa = itemView.findViewById(R.id.imageView_empresa_adapter);
             tipoEmpresa = itemView.findViewById(R.id.textView_tipo_empresa_adapter);

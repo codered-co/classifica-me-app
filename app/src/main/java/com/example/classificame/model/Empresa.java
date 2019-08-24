@@ -150,4 +150,13 @@ public class Empresa {
     public void setVoto(Voto voto) {
         this.voto = voto;
     }
+
+    public String getLocal() {
+        String local = getRua() + ", " +
+                getNumero() + ", " +
+                getBairro() + ", " +
+                getCidade() + " - " +
+                getEstado();
+        return local;
+    }
 }

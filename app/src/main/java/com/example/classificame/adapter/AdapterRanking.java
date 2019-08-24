@@ -39,11 +39,7 @@ public class AdapterRanking extends RecyclerView.Adapter<AdapterRanking.AdapterR
     @Override
     public void onBindViewHolder(@NonNull AdapterRankingViewHolder adapterRankingViewHolder, final int posicao) {
         Empresa empresa = empresaArrayList.get(posicao);
-        String local = empresa.getRua() + ", " +
-                empresa.getNumero() + ", " +
-                empresa.getBairro() + ", " +
-                empresa.getCidade() + " - " +
-                empresa.getEstado();
+        String local = empresa.getLocal();
 
         adapterRankingViewHolder.textViewNomeEmpresa.setText(empresa.getNome());
         adapterRankingViewHolder.textViewDescricaoEmpresa.setText(empresa.getDescricao());
@@ -71,11 +67,7 @@ public class AdapterRanking extends RecyclerView.Adapter<AdapterRanking.AdapterR
             @Override
             public void onClick(View v) {
                 Empresa empresa = empresaArrayList.get(posicao);
-                String endereco = empresa.getRua() + ", " +
-                        empresa.getBairro() + ", Nº " +
-                        empresa.getNumero() + ", " +
-                        empresa.getCidade() + " - " +
-                        empresa.getEstado();
+                String endereco = empresa.getLocal();
                 Fragment fragment = new DescricaoEmpresaFragment();
 
                 Bundle bundle = new Bundle();
