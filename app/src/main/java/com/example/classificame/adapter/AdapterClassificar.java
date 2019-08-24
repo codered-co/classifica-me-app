@@ -41,15 +41,9 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
     @Override
     public void onBindViewHolder(@NonNull ViewHolderEmpresa viewHolderEmpresa, final int posicao) {
         Empresa empresa = empresas.get(posicao);
-        String local = empresa.getRua() + ", " +
-                empresa.getNumero() + ", " +
-                empresa.getBairro() + ", " +
-                empresa.getCidade() + " - " +
-                empresa.getEstado();
+        String local = empresa.getLocal();
 
-        viewHolderEmpresa.nomeEmpresa.setText(empresa.getNome());
-        viewHolderEmpresa.localEmpresa.setText(local);
-        viewHolderEmpresa.tipoEmpresa.setText(empresa.getTipo());
+        setTexts(viewHolderEmpresa, empresa, local);
         //imagemEmpresa -->
 
         viewHolderEmpresa.itemView.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +65,12 @@ public class AdapterClassificar extends RecyclerView.Adapter<AdapterClassificar.
                 context.startActivity(intent);
             }
         });
+    }
+
+    private void setTexts(@NonNull ViewHolderEmpresa viewHolderEmpresa, Empresa empresa, String local) {
+        viewHolderEmpresa.nomeEmpresa.setText(empresa.getNome());
+        viewHolderEmpresa.localEmpresa.setText(local);
+        viewHolderEmpresa.tipoEmpresa.setText(empresa.getTipo());
     }
 
 

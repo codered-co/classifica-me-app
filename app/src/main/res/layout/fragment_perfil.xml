@@ -14,7 +14,7 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="230dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/lightPurple"
             android:gravity="center_vertical"
             android:orientation="vertical"
             app:layout_constraintTop_toTopOf="parent"

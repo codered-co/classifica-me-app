@@ -27,6 +27,28 @@ public class DescricaoEmpresaFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_descricao_empresa, container, false);
 
+        findView(view);
+
+        bottomNavigationView = getActivity().findViewById(R.id.nav_view);
+        bottomNavigationView.setVisibility(View.GONE);
+
+        setTexts();
+
+        return view;
+    }
+
+    private void setTexts() {
+        Bundle bundle = getArguments();
+        textViewNome.setText("Nome: " + bundle.getString("NomeEmpresa"));
+        textViewDescricao.setText("Descricao: " + bundle.getString("DescricaoEmpresa"));
+        textViewTipo.setText("Tipo: " + bundle.getString("TipoEmpresa"));
+        textViewCategoria.setText("Categoria: " + bundle.getString("CategoriaEmpresa"));
+        textViewTelefone.setText("Telefone: " + bundle.getString("TelefoneEmpresa"));
+        textViewCnpj.setText("CNPJ: " + bundle.getString("CnpjEmpresa"));
+        textViewEndereco.setText("Endereco: " + bundle.getString("EnderecoEmpresa"));
+    }
+
+    private void findView(View view) {
         textViewNome = view.findViewById(R.id.textView_nome_descricao_empresa);
         textViewDescricao = view.findViewById(R.id.textView_desc_descricao_empresa);
         textViewTipo = view.findViewById(R.id.textView_tipo_descricao_empresa);
@@ -35,25 +57,6 @@ public class DescricaoEmpresaFragment extends Fragment {
         textViewEndereco = view.findViewById(R.id.textView_endereco_descricao_empresa);
         textViewCnpj = view.findViewById(R.id.textView_cnpj_descricao_empresa);
         imageViewPerfil = view.findViewById(R.id.imageView_perfil_descricao_empresa);
-
-        bottomNavigationView = getActivity().findViewById(R.id.nav_view);
-        bottomNavigationView.setVisibility(View.GONE);
-
-        Bundle bundle = this.getArguments();
-
-        textViewNome.setText("Nome: " + bundle.getString("NomeEmpresa"));
-        textViewDescricao.setText("Descricao: " + bundle.getString("DescricaoEmpresa"));
-        textViewTipo.setText("Tipo: " + bundle.getString("TipoEmpresa"));
-        textViewCategoria.setText("Categoria: " + bundle.getString("CategoriaEmpresa"));
-        textViewTelefone.setText("Telefone: " + bundle.getString("TelefoneEmpresa"));
-        textViewCnpj.setText("CNPJ: " + bundle.getString("CnpjEmpresa"));
-        textViewEndereco.setText("Endereco: " + bundle.getString("EnderecoEmpresa"));
-
-        return view;
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 }

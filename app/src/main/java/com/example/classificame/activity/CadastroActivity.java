@@ -58,28 +58,12 @@ public class CadastroActivity extends AppCompatActivity {
 
         auth = ConfigFirebase.getAuth();
 
-        editTextNome = findViewById(R.id.editText_nome);
-        editTextEmail = findViewById(R.id.editText_email);
-        editTextSenha = findViewById(R.id.editText_senha);
-        editTextConfirmarSenha = findViewById(R.id.editText_confirmar_senha);
-        editTextTelefone = findViewById(R.id.editText_telefone);
-        editTextAno = findViewById(R.id.editText_ano);
-        editTextCidade = findViewById(R.id.editText_cidade);
-        editTextEstado = findViewById(R.id.editText_estado);
-        spinnerDia = findViewById(R.id.spinner_dia);
-        spinnerMes = findViewById(R.id.spinner_mes);
-        spinnerPaises = findViewById(R.id.spinner_paises);
-        buttonCadastrar = findViewById(R.id.button_cadastrar);
-        radioGroup = findViewById(R.id.radioGroup_sexo);
-        radioButtonNull = findViewById(R.id.radioButton_null);
+        findViewByIds();
 
         radioButtonNull.setVisibility(View.GONE);
 
         if (auth.getCurrentUser() != null) {
-            FirebaseUser user = auth.getCurrentUser();
-            editTextNome.setText(user.getDisplayName());
-            editTextEmail.setText(user.getEmail());
-            editTextTelefone.setText(user.getPhoneNumber());
+            setTexts();
             editTextSenha.setVisibility(View.GONE);
             editTextConfirmarSenha.setVisibility(View.GONE);
         }
@@ -186,6 +170,30 @@ public class CadastroActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void setTexts() {
+        FirebaseUser user = auth.getCurrentUser();
+        editTextNome.setText(user.getDisplayName());
+        editTextEmail.setText(user.getEmail());
+        editTextTelefone.setText(user.getPhoneNumber());
+    }
+
+    private void findViewByIds() {
+        editTextNome = findViewById(R.id.editText_nome);
+        editTextEmail = findViewById(R.id.editText_email);
+        editTextSenha = findViewById(R.id.editText_senha);
+        editTextConfirmarSenha = findViewById(R.id.editText_confirmar_senha);
+        editTextTelefone = findViewById(R.id.editText_telefone);
+        editTextAno = findViewById(R.id.editText_ano);
+        editTextCidade = findViewById(R.id.editText_cidade);
+        editTextEstado = findViewById(R.id.editText_estado);
+        spinnerDia = findViewById(R.id.spinner_dia);
+        spinnerMes = findViewById(R.id.spinner_mes);
+        spinnerPaises = findViewById(R.id.spinner_paises);
+        buttonCadastrar = findViewById(R.id.button_cadastrar);
+        radioGroup = findViewById(R.id.radioGroup_sexo);
+        radioButtonNull = findViewById(R.id.radioButton_null);
     }
 
     private void configurarSpinner(Spinner spinner, int array) {

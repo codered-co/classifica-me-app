@@ -68,13 +68,7 @@ public class PerfilFragment extends Fragment {
         auth = ConfigFirebase.getAuth();
         firebase = ConfigFirebase.getDatabase();
 
-        textViewTituloUsuarioGamificacao = view.findViewById(R.id.textView_titulo_usuario_perfil);
-        textViewNome = view.findViewById(R.id.textView_nome_perfil);
-        textViewDataNascimento = view.findViewById(R.id.textView_data_perfil);
-
-        imageViewPerfil = view.findViewById(R.id.imageView_perfil_usuario);
-        imageViewEmblema = view.findViewById(R.id.imageView_emblema_perfil);
-        buttonAdicionarEmpresa = view.findViewById(R.id.button_adicionar_empresa);
+        findViewByIds(view);
 
         buttonAdicionarEmpresa.setVisibility(View.GONE);
 
@@ -94,6 +88,16 @@ public class PerfilFragment extends Fragment {
 
         criaGamificacao();
         return view;
+    }
+
+    private void findViewByIds(View view) {
+        textViewTituloUsuarioGamificacao = view.findViewById(R.id.textView_titulo_usuario_perfil);
+        textViewNome = view.findViewById(R.id.textView_nome_perfil);
+        textViewDataNascimento = view.findViewById(R.id.textView_data_perfil);
+
+        imageViewPerfil = view.findViewById(R.id.imageView_perfil_usuario);
+        imageViewEmblema = view.findViewById(R.id.imageView_emblema_perfil);
+        buttonAdicionarEmpresa = view.findViewById(R.id.button_adicionar_empresa);
     }
 
     public void criaGamificacao() {
