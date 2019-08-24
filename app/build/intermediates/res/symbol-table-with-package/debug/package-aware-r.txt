@@ -632,6 +632,7 @@ color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
 color colorAccent
+color colorNavigation
 color colorPrimary
 color colorPrimaryDark
 color com_facebook_blue
@@ -681,6 +682,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color lightPurple
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1450,7 +1452,6 @@ id textStart
 id textView
 id textView2
 id textView3
-id textView4
 id textView_atendimento_cliente
 id textView_categoria_descricao_empresa
 id textView_classificacao_empresa_adapter_ranking

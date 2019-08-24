@@ -11,7 +11,7 @@ android:orientation="vertical">
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/lightPurple"
         android:orientation="vertical"
         android:layout_gravity="center">
 
@@ -40,7 +40,7 @@ android:orientation="vertical">
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="5dp"
-        android:elevation="5dp">
+        android:elevation="10dp">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -115,7 +115,6 @@ android:orientation="vertical">
                 android:id="@+id/textView_desc_descricao_empresa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="168dp"
                 android:text="Descrição"

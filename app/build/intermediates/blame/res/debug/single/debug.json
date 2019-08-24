@@ -4,12 +4,12 @@
         "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/c9f75ece25ed366dc2a815e5b34208c8/res/drawable-mdpi-v4/com_facebook_tooltip_black_bottomnub.png"
     },
     {
-        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_half_black_16dp.png.flat",
-        "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/520c4bcadddf3784215d09d5c21df042/res/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png"
-    },
-    {
         "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/520c4bcadddf3784215d09d5c21df042/res/drawable-mdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_half_black_16dp.png.flat",
+        "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/520c4bcadddf3784215d09d5c21df042/res/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png"
     },
     {
         "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -128,16 +128,16 @@
         "source": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/src/main/res/mipmap-xhdpi/srv_ic_rating_good.png"
     },
     {
-        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/layout_abc_tooltip.xml.flat",
-        "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/520c4bcadddf3784215d09d5c21df042/res/layout/abc_tooltip.xml"
+        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_com_facebook_tooltip_black_bottomnub.png.flat",
+        "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/c9f75ece25ed366dc2a815e5b34208c8/res/drawable-xhdpi-v4/com_facebook_tooltip_black_bottomnub.png"
     },
     {
         "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_dark_focused.xml.flat",
         "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/3b2e5060125bfb292fb03c1065432df8/res/drawable/common_google_signin_btn_text_dark_focused.xml"
     },
     {
-        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_com_facebook_tooltip_black_bottomnub.png.flat",
-        "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/c9f75ece25ed366dc2a815e5b34208c8/res/drawable-xhdpi-v4/com_facebook_tooltip_black_bottomnub.png"
+        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/layout_abc_tooltip.xml.flat",
+        "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/520c4bcadddf3784215d09d5c21df042/res/layout/abc_tooltip.xml"
     },
     {
         "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
@@ -148,44 +148,44 @@
         "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/520c4bcadddf3784215d09d5c21df042/res/layout/abc_alert_dialog_title_material.xml"
     },
     {
-        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable_ic_confirmar.xml.flat",
-        "source": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/src/main/res/drawable/ic_confirmar.xml"
-    },
-    {
         "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/520c4bcadddf3784215d09d5c21df042/res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable_ic_confirmar.xml.flat",
+        "source": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/src/main/res/drawable/ic_confirmar.xml"
     },
     {
         "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/layout_activity_adicionar_empresa.xml.flat",
         "source": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/src/main/res/layout/activity_adicionar_empresa.xml"
     },
     {
-        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_checkbox.xml.flat",
-        "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/520c4bcadddf3784215d09d5c21df042/res/layout/abc_list_menu_item_checkbox.xml"
-    },
-    {
         "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
         "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/520c4bcadddf3784215d09d5c21df042/res/drawable-xhdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
-        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
-        "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/520c4bcadddf3784215d09d5c21df042/res/drawable-xxxhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
+        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_checkbox.xml.flat",
+        "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/520c4bcadddf3784215d09d5c21df042/res/layout/abc_list_menu_item_checkbox.xml"
     },
     {
         "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_srv_ic_rating_amazing_round.png.flat",
         "source": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/src/main/res/mipmap-xxhdpi/srv_ic_rating_amazing_round.png"
     },
     {
+        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/520c4bcadddf3784215d09d5c21df042/res/drawable-xxxhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
         "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable_com_facebook_auth_dialog_cancel_background.xml.flat",
         "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/6b4027ad31a9eff8d1598d89a4843243/res/drawable/com_facebook_auth_dialog_cancel_background.xml"
     },
     {
-        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
-        "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/520c4bcadddf3784215d09d5c21df042/res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
-    },
-    {
         "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable_abc_ic_menu_overflow_material.xml.flat",
         "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/520c4bcadddf3784215d09d5c21df042/res/drawable/abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
+        "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/520c4bcadddf3784215d09d5c21df042/res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
     {
         "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
@@ -248,20 +248,20 @@
         "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/3b2e5060125bfb292fb03c1065432df8/res/drawable-mdpi-v4/googleg_standard_color_18.png"
     },
     {
-        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_com_facebook_tooltip_blue_xout.png.flat",
-        "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/c9f75ece25ed366dc2a815e5b34208c8/res/drawable-mdpi-v4/com_facebook_tooltip_blue_xout.png"
-    },
-    {
         "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/520c4bcadddf3784215d09d5c21df042/res/drawable-xxxhdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/layout_notification_template_media_custom.xml.flat",
-        "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/474a24d6bdbb5e6ace2701cf1b0f0865/res/layout/notification_template_media_custom.xml"
+        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_com_facebook_tooltip_blue_xout.png.flat",
+        "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/c9f75ece25ed366dc2a815e5b34208c8/res/drawable-mdpi-v4/com_facebook_tooltip_blue_xout.png"
     },
     {
         "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/layout_notification_template_lines_media.xml.flat",
         "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/474a24d6bdbb5e6ace2701cf1b0f0865/res/layout/notification_template_lines_media.xml"
+    },
+    {
+        "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/layout_notification_template_media_custom.xml.flat",
+        "source": "/home/usuario/.gradle/caches/transforms-2/files-2.1/474a24d6bdbb5e6ace2701cf1b0f0865/res/layout/notification_template_media_custom.xml"
     },
     {
         "merged": "/home/usuario/AndroidStudioProjects/classifica-me-app/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",

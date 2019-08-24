@@ -30,13 +30,13 @@ public final class R {
     public static final class color {
         private color() {}
 
-        public static final int notification_action_color_filter = 0x7f060082;
-        public static final int notification_icon_bg_color = 0x7f060083;
-        public static final int notification_material_background_media_default_color = 0x7f060084;
-        public static final int primary_text_default_material_dark = 0x7f060089;
-        public static final int ripple_material_light = 0x7f06008e;
-        public static final int secondary_text_default_material_dark = 0x7f06008f;
-        public static final int secondary_text_default_material_light = 0x7f060090;
+        public static final int notification_action_color_filter = 0x7f060084;
+        public static final int notification_icon_bg_color = 0x7f060085;
+        public static final int notification_material_background_media_default_color = 0x7f060086;
+        public static final int primary_text_default_material_dark = 0x7f06008b;
+        public static final int ripple_material_light = 0x7f060090;
+        public static final int secondary_text_default_material_dark = 0x7f060091;
+        public static final int secondary_text_default_material_light = 0x7f060092;
     }
     public static final class dimen {
         private dimen() {}
@@ -110,8 +110,8 @@ public final class R {
         public static final int tag_transition_group = 0x7f090112;
         public static final int text = 0x7f090115;
         public static final int text2 = 0x7f090116;
-        public static final int time = 0x7f090141;
-        public static final int title = 0x7f090142;
+        public static final int time = 0x7f090140;
+        public static final int title = 0x7f090141;
     }
     public static final class integer {
         private integer() {}

@@ -68,6 +68,7 @@ public class PerfilFragment extends Fragment {
         auth = ConfigFirebase.getAuth();
         firebase = ConfigFirebase.getDatabase();
 
+
         findViewByIds(view);
 
         buttonAdicionarEmpresa.setVisibility(View.GONE);
