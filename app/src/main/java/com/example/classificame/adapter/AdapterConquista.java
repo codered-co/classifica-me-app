@@ -45,8 +45,8 @@ public class AdapterConquista extends RecyclerView.Adapter<AdapterConquista.View
             @Override
             public void onClick(View view) {
                 Toast.makeText(context, "Conquista em breve", Toast.LENGTH_SHORT).show();
-                //Intent intent = new Intent(context, DescricaoConquistaActivity.class);
-                //context.startActivity(intent);
+                Intent intent = new Intent(context, DescricaoConquistaActivity.class);
+                context.startActivity(intent);
             }
         });
 

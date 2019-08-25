@@ -193,7 +193,7 @@ public class PerfilFragment extends Fragment {
             encerrarSessao();
         }
         if (id == R.id.action_editar) {
-            Intent i = new Intent(getContext(), DescricaoConquistaActivity.class);
+            Intent i = new Intent(getContext(), EditarPerfilActivity.class);
             startActivity(i);
         }
         return super.onOptionsItemSelected(item);
