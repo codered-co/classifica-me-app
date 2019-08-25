@@ -10,120 +10,108 @@ android:orientation="vertical">
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="200dp"
         android:background="@color/lightPurple"
         android:orientation="vertical"
         android:layout_gravity="center">
 
         <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageView_perfil_descricao_empresa"
-        android:layout_width="100dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/ic_pessoa" />
-
-        <TextView
-            android:id="@+id/textView_nome_descricao_empresa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="8dp"
-            android:text="Nome"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="5dp"
-        android:elevation="10dp">
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_pessoa" />
+    </LinearLayout>
 
-        <android.support.constraint.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center">
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView_tipo_descricao_empresa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="Tipo empresa"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView_categoria_descricao_empresa" />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:elevation="10dp"
+                android:layout_gravity="center_horizontal">
 
-            <TextView
-                android:id="@+id/textView_categoria_descricao_empresa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="8dp"
-                android:text="Categoria"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.495"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_horizontal">
 
-            <TextView
-                android:id="@+id/textView_cnpj_descricao_empresa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="CNPJ"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.494"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView_endereco_descricao_empresa" />
+                    <TextView
+                        android:id="@+id/textView_nome_descricao_empresa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:text="Nome"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textView_telefone_descricao_empresa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="Telefone"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.494"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView_cnpj_descricao_empresa" />
+                    <TextView
+                        android:id="@+id/textView_tipo_descricao_empresa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Tipo"
+                        android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/textView_endereco_descricao_empresa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="Endereço"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView_tipo_descricao_empresa" />
+                    <TextView
+                        android:id="@+id/textView_categoria_descricao_empresa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Categoria"
+                        android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/textView_desc_descricao_empresa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="168dp"
-                android:text="Descrição"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView_telefone_descricao_empresa" />
+                    <TextView
+                        android:id="@+id/textView_cnpj_descricao_empresa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="CNPJ"
+                        android:layout_gravity="center"
+                        android:textSize="16sp" />
 
-        </android.support.constraint.ConstraintLayout>
-    </android.support.v7.widget.CardView>
+                    <TextView
+                        android:id="@+id/textView_telefone_descricao_empresa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Telefone"
+                        android:layout_gravity="center"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView_endereco_descricao_empresa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Endereço"
+                        android:layout_gravity="center"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView_desc_descricao_empresa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Descrição"
+                        android:layout_gravity="center"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
 </LinearLayout>

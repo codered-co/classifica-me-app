@@ -17,4 +17,10 @@
         app:showAsAction="always"
         android:title="Ordenar">
     </item>
+    <item android:id="@+id/action_check"
+        android:icon="@drawable/ic_confirmar"
+        android:title="Confirmar"
+        app:showAsAction="always">
+
+    </item>
 </menu>

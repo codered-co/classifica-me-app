@@ -1181,6 +1181,7 @@ id action_bar_root
 id action_bar_spinner
 id action_bar_subtitle
 id action_bar_title
+id action_check
 id action_container
 id action_context_bar
 id action_divider
@@ -1214,13 +1215,11 @@ id bottom
 id box_count
 id button
 id buttonPanel
-id button_adicionar_empresa
 id button_cadastrar
 id button_entrar
 id button_facebook
 id button_google
 id button_salvar_empresa
-id button_submit_valor
 id cancel_action
 id cancel_button
 id cardView_empresa_adapter
@@ -1296,7 +1295,6 @@ id fill_horizontal
 id fill_vertical
 id filled
 id fixed
-id floatingActionButton_salvar_edit_perfil
 id forever
 id ghost_view
 id gone
@@ -1458,7 +1456,6 @@ id textView_cnpj_descricao_empresa
 id textView_data_perfil
 id textView_desc_descricao_empresa
 id textView_descricao_conquista
-id textView_descricao_empresa_classificar
 id textView_endereco_descricao_empresa
 id textView_forma_pagamento
 id textView_local_empresa_adapter
@@ -1615,6 +1612,7 @@ layout view_simpleratingview
 menu bottom_nav_menu
 menu menu_toolbar
 mipmap amazing_rating_value
+mipmap ic_icon
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap srv_ic_rating_amazing

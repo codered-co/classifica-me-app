@@ -1,10 +1,14 @@
 package com.example.classificame.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -59,20 +63,12 @@ public class EditarPerfilActivity extends AppCompatActivity {
         editTextCidade = findViewById(R.id.editText_cidade_edit_perfil);
         editTextEstado = findViewById(R.id.editText_estado);
         editTextTelefone = findViewById(R.id.editText_telefone_edit_perfil);
-        floatingActionButtonEdit = findViewById(R.id.floatingActionButton_salvar_edit_perfil);
         imageViewPerfilEdit = findViewById(R.id.imageView_user_perfil);
         spinnerPaises = findViewById(R.id.spinner_paises);
 
         paisesAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, paises);
         configurarSpinnerPaises();
 
-        floatingActionButtonEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                salvarAlteracao();
-                finish();
-            }
-        });
     }
 
     @Override
@@ -124,6 +120,39 @@ public class EditarPerfilActivity extends AppCompatActivity {
         usuarioRef.child("cidade").setValue(cidade);
         usuarioRef.child("telefone").setValue(telefone);
         usuarioRef.child("pais").setValue(pais);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_toolbar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        MenuItem item1 = menu.findItem(R.id.action_ordenar);
+        MenuItem item2 = menu.findItem(R.id.action_logout);
+        MenuItem item3 = menu.findItem(R.id.action_editar);
+
+        if (item1 != null) {
+            item1.setVisible(false);
+        } if (item2 != null) {
+            item2.setVisible(false);
+        } if (item3 != null) {
+            item3.setVisible(false);
+        }
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_check:
+                salvarAlteracao();
+                finish();
+                break;
+        }
+        return true;
     }
 
     private void configurarSpinnerPaises() {

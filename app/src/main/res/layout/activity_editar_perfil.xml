@@ -26,9 +26,10 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageView_user_perfil"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_pessoa" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_pessoa"
+                android:scaleType="centerCrop"/>
 
         </LinearLayout>
 
@@ -93,14 +94,6 @@
 
             </Spinner>
 
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/floatingActionButton_salvar_edit_perfil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginRight="25dp"
-
-                android:src="@drawable/ic_confirmar" />
         </LinearLayout>
 
     </LinearLayout>

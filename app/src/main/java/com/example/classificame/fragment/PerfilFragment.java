@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.example.classificame.R;
 import com.example.classificame.activity.AdicionarEmpresaActivity;
 import com.example.classificame.activity.CadastroActivity;
+import com.example.classificame.activity.DescricaoConquistaActivity;
 import com.example.classificame.activity.EditarPerfilActivity;
 import com.example.classificame.activity.MainActivity;
 import com.example.classificame.adapter.AdapterConquista;
@@ -46,7 +47,7 @@ public class PerfilFragment extends Fragment {
     private TextView textViewNome, textViewDataNascimento, textViewTituloUsuarioGamificacao;
 
     private ImageView imageViewPerfil, imageViewEmblema;
-    private Button buttonAdicionarEmpresa;
+    //private Button buttonAdicionarEmpresa;
 
     private RecyclerView recyclerViewGamificacao;
     private ArrayList<Conquista> conquistas = new ArrayList<>();
@@ -71,14 +72,15 @@ public class PerfilFragment extends Fragment {
 
         findViewByIds(view);
 
-        buttonAdicionarEmpresa.setVisibility(View.GONE);
+        //buttonAdicionarEmpresa.setVisibility(View.GONE);
 
-        buttonAdicionarEmpresa.setOnClickListener(new View.OnClickListener() {
+       /* buttonAdicionarEmpresa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(), AdicionarEmpresaActivity.class));
             }
         });
+        */
 
         //RecyclerView
         recyclerViewGamificacao = view.findViewById(R.id.recyclerView_perfil_gamificacao);
@@ -87,7 +89,7 @@ public class PerfilFragment extends Fragment {
         adapterConquista = new AdapterConquista(conquistas, getContext());
         recyclerViewGamificacao.setAdapter(adapterConquista);
 
-        criaGamificacao();
+        criaConquista();
         return view;
     }
 
@@ -98,10 +100,10 @@ public class PerfilFragment extends Fragment {
 
         imageViewPerfil = view.findViewById(R.id.imageView_perfil_usuario);
         imageViewEmblema = view.findViewById(R.id.imageView_emblema_perfil);
-        buttonAdicionarEmpresa = view.findViewById(R.id.button_adicionar_empresa);
+       // buttonAdicionarEmpresa = view.findViewById(R.id.button_adicionar_empresa);
     }
 
-    public void criaGamificacao() {
+    public void criaConquista() {
 
         Conquista conquista1 = new Conquista();
         conquista1.setNomeConquista("Primeiro voto");
@@ -172,9 +174,13 @@ public class PerfilFragment extends Fragment {
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
         MenuItem item1 = menu.findItem(R.id.action_ordenar);
+        MenuItem item2 = menu.findItem(R.id.action_check);
 
         if (item1 != null) {
             item1.setVisible(false);
+        }
+        if (item2 != null) {
+            item2.setVisible(false);
         }
 
         super.onPrepareOptionsMenu(menu);
@@ -234,7 +240,7 @@ public class PerfilFragment extends Fragment {
 
     public void verificaAdmin(Usuario usuario) {
         if (usuario.isAdmin()){
-            buttonAdicionarEmpresa.setVisibility(View.VISIBLE);
+            //buttonAdicionarEmpresa.setVisibility(View.VISIBLE);
         }
     }
     private String switchMes(String mes) {
