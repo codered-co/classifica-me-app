@@ -188,7 +188,7 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /home/usuario/.grad
 	android:label
 		ADDED from /home/usuario/AndroidStudioProjects/classifica-me-app/app/src/main/AndroidManifest.xml:12:9-41
 	android:roundIcon
-		ADDED from /home/usuario/AndroidStudioProjects/classifica-me-app/app/src/main/AndroidManifest.xml:13:9-48
+		ADDED from /home/usuario/AndroidStudioProjects/classifica-me-app/app/src/main/AndroidManifest.xml:13:9-54
 	android:icon
 		ADDED from /home/usuario/AndroidStudioProjects/classifica-me-app/app/src/main/AndroidManifest.xml:11:9-43
 	android:allowBackup

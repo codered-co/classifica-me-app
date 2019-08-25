@@ -3,6 +3,9 @@ package com.example.classificame.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -33,6 +36,7 @@ public class ClassificandoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_classificar);
 
         getSupportActionBar().setTitle("Classificar");
+        getSupportActionBar().setElevation(0);
 
         ratingViewAtendimentoCliente = findViewById(R.id.simpleRatingView_atendimento_cliente);
         ratingViewFormaPagamento = findViewById(R.id.simpleRatingView_forma_pagamento);
@@ -45,7 +49,6 @@ public class ClassificandoActivity extends AppCompatActivity {
         textViewValorPossibilidadeVoltar = findViewById(R.id.textView_ratingValue_possibilidade_voltar);
 
         TextView textViewNomeEmpresa = findViewById(R.id.textView_nome_empresa_classificar);
-        TextView textViewDescricaoEmpresa = findViewById(R.id.textView_descricao_empresa_classificar);
 
         addListenerOnRatingBar(ratingViewAtendimentoCliente, textViewValorAtendimentoCliente);
         addListenerOnRatingBar(ratingViewFormaPagamento, textViewValorFormaPagamento);
@@ -56,9 +59,58 @@ public class ClassificandoActivity extends AppCompatActivity {
         bundle = intent.getExtras();
 
         textViewNomeEmpresa.setText( bundle.getString("NomeEmpresa"));
-        textViewDescricaoEmpresa.setText(bundle.getString("DescricaoEmpresa"));
 
         addListenerOnButtonEnviar();
+    }
+
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_toolbar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        MenuItem item1 = menu.findItem(R.id.action_ordenar);
+        MenuItem item2 = menu.findItem(R.id.action_logout);
+        MenuItem item3 = menu.findItem(R.id.action_editar);
+
+        if (item1 != null) {
+            item1.setVisible(false);
+        } if (item2 != null) {
+            item2.setVisible(false);
+        } if (item3 != null) {
+            item3.setVisible(false);
+        }
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_check:
+                double votoAtendimentoCliente = pegarValor(textViewValorAtendimentoCliente);
+                double votoFormaPagamento = pegarValor(textViewValorFormaPagamento);
+                double votoServicoEntrega = pegarValor(textViewValorServicoEntrega);
+                double votoPossibilidadeVoltar = pegarValor(textViewValorPossibilidadeVoltar);
+
+                Voto votoRecuperado = new Voto();
+                votoRecuperado.setAtendimentoCliente(bundle.getDouble("VotoAtendimentoCliente"));
+                votoRecuperado.setServicoEntrega(bundle.getDouble("VotoServicoEntrega"));
+                votoRecuperado.setPossibilidadeVoltar(bundle.getDouble("VotoPossibilidadedeVoltar"));
+                votoRecuperado.setFormaPagamento(bundle.getDouble("VotoFormaPagamento"));
+
+                Voto voto = new Voto();
+                voto.setAtendimentoCliente(votoRecuperado.getAtendimentoCliente() + votoAtendimentoCliente);
+                voto.setFormaPagamento(votoRecuperado.getFormaPagamento() + votoFormaPagamento);
+                voto.setServicoEntrega(votoRecuperado.getServicoEntrega() + votoServicoEntrega);
+                voto.setPossibilidadeVoltar(votoRecuperado.getPossibilidadeVoltar() + votoPossibilidadeVoltar);
+
+                salvarVoto(voto);
+                break;
+        }
+        return true;
     }
 
     public void salvarVoto(Voto voto) {
@@ -109,30 +161,14 @@ public class ClassificandoActivity extends AppCompatActivity {
         textViewValorServicoEntrega = findViewById(R.id.textView_ratingValue_qualidade_produto);
         textViewValorPossibilidadeVoltar = findViewById(R.id.textView_ratingValue_possibilidade_voltar);
 
-        Button buttonSubmit = findViewById(R.id.button_submit_valor);
+       /* Button buttonSubmit = findViewById(R.id.button_submit_valor);
         //if click, then display the current rating value.
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double votoAtendimentoCliente = pegarValor(textViewValorAtendimentoCliente);
-                double votoFormaPagamento = pegarValor(textViewValorFormaPagamento);
-                double votoServicoEntrega = pegarValor(textViewValorServicoEntrega);
-                double votoPossibilidadeVoltar = pegarValor(textViewValorPossibilidadeVoltar);
 
-                Voto votoRecuperado = new Voto();
-                votoRecuperado.setAtendimentoCliente(bundle.getDouble("VotoAtendimentoCliente"));
-                votoRecuperado.setServicoEntrega(bundle.getDouble("VotoServicoEntrega"));
-                votoRecuperado.setPossibilidadeVoltar(bundle.getDouble("VotoPossibilidadedeVoltar"));
-                votoRecuperado.setFormaPagamento(bundle.getDouble("VotoFormaPagamento"));
-
-                Voto voto = new Voto();
-                voto.setAtendimentoCliente(votoRecuperado.getAtendimentoCliente() + votoAtendimentoCliente);
-                voto.setFormaPagamento(votoRecuperado.getFormaPagamento() + votoFormaPagamento);
-                voto.setServicoEntrega(votoRecuperado.getServicoEntrega() + votoServicoEntrega);
-                voto.setPossibilidadeVoltar(votoRecuperado.getPossibilidadeVoltar() + votoPossibilidadeVoltar);
-
-                salvarVoto(voto);
             }
         });
+        */
     }
 }
