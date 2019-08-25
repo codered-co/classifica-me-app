@@ -49,9 +49,6 @@ public class AdapterConquista extends RecyclerView.Adapter<AdapterConquista.View
                 context.startActivity(intent);
             }
         });
-
-
-        //Implementar click no item da listView
     }
 
     @Override

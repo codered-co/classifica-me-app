@@ -26,6 +26,7 @@ public class ClassificandoActivity extends AppCompatActivity {
     private TextView textViewValorFormaPagamento;
     private TextView textViewValorServicoEntrega;
     private TextView textViewValorPossibilidadeVoltar;
+    private TextView textViewNomeEmpresa;
 
     private Bundle bundle;
     private String idEmpresa;
@@ -38,17 +39,7 @@ public class ClassificandoActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Classificar");
         getSupportActionBar().setElevation(0);
 
-        ratingViewAtendimentoCliente = findViewById(R.id.simpleRatingView_atendimento_cliente);
-        ratingViewFormaPagamento = findViewById(R.id.simpleRatingView_forma_pagamento);
-        ratingViewServicoEntrega = findViewById(R.id.simpleRatingView_qualidade_produto);
-        ratingViewPossibilidadeVoltar = findViewById(R.id.simpleRatingView_possibilidade_voltar);
-
-        textViewValorAtendimentoCliente = findViewById(R.id.textView_ratingValue_atendimento_cliente);
-        textViewValorFormaPagamento = findViewById(R.id.textView_ratingValue_forma_pagamento);
-        textViewValorServicoEntrega = findViewById(R.id.textView_ratingValue_qualidade_produto);
-        textViewValorPossibilidadeVoltar = findViewById(R.id.textView_ratingValue_possibilidade_voltar);
-
-        TextView textViewNomeEmpresa = findViewById(R.id.textView_nome_empresa_classificar);
+        findViewById();
 
         addListenerOnRatingBar(ratingViewAtendimentoCliente, textViewValorAtendimentoCliente);
         addListenerOnRatingBar(ratingViewFormaPagamento, textViewValorFormaPagamento);
@@ -168,7 +159,22 @@ public class ClassificandoActivity extends AppCompatActivity {
             public void onClick(View v) {
 
             }
-        });
+        });[
         */
+    }
+
+    private void findViewById(){
+        ratingViewAtendimentoCliente = findViewById(R.id.simpleRatingView_atendimento_cliente);
+        ratingViewFormaPagamento = findViewById(R.id.simpleRatingView_forma_pagamento);
+        ratingViewServicoEntrega = findViewById(R.id.simpleRatingView_qualidade_produto);
+        ratingViewPossibilidadeVoltar = findViewById(R.id.simpleRatingView_possibilidade_voltar);
+
+        textViewValorAtendimentoCliente = findViewById(R.id.textView_ratingValue_atendimento_cliente);
+        textViewValorFormaPagamento = findViewById(R.id.textView_ratingValue_forma_pagamento);
+        textViewValorServicoEntrega = findViewById(R.id.textView_ratingValue_qualidade_produto);
+        textViewValorPossibilidadeVoltar = findViewById(R.id.textView_ratingValue_possibilidade_voltar);
+
+        textViewNomeEmpresa = findViewById(R.id.textView_nome_empresa_classificar);
+
     }
 }
