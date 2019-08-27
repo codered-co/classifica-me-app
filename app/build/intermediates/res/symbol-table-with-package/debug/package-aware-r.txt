@@ -1267,10 +1267,12 @@ id editText_categoria_empresa
 id editText_cidade
 id editText_cidade_edit_perfil
 id editText_cidade_empresa
+id editText_cnpj_descricao_empresa
 id editText_cnpj_empresa
 id editText_confirmar_senha
 id editText_descricao_empresa
 id editText_email
+id editText_endereco_descricao_empresa
 id editText_estado
 id editText_estado_empresa
 id editText_nome
@@ -1280,7 +1282,9 @@ id editText_numero_empresa
 id editText_rua_empresa
 id editText_senha
 id editText_telefone
+id editText_telefone_descricao_empresa
 id editText_telefone_edit_perfil
+id editText_tipo_descricao_empresa
 id editText_tipo_empresa
 id edit_query
 id end
@@ -1452,11 +1456,9 @@ id textView3
 id textView_atendimento_cliente
 id textView_categoria_descricao_empresa
 id textView_classificacao_empresa_adapter_ranking
-id textView_cnpj_descricao_empresa
 id textView_data_perfil
 id textView_desc_descricao_empresa
 id textView_descricao_conquista
-id textView_endereco_descricao_empresa
 id textView_forma_pagamento
 id textView_local_empresa_adapter
 id textView_local_empresa_adapter_ranking
@@ -1473,8 +1475,6 @@ id textView_ratingValue_atendimento_cliente
 id textView_ratingValue_forma_pagamento
 id textView_ratingValue_possibilidade_voltar
 id textView_ratingValue_qualidade_produto
-id textView_telefone_descricao_empresa
-id textView_tipo_descricao_empresa
 id textView_tipo_empresa_adapter
 id textView_tipo_empresa_adapter_ranking
 id textView_titulo_usuario_perfil
