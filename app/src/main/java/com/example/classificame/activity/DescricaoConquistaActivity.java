@@ -30,8 +30,7 @@ public class DescricaoConquistaActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("Descrição");
-
-        getActionBar().setElevation(0);
+        getSupportActionBar().setElevation(0);
 
     }
 
